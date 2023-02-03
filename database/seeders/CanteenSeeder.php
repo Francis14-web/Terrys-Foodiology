@@ -14,6 +14,6 @@ class CanteenSeeder extends Seeder
      */
     public function run()
     {
-        //
+        \App\Models\Canteen::factory(10)->create();
     }
 }
