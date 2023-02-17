@@ -24,6 +24,8 @@ class UserAuthController extends Controller
             return redirect()->intended(route('user.dashboard'));
         }
 
-        return redirect()->back()->withInput($request->only('email'));
+        return redirect()->back()->withErrors([
+            'email' => 'The provided credentials do not match our records.',
+        ]);
     }  
 }

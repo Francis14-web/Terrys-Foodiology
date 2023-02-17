@@ -18,13 +18,15 @@ class AdminAuthController extends Controller
     }
 
     public function authenticate(Request $request){
-        $credentials = $request->only('email', 'password');
+        $credentials = $request->only('username', 'password');
 
         if (Auth::guard('admin')->attempt($credentials)) {
             return redirect()->intended(route('admin.dashboard'));
         }
 
-        return redirect()->back()->withInput($request->only('email'));
+        return redirect()->back()->withErrors([
+            'username' => 'The provided credentials do not match our records.',
+        ]);
     }    
 }
  

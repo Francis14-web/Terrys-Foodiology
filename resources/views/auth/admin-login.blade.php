@@ -6,43 +6,23 @@
 @endsection
 
 @section('content')
-<div id="wrapper">
-    
-    <form action="{{route('canteen.authenticate')}}" method="post" id="form-container">
-        @csrf
-        <p id="sign-in">Sign into your account</p>
-        <div class="form-group">
-            <label for="email" class="name">Email</label>
-            <input type="email" name="email" id="email" class="form-control" value="{{ old('email') }}">
-        </div>
-        <div class="form-group">
-            <label for="password" class="name">Password</label>
-            <input type="password" name="password" id="password" class="form-control" >
-        </div>
-        <div id="before-login">
+<div class="flex justify-center items-center w-screen h-screen">
+    <div class=" max-w-xs w-full">
+        <div class=" bg-white shadow-xl rounded-md flex flex-col p-8">
+            <img src="/img/canteen-two-logo.png" class="logo h-36 w-36 mb-8 self-center">
             <div>
-                <input type="checkbox" name="checkbox" id="checkbox">
-                <label for="checkbox" id="checkbox-name">Remember me?</label>
+                <form id="admin-login" action="{{route('admin.authenticate')}}" method="post">
+                    @csrf
+                    <x-input-field label="Username" name="username" type="text"/>
+                    <x-input-field label="Password" type="password" name="password"/>
+                    @error('username')
+                        <p class="text-xs text-red-500 my-5 text-center">{{$message}}</p>
+                    @enderror
+                    <x-submit-button value="Login"/>
+                    
+                </form>
             </div>
-            <div>
-                <a href="#" id="forgot-pass">Forgot password?</a>
-            </div>
-        </div>
-        <div class="form-group">
-            <button type="submit" class="btn btn-primary" id="btn-login">Login</button>
-        </div>
-
-        <div id="register-container">
-            <p>Don't have an account?</p>
-            <a href="#" id="register">Register</a>
-        </div>
-
-    </form>
-
-
-    <div>
-        <div class="right-side">
-
+            <a href="#" class="forgotPass text-sm text-green-700">Forgot Password</a>
         </div>
     </div>
 </div>

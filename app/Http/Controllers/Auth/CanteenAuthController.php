@@ -24,6 +24,8 @@ class CanteenAuthController extends Controller
             return redirect()->intended(route('canteen.dashboard'));
         }
 
-        return redirect()->back()->withInput($request->only('email'));
+        return back()->withErrors([
+            'email' => 'The provided credentials do not match our records.',
+        ]);
     }  
 }

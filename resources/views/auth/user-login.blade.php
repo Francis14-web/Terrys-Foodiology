@@ -6,44 +6,34 @@
 @endsection
 
 @section('content')
-<div id="wrapper">
-    
-    <form action="{{route('canteen.authenticate')}}" method="post" id="form-container">
+<div class="flex gap-10 flex-row-reverse justify-center items-center h-screen w-full">
+    <form action="{{route('user.authenticate')}}" method="post" class="max-w-xs w-full">
         @csrf
-        <p id="sign-in">Sign into your account</p>
-        <div class="form-group">
-            <label for="email" class="name">Email</label>
-            <input type="email" name="email" id="email" class="form-control" value="{{ old('email') }}">
-        </div>
-        <div class="form-group">
-            <label for="password" class="name">Password</label>
-            <input type="password" name="password" id="password" class="form-control" >
-        </div>
-        <div id="before-login">
-            <div>
+        <p class="text-xl text-gray-800 font-bold font-nunito my-8">Sign in to your account</p>
+        <x-input-field label="Email" type="email" name="email"/>
+        <x-input-field label="Password" type="password" name="password"/>
+        @error('email')
+            <p class="text-xs text-red-500 my-5 text-center">{{$message}}</p>
+        @enderror
+        <div class="w-full flex justify-between items-center my-4">
+            <div class="flex items-center">
                 <input type="checkbox" name="checkbox" id="checkbox">
-                <label for="checkbox" id="checkbox-name">Remember me?</label>
+                <label for="checkbox" class="text-xs ml-2">Remember me?</label>
             </div>
-            <div>
-                <a href="#" id="forgot-pass">Forgot password?</a>
-            </div>
+            <a href="#" class="text-xs font-semibold text-green-600">Forgot password?</a>
         </div>
-        <div class="form-group">
-            <button type="submit" class="btn btn-primary" id="btn-login">Login</button>
+        
+        <x-submit-button value="Login"/>
+        <div class="w-full flex flex-row items-center justify-center mt-6">
+            <p class="text-xs">Don't have an account?</p>
+            <a href="#" class="text-xs font-semibold text-green-600 ml-2">Register</a>
         </div>
-
-        <div id="register-container">
-            <p>Don't have an account?</p>
-            <a href="#" id="register">Register</a>
-        </div>
-
+        
     </form>
 
-
-    <div>
-        <div class="right-side">
-            <img src="{{asset('pictures/user-login-1.svg')}}" alt="sign-in" id="user-picture">
-        </div>
+    <div class="w-1/2 h-3/4">
+      <img src="{{asset('pictures/user-login-1.svg')}}" alt="sign-in" class="w-full h-full object-contain">
     </div>
-</div>
+  </div>
+  
 @endsection
