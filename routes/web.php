@@ -27,6 +27,8 @@ Route::post('/canteen/authenticate', 'App\Http\Controllers\Auth\CanteenAuthContr
 Route::get('/user/login', 'App\Http\Controllers\Auth\UserAuthController@login')->name('user.login')->middleware('guest:user');
 Route::post('/user/authenticate', 'App\Http\Controllers\Auth\UserAuthController@authenticate')->name('user.authenticate')->middleware('guest:user');
 
+Route::get('/user/register', 'App\Http\Controllers\Auth\UserAuthController@register')->name('user.register')->middleware('guest:user');
+
 Route::middleware('admin')->group(function () {
     Route::get('/admin/dashboard', 'App\Http\Controllers\AdminController@dashboard')->name('admin.dashboard');
     Route::get('/admin/logout', 'App\Http\Controllers\Auth\AdminAuthController@logout')->name('admin.logout');
@@ -41,6 +43,8 @@ Route::middleware('user')->group(function () {
     Route::get('/user/dashboard', 'App\Http\Controllers\UserController@dashboard')->name('user.dashboard');
     Route::get('/user/logout', 'App\Http\Controllers\Auth\UserAuthController@logout')->name('user.logout');
 });
+
+
 
 Route::get('/logout', function()
 {

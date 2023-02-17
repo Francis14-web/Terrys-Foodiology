@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito&family=Poppins&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+#wrapper{
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    background-color: #e6f4e3;
+}
+#form-container{
+    height: 75vh;
+    width: 50vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    background-color: #f6fff5;
+}
+
+#sign-in{
+    font-size: 25px;
+    font-weight: bold;
+    font-family: 'Nunito', sans-serif;
+    margin-bottom: 2em;
+}
+
+.form-group{
+   width: 100%;
+   display: flex;
+   flex-direction: column;
+   margin: .5em 0;
+   padding: 0 1.5em;
+}
+
+#email, #password{
+    padding: .3em;
+    border-radius: 5px;
+    border: 1px solid gray;
+}
+
+#btn-login{
+    font-size: .7em;
+    padding: .5em;
+    border: none;
+    border-radius: 5px;
+    background-color:#5fbd69;
+    color: white;
+    cursor: pointer;
+}
+
+#before-login{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 100%;
+    margin: 1em 0 1em 0;
+}
+
+.name, #before-login, #register-container{
+    font-size: .7em;
+}
+
+#forgot-pass{
+    text-decoration: none;
+    color: #5fbd69;
+    font-weight: 600;
+}
+
+#register-container{
+    display: flex;
+    flex-direction: row;
+    margin-top: 1em;
+}
+
+#register{
+    margin-left: .2em;
+}
+
+#sign-in, .name, #checkbox-name, #register-container p{
+    color: #3e3e3e;
+}
+
+
+
+.right-side{
+    width: 75vh;
+    height: 75vh;
+    background-color: #5fbd69;
+    
+}

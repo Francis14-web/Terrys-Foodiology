@@ -1,0 +1,268 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing:border-box;
+    font-family: 'Poppins', sans-serif;
+    
+}
+
+.container{
+    height: 100vh;
+    width: auto;
+    scroll-behavior: smooth;
+}
+
+.wrapper{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    width: 100%;
+}
+
+#menu-side{
+    height: 100%;
+    width: 100%;
+    margin-left: 270px;
+}
+
+#carousel{
+    background-color: blue;
+    height: 60%;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+#best-seller{ 
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 2em;
+    gap: 5%;
+}
+.best-seller-card{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+    width: 40vh;
+    transition: all .5s ease;
+    box-shadow: 5px 5px 15px #cfcfcf;
+    border-radius: 25px;
+}
+
+.best-seller-card:hover{
+    transform: scale(1.13);
+}
+
+#best-seller-title{
+    font-size: 30px;
+    margin: 20px;
+    text-align: center;
+}
+
+.card-picture{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 200px;
+    
+
+}
+
+#adobo{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 25px;
+}
+
+.best-seller-info{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: 1em;
+    color: #282828;
+}
+
+.best-seller-info h1{
+    font-size: 18px;
+}
+
+.best-seller-info p{
+    font-size: 13px;
+}
+
+.edit-btn{
+    width: 50%;
+    border-radius: 7px;
+    border: none;
+    background-color: #b7efb7;
+    color: #282828;
+    font-weight: 200;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.edit-btn:hover{
+    width: 75%;
+    transition: all .3s ease-in-out;
+    font-weight: 600;
+    color:#ffff;
+    background-color: #56b769;
+}
+
+#carousel-card1{
+    height: 100%;
+    width: auto;
+    justify-content: center;
+}
+
+#carousel-card1 img{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    object-fit: contain;
+}
+
+
+
+#sidebar{
+    height: 100vh;
+    width: 270px; 
+    background-color:#56b769;
+    position: fixed;
+}
+
+.wrapper #sidebar p{
+    padding: 1em;
+    font-size: 25px;
+    text-align: center;
+}
+
+.wrapper #sidebar ul{
+   margin-top: 3em;
+}
+
+.wrapper #sidebar ul li{
+    list-style: none;
+    margin-left: 1em;
+}
+
+.wrapper #sidebar ul li a{
+    text-decoration: none;
+    color: #e9e4e4;
+    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+    padding: .7em;
+    font-size: 13px;
+    transition: .3s ease-in-out;
+}
+
+.wrapper #sidebar ul li a:hover {
+    background-color: #fff;
+    padding-left: 2em;
+    border-bottom-left-radius: 50px;
+    border-top-left-radius: 50px;
+    color:rgb(97, 146, 0);
+    font-weight:900;
+    display: flex;
+    align-items: center;
+}
+
+.wrapper #sidebar ul li a .fa-solid{
+    color: #e9e4e4;
+    width: 25px;
+    height: 25px;
+    margin-right: 8px; 
+    display: flex;
+    align-items: center;    
+}
+
+.new-product{
+    height:50%;
+    background-color: #caf3ca;
+    display: flex;
+    align-items: center;
+    margin: 1em;
+    border-radius: 7px
+}
+
+.product-container{
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+#edit-btn-product{
+    width: 20%;
+    border-radius: 10px;
+    border: none;
+    background-color: #ffffff;
+    color: #282828;
+    font-weight: 200;
+    margin-top: 10px;
+    cursor: pointer;
+    padding: 5px;
+}
+#edit-btn-promo{
+    width: 40%;
+    border-radius: 10px;
+    border: none;
+    background-color: #b7efb7;
+    color: #282828;
+    font-weight: 200;
+    margin-top: 10px;
+    cursor: pointer;
+    padding: 5px;
+}
+#edit-btn-product:hover{
+    width: 55%;
+    transition: all .3s ease-in-out;
+    font-weight: 600;
+    color:#ffff;
+    background-color: #56b769;
+}
+
+#edit-btn-promo:hover{
+    width: 75%;
+    transition: all .3s ease-in-out;
+    font-weight: 600;
+    color:#ffff;
+    background-color: #56b769;
+}
+
+#new-burger{
+    height: 100%;
+    width: 350px;
+}
+
+#new-product-info{
+    width:50%;
+}
+.promo{
+    height: 50%;
+}
+.promo-container{
+    height:100%;
+    background-color: #fff;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+#promo-pic{
+    height:450px;
+    width: 450px;
+}
