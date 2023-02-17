@@ -1,0 +1,377 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+  font-family: 'Poppins', sans-serif;
+  transition: ease .3s;
+  padding: 0;
+  margin: 0;
+}
+
+body 
+{
+  	background-color: white;
+    padding: 0;
+    margin: 0;
+}
+
+
+nav
+{
+    background-color: #ffffff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+nav ul{
+  list-style: none; 
+  display: flex;
+  gap: 15px;
+}
+
+nav ul li a {
+  text-decoration: none;
+}
+
+
+.logo
+{
+  width: 200px;
+  height: auto;
+
+}
+
+/* Wag ka mag height kung ayaw mo mastretch yung image. Or kung gusto mo naman pwedeng yung width yung auto and yung height yung may value. 
+  Basta alternate sila.
+*/
+.intro
+{
+  color:rgb(14, 80, 18);
+  font-size: 50px;
+  line-height: 1;
+  font-weight: bold;
+}
+
+.introP
+{
+  color:rgb(15, 37, 16);
+  font-size: 15px;
+  margin: 35px 0;
+ 
+}
+
+
+.viewbut
+{
+  border: .10px solid #0f3811;
+  border-radius: 20px;
+  font-size: 15px;
+  font-weight: bold;
+  color:rgb(52, 138, 58);
+  display:inline-block;
+  padding: 6px 14px;
+  text-decoration: none;
+}
+
+.viewbut:hover
+{
+  background: rgb(14, 80, 18);
+  color: #FFFFFF;
+}
+
+.LogButton
+{
+  border: .10px solid #0f3811;
+  border-radius: 20px;
+  font-size: 12px;
+  color: #0b1f0a;
+  display:inline-block;
+  padding: 6px 14px;
+}
+
+.LogButton:hover
+{
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.SignButton
+{
+  border: .10px solid #0f3811;
+  border-radius: 20px;
+  background-color: #0f3811;
+  font-size: 12px;
+  color: #fafffa;
+  display:inline-block;
+  padding: 6px 14px;
+
+}
+
+.SignButton:hover
+{
+  background-color: #081a0e ;
+
+}
+
+.description
+{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 10px;
+  align-items: center;
+  position: relative;
+  background: #1e4d2b;
+  min-height: 500px;
+  width: 100%;
+}
+
+.hdecs
+{
+  font-size: 30px;
+  font-weight: 25px;
+  color: #ffffff;
+  text-align: center;
+  line-height: 25px;
+}
+.desc
+{
+  font-size: 15px;
+  color: #ffffff;
+  text-align: center;
+  line-height: 25px;
+  letter-spacing: 2px;
+  margin: 40px 0;
+}
+
+#seclanding
+{ 
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  position: relative;
+  height: 700px;
+}
+.context
+{
+  margin-left: 100px;
+  align-items: center;
+  max-width: 40vw;
+}
+
+ 
+
+.foodtitle
+{
+  text-align: center;
+  font-size: 50px;
+  text-decoration: overline underline;
+  color:rgb(56, 85, 48);
+}
+/* 
+.menu-container{
+  display: flex;
+  flex-direction: column;
+  row-gap: 50px;
+}
+
+row-gap para may space sa kanila vertically.
+gap naman para sa horizontal.  
+
+nagana lang yan kapag naka display "flex" or "grid".
+*/
+/*
+.menu
+{
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+}
+
+#coffee
+{
+  background-color: #0f311b;
+  border-radius: 7px;
+  width: 500%;
+  max-width: 900px;
+  color: #FFFFFF;
+}
+
+.coffeetable {
+  width: 100%;
+  text-align: center;
+  font-size: 22px;
+  padding: 20px;
+}
+
+td
+{
+  background-color: #226d3b;
+}
+
+.img
+{
+  width: 350px;
+  height: 300px;
+}
+
+#rice
+{
+  background-color: #0f311b;
+  border-radius: 7px;
+  width: 500%;
+  max-width: 900px;
+  color: #FFFFFF;
+  }
+
+  .ricetable 
+  {
+    width: 100%;
+    text-align: center;
+    font-size: 22px;
+    padding: 20px;
+  }
+
+#snack
+{
+  background-color: #0f311b;
+  border-radius: 7px;
+  width: 500%;
+  max-width: 900px;
+  color: #FFFFFF;
+  margin-top: 50px;
+  }
+  .snacktable {
+    width: 100%;
+    text-align: center;
+    font-size: 22px;
+    padding: 20px;
+  }
+.snackimg
+{
+  margin-top: 50px;
+  width: 350px;
+  height: 300px;
+}
+ */
+ .offerh
+ {
+  font-size: 30px;
+  text-align: center;
+  color:rgb(14, 80, 18);
+  text-decoration: underline;
+  padding: 50px 50px 50px 50px;
+ }
+ .offer
+ {
+  font-size: 15px;
+  font-weight: 50px;
+  letter-spacing: 2px;
+  text-align: center;
+  color:rgb(14, 80, 18);
+ }
+
+ .container { 
+  display: grid;
+  max-width: 75vw;
+  margin: auto;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-gap: 10px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "rice sandwich pasta"
+    "Snacks Coffee Drinks";
+  justify-content: center;
+}
+
+.food-view{
+  height: fit-content;
+  padding: 10px 10px;
+  border-radius: 12px;
+  text-align: center;
+  
+}
+
+.foodimg
+{
+  height: 250px;
+  width: 260px;
+  padding: 8px 8px;
+  border-radius: 10%;
+  object-fit: cover;
+  object-position: center;
+}
+.rice {
+  grid-area: rice; 
+  }
+
+.sandwich { 
+  grid-area: sandwich; 
+}
+
+.pasta { 
+  grid-area: pasta; 
+}
+
+.Snacks {
+   grid-area: Snacks; 
+  }
+
+.Coffee { 
+  grid-area: Coffee; 
+}
+
+.Drinks { 
+  grid-area: Drinks; 
+}
+
+.footc
+{
+display: flex;
+align-items: center;
+justify-content: space-between;
+font-size: 15px;
+padding: .5px 20px;
+}
+
+.TF
+{
+height: auto;
+width: 90px;
+object-fit: contain;
+object-position: left;
+}
+
+
+a{
+  padding: 0px 10px;
+  text-decoration: none;
+  color: rgba(0, 0, 0, 0.7);
+ }
+
+ .copy
+ {
+  margin-top: 15px;
+  padding: 15px;
+  font-size: 15px;
+  color: rgba(0, 0, 0, 0.7);
+ }
+ hr
+ {
+border: 1px solid rgba(0, 0, 0, 0.1);
+ }
+
+footer{
+  margin-top: 100px;
+  padding: 10px;
+  font-size: 12px;
+  display: inline block;
+  text-align: center;
+}
