@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('foods', function (Blueprint $table) {
             $table->uuid('id')->primary();
             $table->uuid('owner_id');
-            $table->foreign('owner_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('owner_id')->references('id')->on('canteens')->onDelete('cascade');
             $table->string('food_name');
             $table->string('food_description');
             $table->string('food_image');

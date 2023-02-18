@@ -11,4 +11,8 @@ class CanteenController extends Controller
     public function dashboard(){
         return view('canteen.dashboard');
     }
+
+    public function menu() {
+        return view('canteen.menu');
+    }
 }

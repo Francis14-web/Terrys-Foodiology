@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('index');
 });
 
 Route::get('/admin/login', 'App\Http\Controllers\Auth\AdminAuthController@login')->name('admin.login')->middleware('guest:admin');
@@ -37,6 +37,7 @@ Route::middleware('admin')->group(function () {
 
 Route::middleware('canteen')->group(function () {
     Route::get('/canteen/dashboard', 'App\Http\Controllers\CanteenController@dashboard')->name('canteen.dashboard');
+    Route::get('/canteen/menu', 'App\Http\Controllers\CanteenController@menu')->name('canteen.menu');
     Route::get('/canteen/logout', 'App\Http\Controllers\Auth\CanteenAuthController@logout')->name('canteen.logout');
 });
 

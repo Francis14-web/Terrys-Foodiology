@@ -10,6 +10,8 @@ class Food extends Model
 {
     use HasFactory, HasUuids;
 
+    protected $table = 'foods';
+
     protected $fillable = [
         'owner_id',
         'food_name',
@@ -23,7 +25,7 @@ class Food extends Model
 
     public function owner()
     {
-        return $this->belongsTo(User::class, 'owner_id');
+        return $this->belongsTo(User::class, 'own   qer_id');
     }
     
     public function orders()
