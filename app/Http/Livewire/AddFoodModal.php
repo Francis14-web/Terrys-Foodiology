@@ -59,7 +59,10 @@ class AddFoodModal extends ModalComponent
         foreach ($this->food_image as $image) {
             if ($image) {
                 try {
-                    $path = $image->store('photos');
+                    $originalName = $image->getClientOriginalName();
+                    $extension = $image->getClientOriginalExtension();
+                    $fileName = $originalName . '.' . $extension;
+                    $path = $image->storeAs('photos', $fileName);
                     array_push($imagePaths, $path);
                 } catch (\Exception $e) {
                     dd($e);
