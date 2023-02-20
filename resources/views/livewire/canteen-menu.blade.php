@@ -1,13 +1,18 @@
 <div class="p-10">
     <button wire:click="$emit('openModal', 'add-food-modal')" class="fixed bottom-10 right-10 bg-green-700 w-12 h-12 flex items-center justify-center text-3xl rounded-full text-white hover:bg-green-800 hover:shadow-xl"><i class='bx bx-plus' ></i></button>
-    <div class="flex gap-5">
-        <button class="{{ ($category) == '' ? 'text-white bg-green-800 py-1 px-3 rounded-full' : 'text-green-800'}}" wire:click="change('')">All</button>
-        <button class="{{ ($category) == 'rice_meal' ? 'text-white bg-green-800 py-1 px-3 rounded-full' : 'text-green-800'}}"wire:click="change('rice_meal')">Rice Meal</button>
-        <button class="{{ ($category) == 'pasta' ? 'text-white bg-green-800 py-1 px-3 rounded-full' : 'text-green-800'}}"wire:click="change('pasta')">Pasta</button>
-        <button class="{{ ($category) == 'snacks' ? 'text-white bg-green-800 py-1 px-3 rounded-full' : 'text-green-800'}}"wire:click="change('snacks')">Snacks</button>
-        <button class="{{ ($category) == 'coffee' ? 'text-white bg-green-800 py-1 px-3 rounded-full' : 'text-green-800'}}"wire:click="change('coffee')">Coffee</button>
-        <button class="{{ ($category) == 'drinks' ? 'text-white bg-green-800 py-1 px-3 rounded-full' : 'text-green-800'}}"wire:click="change('drinks')">Drinks</button>
-        <button class="{{ ($category) == 'desserts' ? 'text-white bg-green-800 py-1 px-3 rounded-full' : 'text-green-800'}}"wire:click="change('desserts')">Desserts</button>
+    <div class="bg-red-500 w-full flex justify-between">
+        <div class="flex gap-5">
+            <button class="{{ ($category) == '' ? 'text-white bg-green-800 py-1 px-3 rounded-full' : 'text-green-800'}}" wire:click="change('')">All</button>
+            <button class="{{ ($category) == 'Rice Meal' ? 'text-white bg-green-800 py-1 px-3 rounded-full' : 'text-green-800'}}"wire:click="change('Rice Meal')">Rice Meal</button>
+            <button class="{{ ($category) == 'Pasta' ? 'text-white bg-green-800 py-1 px-3 rounded-full' : 'text-green-800'}}"wire:click="change('Pasta')">Pasta</button>
+            <button class="{{ ($category) == 'Snacks' ? 'text-white bg-green-800 py-1 px-3 rounded-full' : 'text-green-800'}}"wire:click="change('Snacks')">Snacks</button>
+            <button class="{{ ($category) == 'Coffee' ? 'text-white bg-green-800 py-1 px-3 rounded-full' : 'text-green-800'}}"wire:click="change('Coffee')">Coffee</button>
+            <button class="{{ ($category) == 'Drinks' ? 'text-white bg-green-800 py-1 px-3 rounded-full' : 'text-green-800'}}"wire:click="change('Drinks')">Drinks</button>
+            <button class="{{ ($category) == 'Desserts' ? 'text-white bg-green-800 py-1 px-3 rounded-full' : 'text-green-800'}}"wire:click="change('Desserts')">Desserts</button>
+        </div>
+        <div class="flex gap-5">
+            <input type="text" wire:model="search" class="bg-white focus:outline-none focus:shadow-outline border border-gray-300 rounded-lg py-2 px-4 block w-full appearance-none leading-normal" placeholder="Search">
+        </div>
     </div>
     <div class="bg-red-300 w-full">
         @if ($foods->count() == 0)
@@ -35,6 +40,7 @@
                     </div>
                 @endforeach
             </div>
+            {{ $foods->links() }}
         @endif
     </div>
     

@@ -33,7 +33,7 @@ class EditFoodModal extends ModalComponent
             'food_price' => 'required|numeric|min:0|max:300',
             'food_description' => 'required|min:3|max:500',
             'food_category' => 'required',
-            'food_image.*' => 'required|image|max:1024', // 1MB Max
+            'food_image.*' => 'image|max:1024', // 1MB Max
         ];
     }
 
