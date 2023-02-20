@@ -17,6 +17,7 @@ class EditFoodModal extends ModalComponent
     public $food_image;
     public $food_category = 'Rice Meal';
     public $food_id;
+    public $existing_images = [];
     public $categories = [
         'Rice Meal',
         'Pasta',
@@ -50,25 +51,29 @@ class EditFoodModal extends ModalComponent
         $validatedData = $this->validate();
         $food = Food::find($this->food_id);
         $imagePaths = [];
-        foreach ($this->food_image as $image) {
-            if ($image) {
-                try {
-                    $path = $image->store('photos');
-                    array_push($imagePaths, $path);
-                } catch (\Exception $e) {
-                    dd($e);
+        if ($this->food_image) {
+            foreach ($this->food_image as $image) {
+                if ($image) {
+                    try {
+                        $path = $image->store('photos');
+                        array_push($imagePaths, $path);
+                    } catch (\Exception $e) {
+                        dd($e);
+                    }
+                } else {
+                    dd($image->getError());
                 }
-            } else {
-                dd($image->getError());
             }
         }
+
+        $images = array_unique(array_merge($this->existing_images, $imagePaths));
 
         $data = [
             'food_name' => $this->food_name,
             'food_price' => $this->food_price,
             'food_description' => $this->food_description,
             'food_category' => $this->food_category,
-            'food_image' => implode(',', $imagePaths),
+            'food_image' => implode(',', $images),
         ];
 
         $food->update($data);
@@ -85,12 +90,18 @@ class EditFoodModal extends ModalComponent
         $this->food_price = $food->food_price;
         $this->food_description = $food->food_description;
         $this->food_category = $food->food_category;
-        $this->food_image = explode(',', $food->food_image);
+        $this->food_image = null;
+        $this->existing_images = explode(',', $food->food_image);
     }
 
     public function updated($field)
     {
         $this->validateOnly($field);
+    }
+
+    public function deleteImage($image)
+    {
+        $this->existing_images = array_diff($this->existing_images, [$image]);
     }
 
     public function render()
