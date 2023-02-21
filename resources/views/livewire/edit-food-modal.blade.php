@@ -9,7 +9,7 @@
             @foreach ($existing_images as $image)
                 <div class="relative">
                     <img src="{{ asset('storage/' . $image) }}" alt="Uploaded Images Preview" class="w-20 h-20 object-cover rounded">
-                    <button type="button" wire:click="deleteImage('{{ $image }}')" class="absolute top-0 right-0 px-2 py-1 text-red-500 hover:text-red-700">Delete</button>
+                    <button type="button" wire:click="deleteImage('{{ $image }}')" class="absolute top-0 right-0 text-red-500 hover:text-red-700"><i class='text-3xl text-red-500 bx bx-x' ></i></button>
                 </div>
             @endforeach
         </div>        
