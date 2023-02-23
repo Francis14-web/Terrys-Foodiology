@@ -79,3 +79,12 @@ text-decoration: none;
   background: #ffffff;
  
 }
+
+.settingsB
+{
+  margin-left: 250px;
+  background: #013220;
+  height: auto;
+  width: 100%;
+  max-width: 500px;
+}
