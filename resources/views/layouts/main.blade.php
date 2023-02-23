@@ -22,5 +22,6 @@
     @yield('content')
     @livewireScripts
     @livewire('livewire-ui-modal')
+    @yield('js')
 </body>
 </html>

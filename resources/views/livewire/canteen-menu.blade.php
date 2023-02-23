@@ -14,20 +14,20 @@
             <input type="text" wire:model="search" class="w-4/5 border-transparent bg-lime-50 rounded-3xl py-2 px-4" placeholder="Search">
         </div>
     </div>
-    <div class="bg-red-300 w-full mt-4">
+    <div class="w-full mt-10">
         @if ($foods->count() == 0)
             <p class="text-center">No food found</p>
         @else 
-            <div class="grid gap-5 grid-cols-4 bg-blue-300">
+            <div class="grid gap-5 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
                 @foreach ($foods as $food)
                     @php
                         $imagePaths = explode(',', $food->food_image);
                         $lastImagePath = end($imagePaths);
                     @endphp
                     <div class="cursor-pointer bg-white flex items-center justify-evenly flex-col shadow-md rounded-3xl hover:scale-110 hover:shadow-none hover:bg-green-400">     
-                        <div class="flex items-center justify-center w-full h-52">
-                            <img src="{{ asset('storage/'.$lastImagePath) }}" class="h-full w-full object-cover rounded-3xl">
-                        </div> 
+                        <div class="flex items-center justify-center w-full h-full">
+                            <img src="{{ asset('storage/'.$lastImagePath) }}" class=" h-60 lg:h-80 w-full object-cover rounded-3xl">
+                        </div>
                     
                         <div class="flex justify-center flex-col text-center m-4 text-zinc-800 w-4/5">
                             <h1 class="text-md break-words">{{$food->food_name}}</h1>
