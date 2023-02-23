@@ -35,6 +35,30 @@ class CanteenMenu extends Component
         $this->resetPage();
     }
 
+    public function reduceQuantity(Food $food){
+        if ($food->food_stock == 0) {
+            return;
+        }
+        $food->food_stock = $food->food_stock - 1;
+        $food->save();
+        $this->emit('refreshMenu');
+    }
+
+    public function increaseQuantity(Food $food){
+        $food->food_stock = $food->food_stock + 1;
+        $food->save();
+        $this->emit('refreshMenu');
+    }
+
+    public function inputQuantity(Food $food, $newQuantity){
+        if ($newQuantity < 0) {
+            return;
+        }
+        $food->food_stock = $newQuantity;
+        $food->save();
+        $this->emit('refreshMenu');
+    }
+
     public function render()
     {
         $query = Food::where('owner_id', auth()->guard('canteen')->user()->id);

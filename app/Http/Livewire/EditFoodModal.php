@@ -17,6 +17,7 @@ class EditFoodModal extends ModalComponent
     public $food_image;
     public $food_category = 'Rice Meal';
     public $food_id;
+    public $food_stock = 0;
     public $existing_images = [];
     public $categories = [
         'Rice Meal',
@@ -33,6 +34,7 @@ class EditFoodModal extends ModalComponent
             'food_price' => 'required|numeric|min:0|max:300',
             'food_description' => 'required|min:3|max:500',
             'food_category' => 'required',
+            'food_stock' => 'numeric|min:0|max:100',
             'food_image.*' => 'image|max:1024', // 1MB Max
         ];
     }
@@ -76,6 +78,7 @@ class EditFoodModal extends ModalComponent
             'food_price' => $this->food_price,
             'food_description' => $this->food_description,
             'food_category' => $this->food_category,
+            'food_stock' => $this->food_stock,
             'food_image' => implode(',', $images),
         ];
 
@@ -94,6 +97,7 @@ class EditFoodModal extends ModalComponent
         $this->food_description = $food->food_description;
         $this->food_category = $food->food_category;
         $this->food_image = null;
+        $this->food_stock = $food->food_stock;
         $this->existing_images = explode(',', $food->food_image);
     }
 

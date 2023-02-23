@@ -11,6 +11,7 @@
         <x-user.sidebar />
         <div class="ml-80" id="main-window">
             <x-heading title="Menu" />
+            @livewire('user-menu')
         </div>
     </div>
 @endsection
