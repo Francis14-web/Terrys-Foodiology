@@ -17,13 +17,13 @@
         @if ($foods->count() == 0)
             <p class="text-center">No food found</p>
         @else 
-            <div class="grid gap-5 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
+            <div class="grid gap-5 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
                 @foreach ($foods as $food)
                     @php
                         $imagePaths = explode(',', $food->food_image);
                         $lastImagePath = end($imagePaths);
                     @endphp
-                    <div class="cursor-pointer bg-white flex items-center justify-evenly flex-col shadow-md rounded-3xl hover:scale-110 hover:shadow-none hover:bg-green-400">     
+                    <div wire:click="$emit('openModal', 'add-user-order', {{ json_encode([$food->id]) }})" class="cursor-pointer bg-white flex items-center justify-evenly flex-col shadow-md rounded-3xl hover:scale-110 hover:shadow-none hover:bg-green-400">     
                         <div class="flex items-center justify-center w-full h-full">
                             <img src="{{ asset('storage/'.$lastImagePath) }}" class=" h-60 lg:h-80 w-full object-cover rounded-3xl">
                         </div>
