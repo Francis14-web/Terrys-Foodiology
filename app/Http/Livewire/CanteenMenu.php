@@ -47,7 +47,7 @@ class CanteenMenu extends Component
                 'food_name',
             ], $this->search)
             ->orderBy('food_name')
-            ->paginate(1);
+            ->paginate(10);
 
         return view('livewire.canteen-menu', [
             'foods' => $foods,
