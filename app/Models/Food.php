@@ -25,7 +25,7 @@ class Food extends Model
 
     public function owner()
     {
-        return $this->belongsTo(User::class, 'own   qer_id');
+        return $this->belongsTo(User::class, 'ownner_id');
     }
     
     public function orders()

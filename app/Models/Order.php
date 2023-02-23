@@ -13,8 +13,9 @@ class Order extends Model
     protected $fillable = [
         'food_id',
         'quantity',
+        'price',
         'customer_id',
-        'group_order_id',
+        'order_group_id',
     ];
 
     public function order_groups()
