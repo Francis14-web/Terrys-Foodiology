@@ -136,11 +136,10 @@ text-decoration: none;
   border-radius: 20px 0 0 20px;
   background:  #013220;
   color: #FFFFFF;
-}
+} 
 
-
-
-.account-settings-container{
+.account-settings-container
+{
   display: flex;
   padding: 2em;
   /* background: green; */
