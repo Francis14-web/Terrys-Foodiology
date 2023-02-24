@@ -8,10 +8,12 @@
 
 @section('content')
     <div class="relative w-screen h-screen">
-        <x-user.sidebar />
+        <x-user.user-sidebar />
         <div class="ml-80" id="main-window">
             <x-heading title="Orders" />
-            <livewire:order-group-table theme="tailwind"/>
+            <div class="p-10">
+                <livewire:order-table/>
+            </div>
         </div>
     </div>
 @endsection

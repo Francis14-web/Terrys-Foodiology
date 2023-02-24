@@ -31,7 +31,7 @@
         
     </form>
 
-    <div class="w-1/2 h-3/4">
+    <div class=" max-w-xl w-full hidden sm:block">
       <img src="{{asset('pictures/user-login-1.svg')}}" alt="sign-in" class="w-full h-full object-contain">
     </div>
   </div>

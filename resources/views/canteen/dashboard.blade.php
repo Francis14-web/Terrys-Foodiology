@@ -8,7 +8,7 @@
 
 @section('content')
     <div class="relative w-screen h-screen">
-        <x-canteen.sidebar />
+        <x-canteen.canteen-sidebar />
         <div class="ml-80" id="main-window">
             <x-heading title="Dashboard" />
         </div>

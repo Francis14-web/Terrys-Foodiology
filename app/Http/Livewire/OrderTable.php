@@ -4,32 +4,32 @@ namespace App\Http\Livewire;
 
 use Rappasoft\LaravelLivewireTables\DataTableComponent;
 use Rappasoft\LaravelLivewireTables\Views\Column;
-use App\Models\OrderGroup;
+use App\Models\Order;
 use Illuminate\Database\Eloquent\Builder;
 
-class OrderGroupTable extends DataTableComponent
+class OrderTable extends DataTableComponent
 {
-    protected $model = OrderGroup::class;
+    protected $model = Order::class;
 
     public function configure(): void
     {
         $this->setPrimaryKey('id');
     }
 
-    public function builder(): Builder
-    {
-        
-    }
-
     public function columns(): array
     {
         return [
-            Column::make("Total price", "total_price")
+            Column::make("Food name", "food.food_name")
+                ->sortable()
+                ->searchable(),
+            Column::make("Quantity", "quantity")
                 ->sortable(),
-            Column::make("Customer id", "customer_id")
-                ->sortable(),
-            Column::make("Status", "status")
+            Column::make("Price", "price")
                 ->sortable(),
         ];
+    }
+    public function customView(): string
+    {
+        return 'includes.totalOrder';
     }
 }

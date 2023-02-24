@@ -1,10 +1,10 @@
 <?php
 
-namespace App\View\Components\canteen;
+namespace App\View\Components;
 
 use Illuminate\View\Component;
 
-class Sidebar extends Component
+class UserSidebar extends Component
 {
     /**
      * Create a new component instance.
@@ -23,6 +23,6 @@ class Sidebar extends Component
      */
     public function render()
     {
-        return view('components.canteen.sidebar');
+        return view('components.user.user-sidebar');
     }
 }
