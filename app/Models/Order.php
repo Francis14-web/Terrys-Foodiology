@@ -13,12 +13,18 @@ class Order extends Model
     protected $fillable = [
         'food_id',
         'quantity',
+        'price',
         'customer_id',
-        'group_order_id',
+        'order_group_id',
     ];
 
     public function order_groups()
     {
         return $this->belongsTo(OrderGroup::class);
+    }
+
+    public function food()
+    {
+        return $this->belongsTo(Food::class);
     }
 }

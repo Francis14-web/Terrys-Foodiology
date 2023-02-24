@@ -16,8 +16,8 @@ class OrderGroup extends Model
         'status',
     ];
 
-    public function users(){
-        return $this->belongsTo(User::class);
+    public function orders(){
+        return $this->hasMany(Order::class);
     }
 }
 

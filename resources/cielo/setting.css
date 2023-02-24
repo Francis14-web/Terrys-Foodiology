@@ -14,12 +14,7 @@ body
     margin: 0;
 }
 
-body 
-{
-  	background-color: white;
-    padding: 0;
-    margin: 0;
-}
+
 .wholediv
 {
   display: flex;
@@ -79,12 +74,147 @@ text-decoration: none;
   background: #ffffff;
  
 }
+.logo-container
+{
+  display: flex;
+  justify-content: center;
+}
+.logo
+{
+ height: auto;
+ width: 100%;
+ max-width: 200px;
+ object-fit: contain;
+}
 
 .settingsB
 {
+  display: flex;
   margin-left: 250px;
-  background: #013220;
+  height: 100vh;
+  gap: 10px;
+}
+
+.settinglist
+{
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  max-width: 200px;
+}
+
+.head
+{
+  text-align: center;
+  color: #306030;
+  padding: 30px;
+}
+
+.a
+{
+  margin-left: 50px;
+  padding-left: 30px;
+  text-decoration: none;
+  font-size: 14px;
+  gap: 10px;
+  color: #306030;
+}
+
+.a:hover
+{
+  border: #013220 solid  #013220;
+  border-radius: 20px 0 0 20px;
+  background:  #013220;
+  color: #FFFFFF;
+}
+
+.a:active
+{
+  border: #013220 solid  #013220;
+  border-radius: 20px 0 0 20px;
+  background:  #013220;
+  color: #FFFFFF;
+} 
+
+.account-settings-container
+{
+  display: flex;
+  padding: 2em;
+  /* background: green; */
+  width: 100%;
+  margin-left: 200px;
+  align-items: center;
+  gap: 20px;
+}
+
+.avatar-container{
+  position: relative;
+  background: red;
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+}
+
+.avatar-container img{
+  object-fit: cover;
+  height: 100%;
+  border-radius: 50%;
+  width: 100%;
+}
+
+.avatar-container .icon-container{
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+  background: #ffffffc0;
+  opacity: 0;
+  transition: all .2s ease-in-out;
+  cursor: pointer;
+}
+
+.avatar-container .icon-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.avatar-container .icon-container i{
+  font-size: 45px;
+  color: #575757;
+}
+
+.account-details{
+  margin-top: 5vh;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.avatar-container .icon-container:hover{
+  opacity: 1;
+}
+
+.input-group{
+  display: flex;
+  flex-direction: column;
+}
+
+.button-container
+{
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 15px;
+  gap: 5px;
+  
+}
+
+.buttons
+{
   height: auto;
   width: 100%;
-  max-width: 500px;
+  max-width: 70px;
 }

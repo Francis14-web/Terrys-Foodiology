@@ -4,8 +4,8 @@
         <div class="flex flex-col justify-between">
             <div class="flex flex-col gap-2 ml-10">
                 <a href="{{ route('user.dashboard') }}" class="flex items-center gap-6 py-2 px-3 text-white text-sm  w-full "><i class='text-white bx bxs-home'></i> Home</a>
-                <a href="{{ route('user.menu')}}" class="flex items-center gap-6 py-2 px-3 text-white text-sm  w-full "><i class='text-white bx bxs-book'></i> Menu</a>
-                <a href="#" class="flex items-center gap-6 py-2 px-3 text-white text-sm  w-full "><i class='text-white bx bxs-cart-alt'></i> Order</a>
+                <a href="{{ route('user.menu') }}" class="flex items-center gap-6 py-2 px-3 text-white text-sm  w-full "><i class='text-white bx bxs-book'></i> Menu</a>
+                <a href="{{ route('user.order') }}" class="flex items-center gap-6 py-2 px-3 text-white text-sm  w-full "><i class='text-white bx bxs-cart-alt'></i> Order</a>
                 <a href="#" class="flex items-center gap-6 py-2 px-3 text-white text-sm  w-full "><i class='text-white bx bxs-message'></i> Messages</a>
                 <a href="{{ route('user.logout') }} " class="text-white text-sm flex items-center gap-6 py-2 px-3 w-full "><i class='bx bxs-exit' ></i>Logout</a>
             </div>

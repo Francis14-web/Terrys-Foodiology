@@ -24,23 +24,21 @@
                         $lastImagePath = end($imagePaths);
                     @endphp
                     <div wire:click="$emit('openModal', 'add-user-order', {{ json_encode([$food->id]) }})" class="cursor-pointer bg-white flex items-center justify-evenly flex-col shadow-md rounded-3xl hover:scale-110 hover:shadow-none hover:bg-green-400">     
-                        <div class="flex items-center justify-center w-full h-full">
-                            <img src="{{ asset('storage/'.$lastImagePath) }}" class=" h-60 lg:h-80 w-full object-cover rounded-3xl">
+                        <div class="relative flex items-center justify-center w-full h-full overflow-hidden">
+                            <img src="{{ asset('storage/'.$lastImagePath) }}" class="{{(!$food->food_stock) ? 'blur-sm' : ''}} h-60 lg:h-80 w-full object-cover rounded-3xl">
+                            @if ($food->food_stock > 0)
+                                <p class="absolute bottom-5 right-5 text-white bg-green-800 rounded-full text-xs px-2 py-1">Available: {{$food->food_stock}}</p>
+                            @else
+                                <p class="absolute text-white bg-red-800 rounded-full px-2 py-1 text-md">Not Available</p>
+                            @endif
+
                         </div>
                     
                         <div class="flex justify-center flex-col text-center m-4 text-zinc-800 w-4/5">
                             <h1 class="text-md break-words">{{$food->food_name}}</h1>
-                                <p class="text-xs"><span class="font-bold">Price: </span>₱ {{$food->food_price}}</p>
-                                    {{-- <div class="grid grid-cols-2 place-items-center">
-                                        <button type="button" class="edit-btn" wire:click="$emit('openModal', 'edit-food-modal', {{ json_encode([$food->id]) }})">Edit</button>
-                                        <button type="button" class="hover:text-red-600" wire:click="delete('{{$food->id}}')">Delete</button>
-                                    </div>        --}}
+                            <p class="text-xs"><span class="font-bold">Price: </span>₱ {{$food->food_price}}</p>
                         </div>
-
-                        
                     </div>
-
-                    
                 @endforeach
             </div>
             {{ $foods->links() }}

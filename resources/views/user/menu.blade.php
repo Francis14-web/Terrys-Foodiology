@@ -8,7 +8,7 @@
 
 @section('content')
     <div class="relative w-screen h-screen">
-        <x-user.sidebar />
+        <x-user.user-sidebar />
         <div class="ml-80" id="main-window">
             <x-heading title="Menu" />
             @livewire('user-menu')

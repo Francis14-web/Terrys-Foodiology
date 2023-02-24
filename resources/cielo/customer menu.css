@@ -69,6 +69,11 @@ text-decoration: none;
  
 }
 
+.logo-container
+{
+  display: flex;
+  justify-content: center;
+}
 .logo
 {
  height: auto;

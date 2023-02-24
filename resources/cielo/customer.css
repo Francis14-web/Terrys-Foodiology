@@ -73,6 +73,11 @@ text-decoration: none;
  
 }
 
+.logo-container
+{
+  display: flex;
+  justify-content: center;
+}
 .logo
 {
  height: auto;
@@ -80,6 +85,7 @@ text-decoration: none;
  max-width: 200px;
  object-fit: contain;
 }
+
 
 .icon
 {

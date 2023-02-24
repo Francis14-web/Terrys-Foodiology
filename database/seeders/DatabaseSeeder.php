@@ -27,6 +27,7 @@ class DatabaseSeeder extends Seeder
             UserSeeder::class,
             AdminSeeder::class,
             CanteenSeeder::class,
+            FoodSeeder::class,
         ]);
     }
 }

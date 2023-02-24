@@ -11,4 +11,17 @@
     body {
         @apply overflow-x-hidden;
     }
+
+
+    .cards{
+        @apply flex items-center justify-evenly flex-col w-3/12 transition ease-in shadow-lg rounded-xl;
+    }
+
+    .edit-btn{
+        @apply w-1/2 rounded-lg border-none bg-green-200 text-zinc-800 font-extralight my-2 cursor-pointer hover:scale-105 hover:bg-green-500 hover:text-white hover:font-semibold transition-all duration-300 ease-in-out; 
+    }
+    
+
+
+
 }
