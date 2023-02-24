@@ -7,10 +7,9 @@
 @endsection
 
 @section('content')
-<<<<<<< HEAD
 
 <div class="relative h-screen">
-    <x-canteen.sidebar />
+    <x-canteen.canteen-sidebar />
     <div class="ml-[270px]">
         <div class=" flex h-screen w-full scroll-smooth">
             <div class="flex h-full w-full relative">
@@ -106,12 +105,6 @@
             </div>
             <script src="/javascript/index.js"></script>
 
-=======
-    <div class="relative w-screen h-screen">
-        <x-canteen.canteen-sidebar />
-        <div class="ml-80" id="main-window">
-            <x-heading title="Dashboard" />
->>>>>>> 7988efdccaac4e016fd7279936effd2585caca1e
         </div>
     </div>
 

@@ -2,10 +2,12 @@
 
 namespace App\Http\Livewire;
 
-use Rappasoft\LaravelLivewireTables\DataTableComponent;
-use Rappasoft\LaravelLivewireTables\Views\Column;
 use App\Models\Order;
 use Illuminate\Database\Eloquent\Builder;
+use Rappasoft\LaravelLivewireTables\Views\Column;
+use Rappasoft\LaravelLivewireTables\DataTableComponent;
+use Rappasoft\LaravelLivewireTables\Views\Columns\LinkColumn;
+use Rappasoft\LaravelLivewireTables\Views\Columns\ButtonGroupColumn;
 
 class OrderTable extends DataTableComponent
 {
@@ -14,6 +16,7 @@ class OrderTable extends DataTableComponent
     public function configure(): void
     {
         $this->setPrimaryKey('id');
+        $this->setFooterEnabled();
     }
 
     public function columns(): array
@@ -27,9 +30,5 @@ class OrderTable extends DataTableComponent
             Column::make("Price", "price")
                 ->sortable(),
         ];
-    }
-    public function customView(): string
-    {
-        return 'includes.totalOrder';
     }
 }

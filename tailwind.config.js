@@ -9,7 +9,16 @@ module.exports = {
     fontFamily: {
       poppins: ["Poppins", "sans-serif"],
     },
-    extend: {},
+    extend: {
+      height: {
+        'fill-available': '-webkit-fill-available',
+        'moz-available': '-moz-available',
+      },
+      width: {
+        'fill-available': '-webkit-fill-available',
+        'moz-available': '-moz-available',
+      },
+    },
   },
   plugins: [],
 }

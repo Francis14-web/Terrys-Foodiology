@@ -2,9 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Admin;
-use App\Http\Requests\StoreAdminRequest;
-use App\Http\Requests\UpdateAdminRequest;
+use App\Models\OrderGroup;
 
 class UserController extends Controller
 {
@@ -17,6 +15,12 @@ class UserController extends Controller
     }
 
     public function order(){
-        return view('user.order');
+        $order = OrderGroup::where([
+            'customer_id' => auth()->guard('user')->user()->id,
+            'status' => 'Not yet Paid',
+        ])->whereDate('created_at', date('Y-m-d'))->first();
+        return view('user.order', [
+            'order' => $order,
+        ]);
     }
 }
