@@ -11,4 +11,12 @@ class UserController extends Controller
     public function dashboard(){
         return view('user.dashboard');
     }
+
+    public function menu(){
+        return view('user.menu');
+    }
+
+    public function order(){
+        return view('user.order');
+    }
 }

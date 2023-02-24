@@ -28,7 +28,7 @@ return new class extends Migration
         });
 
         Schema::create('order_groups', function (Blueprint $table) {
-            $table->id();
+            $table->uuid('id')->primary();
             $table->double('total_price');
             $table->uuid('customer_id');
             $table->foreign('customer_id')->references('id')->on('users')->onDelete('cascade');
@@ -41,9 +41,11 @@ return new class extends Migration
             $table->uuid('food_id');
             $table->foreign('food_id')->references('id')->on('foods')->onDelete('cascade');
             $table->integer('quantity');
+            $table->double('price');
             $table->uuid('customer_id');
             $table->foreign('customer_id')->references('id')->on('users')->onDelete('cascade');
-            $table->foreignId('group_order_id')->constrained('order_groups')->onDelete('cascade');
+            $table->uuid('order_group_id');
+            $table->foreign('order_group_id')->references('id')->on('order_groups')->onDelete('cascade');
             $table->timestamps();
         });
     }

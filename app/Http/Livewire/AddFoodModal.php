@@ -18,6 +18,7 @@ class AddFoodModal extends ModalComponent
     public $food_description;
     public $food_image;
     public $food_category = 'Rice Meal';
+    public $food_stock = 0;
     public $categories = [
         'Rice Meal',
         'Pasta',
@@ -33,6 +34,7 @@ class AddFoodModal extends ModalComponent
             'food_price' => 'required|numeric|min:0|max:300',
             'food_description' => 'required|min:3|max:500',
             'food_category' => 'required',
+            'food_stock' => 'numeric|min:0|max:100',
             'food_image.*' => 'required|image|max:1024', // 1MB Max
         ];
     }
@@ -53,7 +55,7 @@ class AddFoodModal extends ModalComponent
         $food->food_category = $this->food_category;
         $food->owner_id = auth()->guard('canteen')->user()->id;
         $food->food_rating = 0;
-        $food->food_stock = 0;
+        $food->food_stock = $this->food_stock;
 
         $imagePaths = [];
         foreach ($this->food_image as $image) {

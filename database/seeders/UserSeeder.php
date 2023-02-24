@@ -15,6 +15,14 @@ class UserSeeder extends Seeder
     public function run()
     {
         \App\Models\User::factory()->create();
+        \App\Models\User::create([
+            'firstname' => 'Test',
+            'lastname' => 'User',
+            'username' => 'dormammu',
+            'email' => 'jericovic64@gmail.com',
+            'password' => bcrypt('password'),
+            'profile_image' => 'https://picsum.photos/200/300',
+        ]);
 
     }
 }

@@ -1,10 +1,16 @@
 @extends('../layouts.main')
 
-@section('title', 'User Dashboard')
+@section('title', 'User Home')
+
+@section('js')
+    <script src="{{ asset('javascript/sidebar.js') }}"></script>
+@endsection
 
 @section('content')
-    <h1>User Dashboard</h1>
-    <p>Welcome to the User dashboard</p>
-
-    <a href="{{route('user.logout')}}" rel="noopener noreferrer">Logout</a>
+    <div class="relative w-screen h-screen">
+        <x-user.sidebar />
+        <div class="ml-80" id="main-window">
+            <x-heading title="Home" />
+        </div>
+    </div>
 @endsection
