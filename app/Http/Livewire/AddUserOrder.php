@@ -54,6 +54,12 @@ class AddUserOrder extends ModalComponent
 
     public function addOrderToCart()
     {
+        if ($this->orderQuantity < 0) {
+            return;
+        } else if ($this->orderQuantity > $this->food->food_stock) {
+            return;
+        }
+
         $check = OrderGroup::where('customer_id', auth()->guard('user')->user()->id)
                     ->where('status', 'Not yet Paid')
                     ->whereDate('created_at', now()->format('Y-m-d'))
@@ -70,6 +76,11 @@ class AddUserOrder extends ModalComponent
                     'quantity' => $order->quantity + $this->orderQuantity,
                     'price' => $order->price + ($this->orderQuantity * $this->food->food_price),
                 ]);
+
+                // Update the total price of the OrderGroup
+                $check->update([
+                    'total_price' => $check->total_price + ($this->orderQuantity * $this->food->food_price),
+                ]);
             } else {
                 // Order doesn't exist, so create a new one
                 $check->orders()->create([
@@ -77,6 +88,11 @@ class AddUserOrder extends ModalComponent
                     'quantity' => $this->orderQuantity,
                     'price' => $this->food->food_price * $this->orderQuantity,
                     'customer_id' => auth()->guard('user')->user()->id,
+                ]);
+
+                // Update the total price of the OrderGroup
+                $check->update([
+                    'total_price' => $check->total_price + ($this->orderQuantity * $this->food->food_price),
                 ]);
             }
         } else {
@@ -97,6 +113,7 @@ class AddUserOrder extends ModalComponent
 
         $this->closeModal();
     }
+
 
     public function render()
     {

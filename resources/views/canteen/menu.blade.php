@@ -9,7 +9,7 @@
 @section('content')
     <div class="relative w-screen h-screen">
         <x-canteen.canteen-sidebar />
-        <div class="ml-80" id="main-window">
+        <div class="ml-[270px]" id="main-window">
             <x-heading title="Menu" />
             @livewire('canteen-menu')
         </div>

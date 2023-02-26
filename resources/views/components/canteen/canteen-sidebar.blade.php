@@ -1,5 +1,5 @@
 <div class="relative w-fit h-auto">
-    <aside id="sidebar" class="fixed top-0 left-0 w-[270px] bg-[#1e4d2b] h-full ">
+    <aside id="sidebar" class="fixed top-0 left-0 max-w-[270px] w-full bg-[#1e4d2b] h-full ">
         <img src="{{ asset('img/TF.jpg')}}" alt="Logo" class="rounded-full my-10 w-28 h-28 mx-auto">
         <div class="flex flex-col justify-between ">
             <div class="flex flex-col gap-2 ml-10 ">
