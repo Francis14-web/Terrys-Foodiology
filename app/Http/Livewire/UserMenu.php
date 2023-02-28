@@ -12,6 +12,8 @@ class UserMenu extends Component
     public $search = "";
     use WithPagination;
 
+    protected $paginationTheme = 'tailwind';
+
     public function change($category)
     {
         $this->category = $category;

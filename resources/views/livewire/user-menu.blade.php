@@ -41,7 +41,9 @@
                     </div>
                 @endforeach
             </div>
-            {{ $foods->links() }}
+            <div class="m-20 flex justify-center">
+                {{ $foods->links() }}
+            </div>
         @endif
     </div>
     
