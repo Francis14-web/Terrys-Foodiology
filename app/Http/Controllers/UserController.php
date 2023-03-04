@@ -14,6 +14,10 @@ class UserController extends Controller
         return view('user.menu');
     }
 
+    public function settings(){
+        return view('user.settings');
+    }
+
     public function order(){
         $order = OrderGroup::where([
             'customer_id' => auth()->guard('user')->user()->id,

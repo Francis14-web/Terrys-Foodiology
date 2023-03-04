@@ -45,10 +45,9 @@ Route::middleware('user')->group(function () {
     Route::get('/user/dashboard', 'App\Http\Controllers\UserController@dashboard')->name('user.dashboard');
     Route::get('/user/menu', 'App\Http\Controllers\UserController@menu')->name('user.menu');
     Route::get('/user/order', 'App\Http\Controllers\UserController@order')->name('user.order');
+    Route::get('user/settings', 'App\Http\Controllers\UserController@settings')->name('user.settings');
     Route::get('/user/logout', 'App\Http\Controllers\Auth\UserAuthController@logout')->name('user.logout');
 });
-
-
 
 Route::get('/logout', function()
 {
