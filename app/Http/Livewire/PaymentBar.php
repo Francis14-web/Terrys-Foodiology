@@ -2,8 +2,9 @@
 
 namespace App\Http\Livewire;
 
-use App\Models\OrderGroup;
 use Livewire\Component;
+use App\Models\OrderGroup;
+use Luigel\Paymongo\Facades\Paymongo;
 
 class PaymentBar extends Component
 {
@@ -11,7 +12,17 @@ class PaymentBar extends Component
 
     public function paymentButton()
     {
-        dd("Good");
+        $gcashSource = Paymongo::source()->create([
+            'type' => 'gcash',
+            'amount' => $this->order->total_price,
+            'currency' => 'PHP',
+            'redirect' => [
+                'success' => route('user.payment.success', $this->order->id),
+                'failed' => route('user.payment.failed')
+            ]
+        ]);
+
+        return redirect($gcashSource->redirect['checkout_url']);
     }
 
     

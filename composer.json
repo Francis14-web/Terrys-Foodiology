@@ -4,6 +4,7 @@
     "description": "The Laravel Framework.",
     "keywords": ["framework", "laravel"],
     "license": "MIT",
+    "repositories": [ { "type": "vcs", "url": "https://github.com/dormammuuuuu/laravel-paymongo" } ],
     "require": {
         "php": "^8.0.2",
         "guzzlehttp/guzzle": "^7.2",
@@ -12,6 +13,8 @@
         "laravel/sanctum": "^3.2",
         "laravel/tinker": "^2.7",
         "livewire/livewire": "^2.11",
+        "luigel/laravel-paymongo": "2.x-dev",
+        "php-flasher/flasher-laravel": "^1.13",
         "rappasoft/laravel-livewire-tables": "^2.11",
         "wire-elements/modal": "^1.0"
     },

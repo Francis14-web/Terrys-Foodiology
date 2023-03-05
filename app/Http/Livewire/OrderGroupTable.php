@@ -5,7 +5,6 @@ namespace App\Http\Livewire;
 use Rappasoft\LaravelLivewireTables\DataTableComponent;
 use Rappasoft\LaravelLivewireTables\Views\Column;
 use App\Models\OrderGroup;
-use Illuminate\Database\Eloquent\Builder;
 
 class OrderGroupTable extends DataTableComponent
 {
@@ -14,11 +13,6 @@ class OrderGroupTable extends DataTableComponent
     public function configure(): void
     {
         $this->setPrimaryKey('id');
-    }
-
-    public function builder(): Builder
-    {
-        
     }
 
     public function columns(): array

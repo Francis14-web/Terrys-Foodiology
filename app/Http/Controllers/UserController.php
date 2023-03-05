@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\OrderGroup;
+use Luigel\Paymongo\Facades\Paymongo;
 
 class UserController extends Controller
 {
@@ -23,8 +24,34 @@ class UserController extends Controller
             'customer_id' => auth()->guard('user')->user()->id,
             'status' => 'Not yet Paid',
         ])->whereDate('created_at', date('Y-m-d'))->first();
+        
         return view('user.order', [
             'order' => $order,
         ]);
+    }
+
+    public function test(){
+        $gcashSource = Paymongo::source()->create([
+            'type' => 'gcash',
+            'amount' => 100.00,
+            'currency' => 'PHP',
+            'redirect' => [
+                'success' => route('user.payment.success'),
+                'failed' => route('user.payment.failed')
+            ]
+        ]);
+
+        return redirect($gcashSource->redirect['checkout_url']);
+    }
+
+    public function paymentSuccess($id){
+        $order = OrderGroup::find($id);
+        $order->status = 'Paid';
+        $order->save();
+        return redirect()->route('user.order')->with('success', 'Payment successful!');
+    }
+
+    public function paymentFailed(){
+        return redirect()->route('user.order')->with('error', 'Payment failed!');
     }
 }

@@ -46,6 +46,7 @@ Route::middleware('user')->group(function () {
     Route::get('/user/menu', 'App\Http\Controllers\UserController@menu')->name('user.menu');
     Route::get('/user/order', 'App\Http\Controllers\UserController@order')->name('user.order');
     Route::get('user/settings', 'App\Http\Controllers\UserController@settings')->name('user.settings');
+    Route::get('/user/payment-success/{id}', 'App\Http\Controllers\UserController@paymentSuccess')->name('user.payment.success');
     Route::get('/user/logout', 'App\Http\Controllers\Auth\UserAuthController@logout')->name('user.logout');
 });
 
@@ -55,3 +56,7 @@ Route::get('/logout', function()
 
     return redirect()->route('login');
 })->name('logout');
+
+
+Route::get('/test-payment', 'App\Http\Controllers\UserController@test')->name('user.test');
+Route::get('/failed', 'App\Http\Controllers\UserController@paymentFailed')->name('user.payment.failed');

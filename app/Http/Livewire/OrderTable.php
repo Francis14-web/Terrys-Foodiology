@@ -6,8 +6,6 @@ use App\Models\Order;
 use Illuminate\Database\Eloquent\Builder;
 use Rappasoft\LaravelLivewireTables\Views\Column;
 use Rappasoft\LaravelLivewireTables\DataTableComponent;
-use Rappasoft\LaravelLivewireTables\Views\Columns\LinkColumn;
-use Rappasoft\LaravelLivewireTables\Views\Columns\ButtonGroupColumn;
 
 class OrderTable extends DataTableComponent
 {
@@ -19,6 +17,14 @@ class OrderTable extends DataTableComponent
         $this->setFooterEnabled();
     }
 
+    public function builder(): Builder
+    {
+        return Order::query()
+            ->join('order_groups', 'orders.order_group_id', '=', 'order_groups.id')
+            ->where('order_groups.status', 'Not yet Paid')
+            ->whereDate('orders.created_at', today());
+    }
+
     public function columns(): array
     {
         return [
@@ -28,6 +34,8 @@ class OrderTable extends DataTableComponent
             Column::make("Quantity", "quantity")
                 ->sortable(),
             Column::make("Price", "price")
+                ->sortable(),
+            Column::make("Created at", "created_at")
                 ->sortable(),
         ];
     }
