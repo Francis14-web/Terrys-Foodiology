@@ -1,24 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-
 * {
-  font-family: 'Poppins', sans-serif;
-  transition: ease .3s;
-  padding: 0;
-  margin: 0;
-}
-
-body 
-{
-  	background-color: white;
+    font-family: 'Poppins', sans-serif;
+    transition: ease .3s;
     padding: 0;
     margin: 0;
 }
-.wholediv
-{
-  display: flex;
+
+body {
+    background-color: white;
+    padding: 0;
+    margin: 0;
 }
-.sidebar
-{
+
+.sidebar {
     display: flex;
     flex-direction: column;
     position: fixed;
@@ -31,165 +25,163 @@ body
     width: 100%;
     max-width: 250px;
     text-decoration: none;
-    padding: 0 0 10px ;
-    
-
-}
-.nav
-{
-font-size: 1px;
-list-style: none;
-padding-bottom: 5px;
-padding-left: 50px;
+    padding: 0 0 10px;
 }
 
-ul li a
-{
-font-size: 15px;
-color: #FFFFFF;
-text-decoration: none;
+.nav {
+    list-style: none;
+    padding-bottom: 5px;
+    padding-left: 50px;
 }
 
-
-.navv
-{
-  font-size: 19px;
-  list-style: none;
-  padding-left: 10px;
-  padding-bottom: 5px;
-} 
-
-.navv:hover
-{
-  color: #000000;
-  background-color: rgba(0 , 0, 0, .2);
-  padding-left: 10px;
-  border-radius: 20px 0 0 20px;
-}
-.navv:active
-{
-  color: black;
-  background: #ffffff;
- 
+ul li a {
+    font-size: 15px;
+    color: #FFFFFF;
+    text-decoration: none;
 }
 
-.logo-container
-{
-  display: flex;
-  justify-content: center;
-}
-.logo
-{
- height: auto;
- width: 100%;
- max-width: 200px;
- object-fit: contain;
+.navv {
+    font-size: 1px;
+    list-style: none;
+    padding-left: 10px;
+    padding-bottom: 5px;
 }
 
-
-.icon
-{
-color: #ffffff;
+.navv:hover {
+    color: #000000;
+    background-color: rgba(0, 0, 0, .2);
+    padding-left: 10px;
+    border-radius: 20px 0 0 20px;
 }
 
-.best-seller-ads
-{
-  background-color: blue;
-  height: 300px;
-  width: auto;
-  margin-left: 250px;
-}
-.searchD
-{
-  margin-left: 250px;
-  margin-top: 10px 10px 10px 10px
-}
-.search
-{
-  float: right;
-  border: none;
-  font-size: 17px;
+.navv:active {
+    color: black;
+    background: #ffffff;
 }
 
-.best-seller
-{
-  margin-left: 250px;
+.logo-container {
+    display: flex;
+    justify-content: center;
 }
 
-.hbest
-{
-  font-size: 30px;
-  text-align: center;
-  color:rgb(14, 80, 18);
+.logo {
+    height: auto;
+    width: 100%;
+    max-width: 200px;
+    object-fit: contain;
 }
 
-.bcontainer {  
-  display: grid;
-  grid-template-columns: 240px 240px 240px;
-  grid-auto-columns: 11fr;
-  grid-auto-rows: 1fr;
-  gap: 21px 41px;
-  grid-auto-flow: row;
-}
-.food-list
-{
-  background: #22c264;
-  height: fit-content;
-  border-radius: 12px;
-  text-align: center;
+.icon {
+    color: #ffffff;
 }
 
-.img
-{
-  height: 240px;
-  width: 240px;
-  border-radius: 12px;
-  object-fit: cover;
-  object-position: center;
+.best-seller-ads {
+    background-color: blue;
+    height: 300px;
+    width: auto;
+    margin-left: 250px;
 }
 
-.rice { grid-area: 1 / 2 / 2 / 3; }
-.sanwich { grid-area: 1 / 3 / 2 / 4; }
-.pasta { grid-area: 1 / 1 / 2 / 2; }
-
-.newfood
-{
-  background: #1e4d2b;
-  display: flex;
-  margin-left: 250px;
-  margin-top: 50px;
-  border-radius: 20px;
-  color: #FFFFFF;
-}
-.newfoodimg
-{
-  height: auto;
-  width: 100%;
-  max-width: 250px;
-  border-radius: 40px;
-  padding: 20px;
-  
+.searchD {
+    margin-left: 250px;
+    margin-top: 10px 10px 10px 10px
 }
 
-.newfoodD
-{
-padding: 30px 30px 30px 30px;
+.divContainer {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    background-color: white;
+    margin-right: 20px;
 }
 
-.add
-{
-  color: #000000;
-  font-size: 15px;
-} 
-.addbut
-{
-  border: .4px solid #FFFFFF;
-  padding: 5px 18px 5px 18px;
-  border-radius: 20px;
-  margin-top: 5px;
+.search {
+    border: none;
+    font-size: 17px;
+    margin: 12px;
+    height: 30px;
 }
-.addbut:hover
-{
-  background: rgba(0 , 0, 0, .2);
-  color: #FFFFFF;
+
+.best-seller {
+    margin-left: 250px;
+}
+
+.hbest {
+    font-size: 30px;
+    text-align: center;
+    color: rgb(14, 80, 18);
+}
+
+.bcontainer {
+    display: grid;
+    grid-template-columns: 240px 240px 240px;
+    grid-auto-columns: 11fr;
+    grid-auto-rows: 1fr;
+    gap: 21px 41px;
+    grid-auto-flow: row;
+}
+
+.food-list {
+    background: #22c264;
+    height: fit-content;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.img {
+    height: 240px;
+    width: 240px;
+    border-radius: 12px;
+    object-fit: cover;
+    object-position: center;
+}
+
+.rice {
+    grid-area: 1 / 2 / 2 / 3;
+}
+
+.sanwich {
+    grid-area: 1 / 3 / 2 / 4;
+}
+
+.pasta {
+    grid-area: 1 / 1 / 2 / 2;
+}
+
+.newfood {
+    background: #1e4d2b;
+    display: flex;
+    margin-left: 250px;
+    margin-top: 50px;
+    border-radius: 20px;
+    color: #FFFFFF;
+}
+
+.newfoodimg {
+    height: auto;
+    width: 100%;
+    max-width: 250px;
+    border-radius: 40px;
+    padding: 20px;
+}
+
+.newfoodD {
+    padding: 30px 30px 30px 30px;
+}
+
+.add {
+    color: #000000;
+    font-size: 15px;
+}
+
+.addbut {
+    border: .4px solid #FFFFFF;
+    padding: 5px 18px 5px 18px;
+    border-radius: 20px;
+    margin-top: 5px;
+}
+
+.addbut:hover {
+    background: rgba(0, 0, 0, .2);
+    color: #FFFFFF;
 }

@@ -1,95 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-   <meta charset="UTF-8">
-   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Terry's Foodilogy</title>
-   <link rel="stylesheet" href="customer.css">
-   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terry's Foodilogy</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
-<body> 
-          
-         <aside class="sidebar">
-          <div>
-            <div class="logo-container"><img class="logo" src="logo-landscape.png" alt="Logo">
+
+<body class="bg-white">
+
+    <aside class="flex flex-col fixed top-0 left-0 bottom-0 justify-between bg-green-800 h-auto max-w-[270px] decoration-0 pb-2.5">
+        <div>
+            <div class="flex justify-center pb-[30px]">
+                <img class="h-full max-w-[200px] object-contain" src="logo-landscape.png" alt="Logo">
             </div>
-            <ul class="nav">
-                 <li class="navv">
-                 <a href="#" class=""><i class='icon bx bxs-user'></i> Profile</a>
-                 </li>
-                 
-                 <li class="navv">
-                 <a href="customer.html " class=""><i class='icon bx bxs-home'></i> Home</a>
-                 </li>
-                 
-                 <li class="navv">
-                 <a href="customerMENU.html" class=""><i class='icon bx bxs-food-menu' ></i> Foodiology</a>
-                 </li>
-                 
-                 <li class="navv">
-                 <a href="#" class=""><i class='icon bx bxs-message'></i> Message</a>
-                 </li>
-              </ul>
-          </div>
-          <div >
-            <ul class="nav">
-               <li class="navv">
-               <a href="settings.html" class=""><i class='icon bx bxs-cog'></i> Settings</a>
-               </li>
-               <li class="navv">
-               <a href="#" class=""><i class='icon bx bxs-log-out'></i> Log out</a>
-               </li>
+            <ul class="list-none pb-[5px] pl-[50px]">
+                <li class="flex text-[14px] list-none pl-[10px] py-[5px] text-white items-center rounded-l-[50px]  hover:bg-white hover:text-green-900 active:bg-white active:text-green-900">
+                    <a href="#" class=""><i class='bx bxs-user'></i> Profile</a>
+                </li>
+
+                <li class="flex text-[14px] list-none pl-[10px] py-[5px] text-white items-center rounded-l-[50px]  hover:bg-white hover:text-green-900">
+                    <a href="customer.html " class=""><i class='bx bxs-home'></i> Home</a>
+                </li>
+
+                <li class="flex text-[14px] list-none pl-[10px] py-[5px] text-white items-center rounded-l-[50px]  hover:bg-white hover:text-green-900">
+                    <a href="customerMENU.html" class=""><i class='bx bxs-food-menu' ></i> Foodiology</a>
+                </li>
+
+                <li class="flex text-[14px] list-none pl-[10px] py-[5px] text-white items-center rounded-l-[50px]  hover:bg-white hover:text-green-900">
+                    <a href="#" class=""><i class='bx bxs-message'></i> Message</a>
+                </li>
             </ul>
-          </div>
-         </aside>
+        </div>
+        <div>
+            <ul class="text-[14px] list-none pb-[5px] pl-[50px]">
+                <li class="flex text-[14px] list-none pl-[10px] py-[5px] text-white items-center rounded-l-[50px]  hover:bg-white hover:text-green-900">
+                    <a href="settings.html" class=""><i class='bx bxs-cog'></i> Settings</a>
+                </li>
+                <li class="flex flex text-[14px] list-none pl-[10px] py-[5px] text-white items-center rounded-l-[50px]  hover:bg-white hover:text-green-900">
+                    <a href="#" class=""><i class='bx bxs-log-out'></i> Log out</a>
+                </li>
+            </ul>
+        </div>
+    </aside>
 
-     
-         <input class="search" type="text" placeholder="Search.." name="Search">
-       
+    <div class="flex w-full justify-end bg-white mr-[20px]">
+        <input class="border-none font-[14px] m-5 h-7" type="text" placeholder="Search.." name="Search">
+    </div>
 
-         <div class="best-seller-ads">
-         </div>
-               <div class="best-seller">
-                  <h1 class="hbest">Best Seller</h1>
+    <div class="bg-blue-800 h-[400px] w-auto ml-[200px] rounded-b-[20px]">
+    </div>
+    <div class="ml-[200px]">
+        <h1 class="text-[30px] text-center text-green-900 font-bold underline underline-offset-8 m-3">Best Seller</h1>
 
-                  <div class="bcontainer">
-                  
-                        <div class="food-list rice">
-                        <img class="img" src="Rice.jpg" alt="Best Seller"> 
-                        <p>1</p>
-                        </div>
+        <div class="grid grid-cols-3 gap-5">
 
-                        <div class="food-list sandwich">
-                        <img class="img" src="Sandwich.jpg" alt="Best Seller"> 
-                        <p>1</p>
-                        </div>
-                        
-                        <div class="food-list pasta">
-                        <img class="img" src="Pasta.jpg" alt="Best Seller"> 
-                        <p>1</p>
-                        </div>
+            <div class="flex flex-col w-[350px] h-[400px] m-3 bg-green-900 rounded-[20px] justify-center items-center text-white">
+                <div class="w-[300px] h-[300px]">
+                    <img class="w-full h-full object-cover rounded-[5px]" src="Rice.jpg" alt="Best Seller">
                 </div>
-             </div>
+                <p>ADOBO</p>
+            </div>
 
-               <div class="newfood"> 
-                  <img class="newfoodimg" src="Coffee.jpg" alt="New Food">
-                  <div class="newfoodD">
-                     <h1>New Product</h1>
-                     <p>Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.</p>
-                     <button class="addbut"><i class='add bx bxs-cart-add'></i> add to cart</button>   
-                  </div>
-               </div>
+            <div class="flex flex-col w-[350px] h-[400px] m-3 bg-green-900 rounded-[20px] justify-center items-center text-white">
+                <div class="w-[300px] h-[300px]">
+                    <img class="w-full h-full object-cover rounded-[5px]" src="Sandwich.jpg" alt="Best Seller">
+                </div>
+                <p>ADOBO</p>
+            </div>
 
-               <div class="newfood">
-                  <div class="newfoodD">
-                  <h1>Special Promo</h1>
-                  <p>Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.</p>
-                  <button class="addbut"><i class='add bx bxs-cart-add'></i> add to cart</button>
-               </div>
-                  <img class="newfoodimg" src="TF.jpg" alt="Logo">
-               </div>
-                  
-            
+            <div class=" flex flex-col w-[350px] h-[400px] m-3 bg-green-900 rounded-[20px] justify-center items-center text-white">
+                <div class="w-[300px] h-[300px] ">
+                    <img class="w-full h-full object-cover rounded-[5px] " src="Pasta.jpg " alt="Best Seller ">
+                </div>
+                <p>ADOBO</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="flex ml-[200px] mt-[5px] w-full h-[400px] bg-green-900 justify-between items-center pl-[30px] pr-[30px]" pr-[1]>
+        <div class="w-[300px] h-[300px]">
+            <img class="w-full h-full object-cover rounded-[5px]" src="Coffee.jpg " alt="New Food ">
+        </div>
+        <div class="pl-[40px]">
+            <h1>New Product</h1>
+            <p>Lorem ipsum is placeholder text commonly used in the graphic,
+                <br>print, and publishing industries for previewing layouts and visual mockups.</p>
+            <button class="addbut "><i class=' add bx bxs-cart-add '></i> add to cart</button>
+        </div>
+    </div>
+
+    <div class="newfood ">
+        <div class="newfoodD ">
+            <h1>Special Promo</h1>
+            <p>Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.</p>
+            <button class="addbut "><i class='add bx bxs-cart-add '></i> add to cart</button>
+        </div>
+        <img class="newfoodimg " src="TF.jpg " alt="Logo ">
+    </div>
+
+
 </body>
+
 </html>
