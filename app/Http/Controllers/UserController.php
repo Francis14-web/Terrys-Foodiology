@@ -48,10 +48,23 @@ class UserController extends Controller
         $order = OrderGroup::find($id);
         $order->status = 'Paid';
         $order->save();
-        return redirect()->route('user.order')->with('success', 'Payment successful!');
+
+        notyf()
+            ->position('x', 'right')->position('y', 'top')
+            ->dismissible(true)
+            ->ripple(true)
+            ->addSuccess('Payment successful!');
+
+        return redirect()->route('user.order');
     }
 
     public function paymentFailed(){
-        return redirect()->route('user.order')->with('error', 'Payment failed!');
+        notyf()
+            ->position('x', 'right')->position('y', 'top')
+            ->dismissible(true)
+            ->ripple(true)
+            ->addWarning('Payment failed!');
+
+        return redirect()->route('user.order');
     }
 }
