@@ -27,7 +27,10 @@ class UserOrderHistory extends DataTableComponent
     public function columns(): array
     {
         return [
-            Column::make("Order ID", "id")
+            Column::make('Order ID', 'id')
+                ->format(function ($value, $row, Column $column) {
+                    return substr($value, 0, 8);
+                })
                 ->sortable(),
             Column::make("Total price", "total_price")
                 ->sortable(),
