@@ -1,3 +1,3 @@
 <div>
-    Hello This is a History
+    <livewire:user-order-history/>
 </div>
