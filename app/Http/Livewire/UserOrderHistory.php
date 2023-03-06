@@ -29,7 +29,7 @@ class UserOrderHistory extends DataTableComponent
         return [
             Column::make('Order ID', 'id')
                 ->format(function ($value, $row, Column $column) {
-                    return substr($value, 0, 8);
+                    return "Order #" . substr($value, 0, 8);
                 })
                 ->sortable(),
             Column::make("Total price", "total_price")
