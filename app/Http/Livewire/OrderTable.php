@@ -21,7 +21,10 @@ class OrderTable extends DataTableComponent
     {
         return Order::query()
             ->join('order_groups', 'orders.order_group_id', '=', 'order_groups.id')
-            ->where('order_groups.status', 'Not yet Paid')
+            ->where([
+                'order_groups.status' => 'Not yet Paid',
+                'orders.customer_id' => auth()->guard('user')->user()->id,
+            ])
             ->whereDate('orders.created_at', today());
     }
 
