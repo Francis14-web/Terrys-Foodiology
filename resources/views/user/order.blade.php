@@ -11,11 +11,13 @@
         <x-user.user-sidebar />
         <div class="ml-[270px] h-full" id="main-window">
             <x-heading title="Orders" />
-            <div class="ml-[40px] mt-[30px] ">
-                 <button type="button" class="inline-block rounded-full border-2  border-emerald-900 px-6 pt-2 pb-[6px] text-xs font-medium leading-normal hover:bg-emerald-600 hover:text-white active:bg-emerald-800"> Cart </button>
-                 <button type="button" class="inline-block rounded-full px-6 pt-2 pb-[6px] text-xs font-medium leading-normal  hover:bg-emerald-600 hover:text-white  hover:border-2 hover:border-emerald-800 active:bg-emerald-800"> Order History </button>
+            <div class="px-10">
+                @livewire('tabs', ['tabs' => [
+                    ['title' => 'Cart', 'view' => 'tabs.user.cart-tab', 'data' => $order],
+                    ['title' => 'Order History', 'view' => 'tabs.user.history-tab', 'data' => null],
+                ]])
             </div>
-            @if ($order)
+            {{-- @if ($order)
                 <div class="p-10">
                     <livewire:order-table/>
                 </div>
@@ -30,7 +32,7 @@
                     </div>
                     <a href="{{ route('user.menu') }}" class="mt-5 bg-green-500 text-white px-5 py-2 rounded-full">Order Now</a>
                 </div>
-            @endif
+            @endif --}}
         </div>
     </div>
 @endsection
