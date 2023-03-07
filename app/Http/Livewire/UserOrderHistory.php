@@ -2,10 +2,12 @@
 
 namespace App\Http\Livewire;
 
-use Rappasoft\LaravelLivewireTables\DataTableComponent;
-use Rappasoft\LaravelLivewireTables\Views\Column;
 use App\Models\OrderGroup;
+use Illuminate\Support\Str;
 use Illuminate\Database\Eloquent\Builder;
+use Rappasoft\LaravelLivewireTables\Views\Column;
+use Rappasoft\LaravelLivewireTables\DataTableComponent;
+use Rappasoft\LaravelLivewireTables\Views\Columns\ComponentColumn;
 
 class UserOrderHistory extends DataTableComponent
 {
@@ -27,11 +29,12 @@ class UserOrderHistory extends DataTableComponent
     public function columns(): array
     {
         return [
-            Column::make('Order ID', 'id')
-                ->format(function ($value, $row, Column $column) {
-                    return "Order #" . substr($value, 0, 8);
-                })
-                ->sortable(),
+            ComponentColumn::make('Order ID', 'id')
+                ->component('table-link')
+                ->attributes(fn ($value, $row, Column $column) => [
+                    'label' => "Order #" . substr($value, 0, 8),
+                    'href' => route('user.order.view', $value),
+                ]),
             Column::make("Total price", "total_price")
                 ->sortable(),
             // Column::make("Customer id", "customer_id")
