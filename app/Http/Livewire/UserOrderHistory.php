@@ -7,6 +7,7 @@ use Illuminate\Support\Str;
 use Illuminate\Database\Eloquent\Builder;
 use Rappasoft\LaravelLivewireTables\Views\Column;
 use Rappasoft\LaravelLivewireTables\DataTableComponent;
+use Rappasoft\LaravelLivewireTables\Views\Columns\BooleanColumn;
 use Rappasoft\LaravelLivewireTables\Views\Columns\ComponentColumn;
 
 class UserOrderHistory extends DataTableComponent
@@ -37,9 +38,13 @@ class UserOrderHistory extends DataTableComponent
                 ]),
             Column::make("Total price", "total_price")
                 ->sortable(),
-            // Column::make("Customer id", "customer_id")
-            //     ->sortable(),
-            Column::make("Status", "status")
+            BooleanColumn::make("Status", "status")
+                ->view('partials.status-widget')
+                ->setCallback(function(string $value, $row) {
+                    if ($value == 'Paid')
+                        return true;
+                    return false;
+                })
                 ->sortable(),
             Column::make("Ordered at", "created_at")
                 ->sortable(),

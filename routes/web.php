@@ -45,7 +45,7 @@ Route::middleware('user')->group(function () {
     Route::get('/user/dashboard', 'App\Http\Controllers\UserController@dashboard')->name('user.dashboard');
     Route::get('/user/menu', 'App\Http\Controllers\UserController@menu')->name('user.menu');
     Route::get('/user/order', 'App\Http\Controllers\UserController@order')->name('user.order');
-    Route::get('/user/order/{id}', 'App\Http\Controllers\UserController@viewOrder')->name('user.order.view');
+    Route::get('/user/order/{orders}', 'App\Http\Controllers\UserController@viewOrder')->name('user.order.view');
     Route::get('user/settings', 'App\Http\Controllers\UserController@settings')->name('user.settings');
     Route::get('/user/payment-success/{id}', 'App\Http\Controllers\UserController@paymentSuccess')->name('user.payment.success');
     Route::get('/user/logout', 'App\Http\Controllers\Auth\UserAuthController@logout')->name('user.logout');

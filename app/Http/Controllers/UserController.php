@@ -30,12 +30,12 @@ class UserController extends Controller
         ]);
     }
 
-    public function viewOrder(OrderGroup $order) {
-        return view('user.view-order', [
-            'order' => $order,
-        ]);
+    public function viewOrder(OrderGroup $orders) {
+        
+        $data = $orders->id;
+        return view('user.view-order', compact('data'));
     }
-
+ 
     public function test(){
         $gcashSource = Paymongo::source()->create([
             'type' => 'gcash',

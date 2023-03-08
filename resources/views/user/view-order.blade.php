@@ -12,7 +12,7 @@
         <div class="ml-[270px] h-full" id="main-window">
             <x-heading title="Orders" />
             <div class="px-10">
-                Here
+                <livewire:user-view-table :data="$data" />
             </div>
         </div>
     </div>

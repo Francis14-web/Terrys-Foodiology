@@ -2,14 +2,15 @@
 
 namespace App\Http\Livewire;
 
-use App\Models\Order;
-use Illuminate\Database\Eloquent\Builder;
-use Rappasoft\LaravelLivewireTables\Views\Column;
 use Rappasoft\LaravelLivewireTables\DataTableComponent;
+use Rappasoft\LaravelLivewireTables\Views\Column;
+use Illuminate\Database\Eloquent\Builder;
+use App\Models\Order;
 
-class OrderTable extends DataTableComponent
+class UserViewTable extends DataTableComponent
 {
     protected $model = Order::class;
+    public $order_groud_id;
 
     public function configure(): void
     {
@@ -21,10 +22,14 @@ class OrderTable extends DataTableComponent
         return Order::query()
             ->join('order_groups', 'orders.order_group_id', '=', 'order_groups.id')
             ->where([
-                'order_groups.status' => 'Not yet Paid',
+                'order_group_id' => $this->order_groud_id,
                 'orders.customer_id' => auth()->guard('user')->user()->id,
-            ])
-            ->whereDate('orders.created_at', today());
+            ]);
+    }
+
+    public function mount($data)
+    {
+        $this->order_groud_id = $data;
     }
 
     public function columns(): array
@@ -35,9 +40,11 @@ class OrderTable extends DataTableComponent
                 ->searchable(),
             Column::make("Quantity", "quantity")
                 ->sortable(),
-            Column::make("Price", "price")
+            Column::make("Price", "food.food_price")
                 ->sortable(),
-            Column::make("Created at", "created_at")
+            Column::make("Total Price", "price")
+                ->sortable(),
+            Column::make("Order added at", "created_at")
                 ->sortable(),
         ];
     }
