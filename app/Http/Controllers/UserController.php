@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Food;
 use App\Models\OrderGroup;
 use Luigel\Paymongo\Facades\Paymongo;
 
@@ -34,6 +35,10 @@ class UserController extends Controller
         
         $data = $orders->id;
         return view('user.view-order', compact('data'));
+    }
+
+    public function viewMenu(Food $food){
+        return view('user.view-menu', compact('food'));
     }
  
     public function test(){

@@ -7,6 +7,7 @@
     "repositories": [ { "type": "vcs", "url": "https://github.com/dormammuuuuu/laravel-paymongo" } ],
     "require": {
         "php": "^8.0.2",
+        "diglactic/laravel-breadcrumbs": "^8.1",
         "guzzlehttp/guzzle": "^7.2",
         "jzonta/faker-restaurant": "^2.0",
         "laravel/framework": "^10.0",

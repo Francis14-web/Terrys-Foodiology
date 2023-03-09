@@ -110,8 +110,13 @@ class AddUserOrder extends ModalComponent
                 'customer_id' => auth()->guard('user')->user()->id,
             ]);
         }
-
-        $this->closeModal();
+        notyf()
+            ->position('x', 'right')->position('y', 'top')
+            ->dismissible(true)
+            ->ripple(true)
+            ->addSuccess('Order added to cart!');
+        return redirect()->route('user.menu');
+    
     }
 
 

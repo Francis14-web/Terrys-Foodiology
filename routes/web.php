@@ -44,6 +44,7 @@ Route::middleware('canteen')->group(function () {
 Route::middleware('user')->group(function () {
     Route::get('/user/dashboard', 'App\Http\Controllers\UserController@dashboard')->name('user.dashboard');
     Route::get('/user/menu', 'App\Http\Controllers\UserController@menu')->name('user.menu');
+    Route::get('/user/menu/{food}', 'App\Http\Controllers\UserController@viewMenu')->name('user.menu.view');
     Route::get('/user/order', 'App\Http\Controllers\UserController@order')->name('user.order');
     Route::get('/user/order/{orders}', 'App\Http\Controllers\UserController@viewOrder')->name('user.order.view');
     Route::get('user/settings', 'App\Http\Controllers\UserController@settings')->name('user.settings');

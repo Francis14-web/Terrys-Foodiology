@@ -24,6 +24,11 @@ class UserMenu extends Component
         $this->resetPage();
     }
 
+    public function openFood($id)
+    {
+        return redirect()->route('user.menu.view', $id);
+    }
+
     public function render()
     {
         $query = Food::query(); // use query builder instead of all()
