@@ -11,8 +11,13 @@
         <x-user.user-sidebar />
         <div class="ml-[270px] h-full" id="main-window">
             <x-heading title="Settings" />
-            
-            <div class="flex gap-20">
+            <div class="px-10 h-[90vh]">
+                @livewire('tabs', ['tabs' => [
+                    ['title' => 'Account Settings', 'view' => 'tabs.user.account', 'data' => null],
+                    ['title' => 'Password', 'view' => 'tabs.user.password', 'data' => null],
+                ]])
+            </div>
+            {{-- <div class="flex gap-20">
                 <div class="flex flex-col mt-[30px] fixed h-full max-w-[250px] text-sm">
                     <h2 class="text-lg ml-[50px] font-semibold text-emerald-900">Account Settings</h2>
                     <a href="#" class=" ml-[100px] mt-[15px] pl-[30px] py-1 pr-[10px] rounded-l-3xl font-semibold text-green-900 hover:bg-lime-200 active:text-lime-200 active:bg-green-900"> Account</a>
@@ -52,7 +57,7 @@
                     </div>
                  </form>
 
-            </div>
+            </div> --}}
         </div>
     </div>
 @endsection

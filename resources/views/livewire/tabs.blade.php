@@ -1,4 +1,4 @@
-<div class="py-5">
+<div class="py-5 h-full">
     <div class="flex gap-3">
         @foreach($tabs as $index => $tab)
             <button wire:click="setActiveTab({{ $index + 1 }})"
@@ -7,10 +7,10 @@
             </button>
         @endforeach
     </div>
-    <div>
+    <div class="h-full">
         @foreach($tabs as $index => $tab)
             <div wire:key="{{ $index }}" 
-                class="{{ $activeTab === ($index + 1) ? '' : 'hidden' }}">
+                class="{{ $activeTab === ($index + 1) ? '' : 'hidden' }} relative h-full">
                 @include($tab['view'], ['data' => $tab['data']])
             </div>
         @endforeach

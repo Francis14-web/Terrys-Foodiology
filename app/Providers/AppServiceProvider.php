@@ -5,6 +5,7 @@ namespace App\Providers;
 use Illuminate\Contracts\Pagination\Paginator;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Database\Eloquent\Builder;
+use Barryvdh\Debugbar\Facades\Debugbar;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -34,5 +35,8 @@ class AppServiceProvider extends ServiceProvider
             });
             return $this;
         });
+
+        //disable debugbar
+        Debugbar::disable();
     }
 }
