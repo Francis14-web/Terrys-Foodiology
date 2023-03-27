@@ -12,6 +12,10 @@ class UserAuthController extends Controller
         return view('auth.user-login');
     }
 
+    public function register(){
+        return view('auth.user-register');
+    }
+
     public function logout(){
         Auth::guard('user')->logout();
         return redirect()->route('user.login');
