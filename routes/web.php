@@ -50,6 +50,7 @@ Route::middleware('user')->group(function () {
     Route::get('user/settings', 'App\Http\Controllers\UserController@settings')->name('user.settings');
     Route::get('/user/payment-success/{id}', 'App\Http\Controllers\UserController@paymentSuccess')->name('user.payment.success');
     Route::get('/user/logout', 'App\Http\Controllers\Auth\UserAuthController@logout')->name('user.logout');
+    Route::get('/user/message', 'App\Http\Controllers\UserController@message')->name('user.message');
 });
 
 Route::get('/logout', function()

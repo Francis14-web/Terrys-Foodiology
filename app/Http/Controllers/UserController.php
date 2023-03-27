@@ -20,6 +20,10 @@ class UserController extends Controller
         return view('user.settings');
     }
 
+    public function message(){
+        return view('user.message');
+    }
+
     public function order(){
         $order = OrderGroup::where([
             'customer_id' => auth()->guard('user')->user()->id,
