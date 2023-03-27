@@ -7,7 +7,7 @@
                     <x-sidebar-link route="user.dashboard" icon="bx bxs-home" label="Home" />
                     <x-sidebar-link route="user.menu" icon="bx bxs-book" label="Menu" />
                     <x-sidebar-link route="user.order" icon="bx bxs-cart-alt" label="Order" />
-                    <x-sidebar-link route="" icon="bx bxs-message" label="Messages" />
+                    <x-sidebar-link route="user.message" icon="bx bxs-message" label="Messages" />
                 </div>
             </div>
             <div class="ml-10">
