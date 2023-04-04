@@ -19,8 +19,9 @@ This is a simple canteen ordering system for Terry's Foodiology. It is a web app
 4. Run `npm run dev`
 5. Run `copy .env.example .env`
 6. Run `php artisan key:generate`
-7. Run `php artisan migrate --seed`
-8. Run `php artisan serve`
+7. Run `php artisan storage:link`
+8. Run `php artisan migrate --seed`
+9. Run `php artisan serve`
 
 ## Usage
 
