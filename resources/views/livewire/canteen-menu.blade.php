@@ -24,7 +24,7 @@
                         $imagePaths = explode(',', $food->food_image);
                         $lastImagePath = end($imagePaths);
                     @endphp
-                    <div class="cursor-pointer bg-white flex items-center justify-evenly flex-col shadow-md rounded-3xl hover:scale-110">     
+                    <div class="cursor-pointer bg-white flex items-center justify-evenly flex-col shadow-md rounded-3xl hover:bg-green-200">     
                         <div class="flex items-center justify-center w-full h-full">
                             <img src="{{ asset('storage/'.$lastImagePath) }}" class=" h-60 lg:h-80 w-full object-cover rounded-3xl">
                         </div>

@@ -15,4 +15,9 @@ class CanteenController extends Controller
     public function menu() {
         return view('canteen.menu');
     }
+
+    public function pos() {
+        return view('canteen.pos');
+    }
+
 }

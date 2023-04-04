@@ -8,6 +8,7 @@
                     <x-sidebar-link route="canteen.menu" icon="bx bxs-book" label="Menu" />
                     <x-sidebar-link route="" icon="bx bxs-credit-card-front" label="Sales" />
                     <x-sidebar-link route="" icon="bx bxs-cart-alt" label="Order" />
+                    <x-sidebar-link route="canteen.pos" icon="bx bxs-basket" label="Point of Sale" />
                     <x-sidebar-link route="" icon="bx bxs-message" label="Messages" />
                 </div>
             </div>

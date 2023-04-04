@@ -17,6 +17,7 @@ class CanteenAuthController extends Controller
         return redirect()->route('canteen.login');
     }
 
+
     public function authenticate(Request $request){
         $credentials = $request->only('email', 'password');
 

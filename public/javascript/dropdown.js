@@ -1,15 +1,16 @@
-const button = document.getElementById("dropdownDefaultButton");
-const menu = document.getElementById("dropdown");
-const options = document.querySelectorAll("#dropdown li");
+const select = document.getElementById("dropdown");
+const visitor = document.getElementById("visitor-parent");
 
+select.addEventListener("change", () => {
+    const selectIndex = select.selectedIndex; // kinukuha yung index ni select
+    const selectOption = select.options[selectIndex]; // kinukuha yung options ni select gamit yung select index
 
-button.addEventListener("click", () => {
-    menu.classList.toggle("hidden");
+    if(selectOption.value === "Visitor"){ 
+        visitor.classList.remove('hidden')
+        visitor.classList.add('flex')
+    }
+    else{
+        visitor.classList.add('hidden')
+    }
 });
 
-options.forEach((option) => {
-    option.addEventListener("click", () => {
-        button.innerText = option.innerText;
-        menu.classList.toggle("hidden");        
-    });
-});

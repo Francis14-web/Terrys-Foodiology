@@ -16,6 +16,10 @@ class UserAuthController extends Controller
         return view('auth.user-register');
     }
 
+    public function forgotPassword(){
+        return view('auth.user-forgot');
+    }
+
     public function logout(){
         Auth::guard('user')->logout();
         return redirect()->route('user.login');
