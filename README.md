@@ -28,5 +28,5 @@ This is a simple canteen ordering system for Terry's Foodiology. It is a web app
 1. Run `php artisan serve`
 2. Open the application in your browser
 3. Login using the following credentials:
-    - Username: `admin`
+    - Username: `testadmin@example.com`
     - Password: `password`
