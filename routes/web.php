@@ -29,8 +29,9 @@ Route::get('/user/login', 'App\Http\Controllers\Auth\UserAuthController@login')-
 Route::post('/user/authenticate', 'App\Http\Controllers\Auth\UserAuthController@authenticate')->name('user.authenticate')->middleware('guest:user');
 
 Route::get('/user/register', 'App\Http\Controllers\Auth\UserAuthController@register')->name('user.register')->middleware('guest:user');
+Route::post('/user/create-account', 'App\Http\Controllers\Auth\UserAuthController@createAccount')->name('user.createAccount')->middleware('guest:user');
 
-Route::get('/user/forgotPassword', 'App\Http\Controllers\Auth\UserAuthController@forgotPassword')->name('user.forgotPassword')->middleware('guest:user');
+Route::get('/user/forgot-password', 'App\Http\Controllers\Auth\UserAuthController@forgotPassword')->name('user.forgotPassword')->middleware('guest:user');
 
 Route::middleware('admin')->group(function () {
     Route::get('/admin/dashboard', 'App\Http\Controllers\AdminController@dashboard')->name('admin.dashboard');

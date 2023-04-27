@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 
 class UserAuthController extends Controller
@@ -23,6 +24,36 @@ class UserAuthController extends Controller
     public function logout(){
         Auth::guard('user')->logout();
         return redirect()->route('user.login');
+    }
+
+    public function createAccount(Request $request){
+        $request->validate([
+            'firstname' => 'required|alpha|min:2|max:20',
+            'lastname' => 'required|alpha|min:2|max:20',
+            'username' => 'required|unique:users',
+            'role' => 'required',
+            'email' => 'required|unique:users',
+            'password' => 'required|confirmed',
+        ]);
+
+        $user = User::create([
+            'firstname' => $request->firstname,
+            'lastname' => $request->lastname,
+            'username' => $request->username,
+            'role' => $request->role,
+            'email' => $request->email,
+            'password' => bcrypt($request->password),
+        ]);
+
+        $credentials = ([
+            'email' => $request->email,
+            'password' => $request->password
+        ]);
+
+        if(auth()->guard('user')->attempt($credentials)){
+            $request->session()->regenerate();
+            return redirect()->route('user.dashboard');
+        }
     }
 
     public function authenticate(Request $request){

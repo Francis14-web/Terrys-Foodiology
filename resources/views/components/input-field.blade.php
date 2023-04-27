@@ -10,7 +10,7 @@
         <label for="{{ $name }}" class="text-xs mb-1">{{ $label }}</label>
         <input name="{{ $name }}" type="{{ $type }}" class="p-2 rounded border text-xs border-gray-300 focus:outline-none focus:ring-2 focus:ring-green-400" value="{{ old($name) }}">
         @error($name)
-            <p class="text-xs text-red-500 my-5 text-center">{{$message}}</p>
+            <p class="text-xs text-red-500 mt-2">{{$message}}</p>
         @enderror
     </div>
 </div>
