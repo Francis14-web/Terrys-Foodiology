@@ -14,8 +14,8 @@
         <div class=" flex h-screen w-full scroll-smooth">
             <div class="flex h-full w-full relative">
                 <div id="menu-side" class="h-full w-full">
-                    <div id="carouselExampleSlidesOnly" class="relative" data-te-carousel-init data-te-carousel-slide>
-                        <div class="relative w-full overflow-hidden after:clear-both after:block after:content-['']">
+                    <div id="carouselExampleSlidesOnly" class="relative p-5" data-te-carousel-init data-te-carousel-slide>
+                        <div class="relative rounded-md w-full overflow-hidden after:clear-both after:block after:content-['']">
                             <div class="relative float-left -mr-[100%] w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none"
                                 data-te-carousel-item data-te-carousel-active>
                                 <img src="https://mdbcdn.b-cdn.net/img/new/slides/041.webp" class="block w-full"
@@ -49,7 +49,7 @@
                         </div>
 
                         <div class="cards">
-                            <div id="card-picture" class="flex items-center justify-center w-full h-[200px]">
+                            <div id="card-picture" class="flex items-center justify-center w-full h-[200px] h-">
                                 <img src="/img/adobo.jpg" id="adobo" class="h-full w-full object-cover rounded-xl">
                             </div>
 

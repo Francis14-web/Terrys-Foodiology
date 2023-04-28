@@ -3,18 +3,6 @@
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
-
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
-
 Route::get('/', function () {
     return view('index');
 });
@@ -42,6 +30,7 @@ Route::middleware('canteen')->group(function () {
     Route::get('/canteen/dashboard', 'App\Http\Controllers\CanteenController@dashboard')->name('canteen.dashboard');
     Route::get('/canteen/menu', 'App\Http\Controllers\CanteenController@menu')->name('canteen.menu');
     Route::get('/canteen/pos', 'App\Http\Controllers\CanteenController@pos')->name('canteen.pos');
+    Route::get('/canteen/order', 'App\Http\Controllers\CanteenController@order')->name('canteen.order');
     Route::get('/canteen/logout', 'App\Http\Controllers\Auth\CanteenAuthController@logout')->name('canteen.logout');
 });
 
@@ -57,10 +46,8 @@ Route::middleware('user')->group(function () {
     Route::get('/user/message', 'App\Http\Controllers\UserController@message')->name('user.message');
 });
 
-Route::get('/logout', function()
-{
+Route::get('/logout', function(){
     Auth::logout();
-
     return redirect()->route('login');
 })->name('logout');
 

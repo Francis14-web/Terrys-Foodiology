@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Events\CanteenOrderPageEvent;
 use App\Models\Food;
 use App\Models\OrderGroup;
 use Luigel\Paymongo\Facades\Paymongo;
@@ -63,6 +64,9 @@ class UserController extends Controller
         $order = OrderGroup::find($id);
         $order->status = 'Paid';
         $order->save();
+
+        // Broadcast the new order
+        event(new CanteenOrderPageEvent($order));
 
         notyf()
             ->position('x', 'right')->position('y', 'top')

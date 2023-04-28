@@ -20,4 +20,9 @@ class CanteenController extends Controller
         return view('canteen.pos');
     }
 
+    public function order() {
+        $user = auth()->guard('canteen')->user()->id;
+        return view('canteen.order', compact('user'));
+    }
+
 }
