@@ -12,7 +12,6 @@ This is a simple canteen ordering system for Terry's Foodiology. It is a web app
 4. MySQL Server (Recommended: MySQL Workbench)
 
 ## Installation
-OK
 1. Clone the repository
 2. Run `composer update`
 3. Run `npm install`
@@ -33,5 +32,4 @@ OK
 
 ## Project Development:
 
-
-https://github.com/users/dormammuuuuu/projects/2
+https://github.com/users/dormammuuuuu/projects/3/views/1

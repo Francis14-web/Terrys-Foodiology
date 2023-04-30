@@ -3,9 +3,13 @@
 namespace App\Http\Livewire;
 
 use Livewire\Component;
+use App\Models\OrderGroup;
+use Livewire\WithPagination;
 
 class CanteenOrder extends Component
 {
+    use WithPagination;
+
     public function getListeners()
     {
         return [
@@ -15,11 +19,13 @@ class CanteenOrder extends Component
 
     public function notifyNewOrder($payload)
     {
-        dd ('new order', $payload);
+        $this->render();
     }
 
     public function render()
     {
-        return view('livewire.canteen-order');
+        return view('livewire.canteen-order', [
+            'orders' => OrderGroup::getAllOrders()->paginate(3),
+        ]);
     }
 }
