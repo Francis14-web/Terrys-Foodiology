@@ -3,12 +3,12 @@ const menuButton = document.getElementById('menu-button')
 const mainWindow = document.getElementById('main-window')
 
 menuButton.addEventListener('click', () => {
-    if (sidebar.classList.contains('max-w-[270px]')) {
-        sidebar.classList.remove('max-w-[270px]')
+    if (sidebar.classList.contains('max-w-sidebar')) {
+        sidebar.classList.remove('max-w-sidebar')
         sidebar.classList.add('hidden', 'max-w-0')
     } else {
         sidebar.classList.remove('hidden', 'max-w-0')
-        sidebar.classList.add('max-w-[270px]')
+        sidebar.classList.add('max-w-sidebar')
     }
 
     mainWindow.classList.toggle('ml-[270px]')

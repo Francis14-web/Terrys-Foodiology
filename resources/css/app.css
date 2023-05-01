@@ -6,6 +6,7 @@
     * {
         @apply transition ease-in-out;
         @apply font-poppins;
+        @apply duration-300;
     }
 
     body {

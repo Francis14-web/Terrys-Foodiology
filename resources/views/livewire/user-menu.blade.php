@@ -23,7 +23,8 @@
                         $imagePaths = explode(',', $food->food_image);
                         $lastImagePath = end($imagePaths);
                     @endphp
-                    <div wire:click="openFood('{{$food->id}}')" class="cursor-pointer bg-white flex items-center justify-evenly flex-col shadow-md rounded-3xl hover:scale-110 hover:shadow-none hover:bg-green-400">     
+                    <x-user.user-menu-card :food="$food" :lastImagePath="$lastImagePath"/>
+                    {{-- <div wire:click="openFood('{{$food->id}}')" class="cursor-pointer bg-white flex items-center justify-evenly flex-col shadow-md rounded-3xl hover:scale-110 hover:shadow-none hover:bg-green-400">     
                         <div class="relative flex items-center justify-center w-full h-full overflow-hidden">
                             <img src="{{ asset('storage/'.$lastImagePath) }}" class="{{(!$food->food_stock) ? 'blur-sm' : ''}} h-60 lg:h-80 w-full object-cover rounded-3xl">
                             @if ($food->food_stock > 0)
@@ -36,7 +37,7 @@
                             <h1 class="text-md break-words">{{$food->food_name}}</h1>
                             <p class="text-xs"><span class="font-bold">Price: </span>₱ {{$food->food_price}}</p>
                         </div>
-                    </div>
+                    </div> --}}
                 @endforeach
             </div>
             <div class="m-20 flex justify-center">

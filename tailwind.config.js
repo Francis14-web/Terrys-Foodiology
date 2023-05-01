@@ -5,6 +5,10 @@ module.exports = {
         "./resources/**/*.js",
         "./vendor/rappasoft/laravel-livewire-tables/resources/views/**/*.blade.php",
     ],
+    safelist: [
+        "max-w-sidebar",
+        "max-w-0",
+    ],
     theme: {
         fontFamily: {
             poppins: ["Poppins", "sans-serif"],
@@ -17,6 +21,9 @@ module.exports = {
             width: {
                 "fill-available": "-webkit-fill-available",
                 "moz-available": "-moz-available",
+            },
+            maxWidth: {
+                'sidebar': '270px',
             },
             maxHeight: {
                 "sm": "24rem",
