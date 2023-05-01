@@ -25,7 +25,7 @@ class CanteenOrder extends Component
     public function render()
     {
         return view('livewire.canteen-order', [
-            'orders' => OrderGroup::getAllOrders()->latest('created_at')->paginate(10),
+            'orders' => OrderGroup::getAllOrdersToday()->latest('created_at')->paginate(10),
         ]);
     }
 }

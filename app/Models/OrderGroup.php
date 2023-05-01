@@ -35,7 +35,13 @@ class OrderGroup extends Model
 
     public static function getAllOrdersToday()
     {
-        return self::whereDate('created_at', today())->get();
+        return self::select('order_groups.*', DB::raw('JSON_ARRAYAGG(orders.quantity) as order_quantity'), DB::raw('JSON_ARRAYAGG(foods.food_name) as food_name'), 'users.firstname', 'users.lastname')
+            ->leftJoin('orders', 'orders.order_group_id', '=', 'order_groups.id')
+            ->leftJoin('foods', 'foods.id', '=', 'orders.food_id')
+            ->join('users', 'users.id', '=', 'order_groups.customer_id')
+            ->groupBy('order_groups.id')
+            ->whereDate('order_groups.created_at', today())
+            ->limit(10);
     }
 
     public static function getAllOrdersWeek()

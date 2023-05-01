@@ -21,6 +21,7 @@ This is a simple canteen ordering system for Terry's Foodiology. It is a web app
 7. Run `php artisan storage:link`
 8. Run `php artisan migrate --seed`
 9. Run `php artisan serve`
+10. Run `php artisan websockets:serve`
 
 ## Usage
 
@@ -31,5 +32,8 @@ This is a simple canteen ordering system for Terry's Foodiology. It is a web app
     - Password: `password`
 
 ## Project Development:
-
 https://github.com/users/dormammuuuuu/projects/3/views/1
+
+## Figma:
+Canteen/User: https://www.figma.com/file/BE7lf7tLYVwLGbc7ijsfcD/Untitled?node-id=0-1&t=mH4UpEFo4wilTflt-0
+Admin: https://www.figma.com/file/QE4rUmMiqm2oWBaDUXNKid/CAPSTONE-UI?t=uDw8FrtBDN9fESzx-6

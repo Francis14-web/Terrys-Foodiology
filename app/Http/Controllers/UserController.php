@@ -65,6 +65,13 @@ class UserController extends Controller
         $order->status = 'Paid';
         $order->save();
 
+        //Get all food and reduce the quantity
+        foreach($order->orders as $userOrder){
+            $food = Food::find($userOrder->food_id);
+            $food->food_stock = $food->food_stock - $userOrder->quantity;
+            $food->save();
+        }
+
         // Broadcast the new order
         event(new CanteenOrderPageEvent($order));
 
@@ -74,7 +81,7 @@ class UserController extends Controller
             ->ripple(true)
             ->addSuccess('Payment successful!');
 
-        return redirect()->route('user.order');
+        return redirect()->route('user.order', ['success' => $order->id]);
     }
 
     public function paymentFailed(){
