@@ -9,7 +9,7 @@
 @section('content')
 <div>
     <div class="h-screen w-screen flex items-center justify-center ">
-            <div class="max-w-lg w-full max-h-3xl h-full bg-white shadow-md rounded-2xl overflow-hidden p-10">
+            <div class="bg-white max-w-lg w-full max-h-2xl h-full shadow-md rounded-2xl overflow-hidden p-10">
                 <form action="{{route('canteen.authenticate')}}" method="post" class="w-full h-full flex flex-col justify-center">
                     @csrf
                     <img src="{{ asset('img/TF.jpg')}}" alt="Logo" class="rounded-full w-28 h-28 mx-auto">

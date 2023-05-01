@@ -4,7 +4,7 @@
 
 @section('content')
     <div class="flex justify-center items-center h-screen w-full ">
-        <div class="flex justify-center flex-row-reverse overflow-hidden rounded-2xl shadow-md items-center max-h-3xl h-full max-w-md md:max-w-5xl w-full">
+        <div class="bg-white flex justify-center flex-row-reverse overflow-hidden rounded-2xl shadow-md items-center max-h-2xl h-full max-w-md md:max-w-5xl w-full">
             <form action="{{route('user.authenticate')}}" method="POST" class="flex justify-center items-center animate-Opac flex-col p-7 md:p-14 w-full">
                 @csrf
                 <p class="text-xl text-gray-800 font-bold font-nunito my-8 text-center">Hello, Welcome!</p>
