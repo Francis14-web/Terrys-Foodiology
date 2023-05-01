@@ -79,7 +79,7 @@ class UserController extends Controller
             ->position('x', 'right')->position('y', 'top')
             ->dismissible(true)
             ->ripple(true)
-            ->addSuccess('Payment successful!');
+            ->addSuccess('New order has arrived!');
 
         return redirect()->route('user.order', ['success' => $order->id]);
     }
