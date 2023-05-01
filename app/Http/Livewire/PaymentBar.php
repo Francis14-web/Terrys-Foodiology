@@ -12,6 +12,20 @@ class PaymentBar extends Component
 
     public function paymentButton()
     {
+        $error = false;
+        // destroy all notyf
+        foreach ($this->order->orders as $userOrder) {
+            if ($userOrder->food->food_stock < $userOrder->quantity) {
+                notyf()
+                    ->position('y', 'top')
+                    ->dismissible(true)
+                    ->addWarning('Not enough stock for ' . $userOrder->food->food_name);
+                $error = true;
+            }
+        }
+        if ($error)
+            return;
+
         $gcashSource = Paymongo::source()->create([
             'type' => 'gcash',
             'amount' => $this->order->total_price,

@@ -14,7 +14,7 @@
         @endif
     </div>
     <div class="flex justify-center flex-col text-center m-4 text-zinc-800 w-4/5">
-        <h1 class="text-md break-words">{{$food->food_name}}</h1>
+        <h1 class="text-md text-ellipsis truncate">{{$food->food_name}}</h1>
         <p class="text-xs"><span class="font-bold">Price: </span>₱ {{$food->food_price}}</p>
     </div>
 </div>
