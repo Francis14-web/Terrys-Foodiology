@@ -28,8 +28,16 @@ This is a simple canteen ordering system for Terry's Foodiology. It is a web app
 1. Run `php artisan serve`
 2. Open the application in your browser
 3. Login using the following credentials:
-    - Username: `testadmin@example.com`
-    - Password: `password`
+    * Admin Account:
+        - admin
+        - password
+    * User Account
+        - terry.user@example.com
+        - password
+    * Canteen Account
+        - terry.canteen@example.com
+        - password
+
 
 ## Project Development:
 https://github.com/users/dormammuuuuu/projects/3/views/1
