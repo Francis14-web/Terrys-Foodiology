@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Events\CanteenOrderPageEvent;
+use App\Events\CanteenMenuPageEvent;
 use App\Models\Food;
 use App\Models\OrderGroup;
+use App\Events\UserMenuPageEvent;
+use App\Events\CanteenOrderPageEvent;
 use Luigel\Paymongo\Facades\Paymongo;
 
 class UserController extends Controller
@@ -69,11 +71,13 @@ class UserController extends Controller
         foreach($order->orders as $userOrder){
             $food = Food::find($userOrder->food_id);
             $food->food_stock = $food->food_stock - $userOrder->quantity;
+            event(new CanteenMenuPageEvent($food->owner_id)); // Broadcast the new menu to canteen
+            event(new CanteenOrderPageEvent($food->owner_id));
             $food->save();
         }
 
         // Broadcast the new order
-        event(new CanteenOrderPageEvent($order));
+        event(new UserMenuPageEvent());
 
         notyf()
             ->position('x', 'right')->position('y', 'top')

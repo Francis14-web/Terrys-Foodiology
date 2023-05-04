@@ -14,6 +14,18 @@ class UserMenu extends Component
 
     protected $paginationTheme = 'tailwind';
 
+    public function getListeners()
+    {
+        return [
+            "echo:user-menu-page,UserMenuPageEvent" => 'updateFoodMenu',
+        ];
+    }
+
+    public function updateFoodMenu()
+    {
+        $this->render();
+    }
+
     public function change($category)
     {
         $this->category = $category;

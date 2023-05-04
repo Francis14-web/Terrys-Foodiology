@@ -4,7 +4,9 @@ namespace App\Http\Livewire;
 
 use App\Models\Food;
 use Livewire\WithFileUploads;
+use App\Events\UserMenuPageEvent;
 use App\Http\Livewire\CanteenMenu;
+use App\Events\CanteenMenuPageEvent;
 use LivewireUI\Modal\ModalComponent;
 
 class EditFoodModal extends ModalComponent
@@ -83,7 +85,8 @@ class EditFoodModal extends ModalComponent
         ];
 
         $food->update($data);
-
+        event(new CanteenMenuPageEvent(auth()->guard('canteen')->user()->id));
+        event(new UserMenuPageEvent());
         $this->closeModalWithEvents([
             CanteenMenu::getName() => 'refreshMenu',
         ]);

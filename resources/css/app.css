@@ -11,6 +11,7 @@
 
     body {
         @apply overflow-x-hidden;
+        @apply bg-neutral-50;
     }
 
 

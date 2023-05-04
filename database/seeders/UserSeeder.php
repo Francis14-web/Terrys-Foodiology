@@ -25,5 +25,15 @@ class UserSeeder extends Seeder
             'profile_image' => 'https://picsum.photos/200/300',
         ]);
 
+        \App\Models\User::create([
+            'firstname' => 'Test',
+            'lastname' => 'User',
+            'username' => 'dormammu2',
+            'email' => 'jericovic65@gmail.com',
+            'role' => 'Student',
+            'password' => bcrypt('password'),
+            'profile_image' => 'https://picsum.photos/200/300',
+        ]);
+
     }
 }
