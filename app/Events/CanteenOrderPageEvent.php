@@ -14,13 +14,13 @@ use Illuminate\Contracts\Broadcasting\ShouldBroadcast;
 class CanteenOrderPageEvent implements ShouldBroadcast
 {
     use Dispatchable, InteractsWithSockets, SerializesModels;
-    public $orderGroup;
+    public $owner;
     /**
      * Create a new event instance.
      */
-    public function __construct(OrderGroup $orderGroup)
+    public function __construct($owner)
     {
-        $this->orderGroup = $orderGroup;
+        $this->owner = $owner;
     }
 
 
@@ -38,6 +38,6 @@ class CanteenOrderPageEvent implements ShouldBroadcast
 
     public function broadcastOn()
     {
-        return ['seller.' . auth()->guard('canteen')->user()->id];
+        return ['seller.' . $this->owner];
     }
 }

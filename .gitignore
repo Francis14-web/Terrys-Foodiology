@@ -18,3 +18,5 @@ yarn-error.log
 /.vscode
 composer.lock
 package-lock.json
+storage/app/photos
+storage/app/public/photos
