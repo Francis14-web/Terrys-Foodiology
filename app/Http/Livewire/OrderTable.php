@@ -36,7 +36,7 @@ class OrderTable extends DataTableComponent
         return Order::query()
             ->join('order_groups', 'orders.order_group_id', '=', 'order_groups.id')
             ->where([
-                'order_groups.status' => 'Not yet Paid',
+                'order_groups.status' => 'Cart',
                 'orders.customer_id' => auth()->guard('user')->user()->id,
             ])
             ->whereDate('orders.created_at', today());
@@ -56,7 +56,7 @@ class OrderTable extends DataTableComponent
             Column::make("Price", "price")
                 ->sortable()
                 ->collapseOnTablet(),
-            Column::make("Created at", "created_at")
+            Column::make("Added at", "created_at")
                 ->sortable()
                 ->collapseOnTablet(),
         ];

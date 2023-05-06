@@ -32,7 +32,8 @@ return new class extends Migration
             $table->double('total_price');
             $table->uuid('customer_id');
             $table->foreign('customer_id')->references('id')->on('users')->onDelete('cascade');
-            $table->enum('status', ['Paid', 'Not yet Paid']);
+            $table->enum('status', ['Cart','Serving', 'Failed', 'Success']);
+            $table->dateTime('pickup_date')->nullable();
             $table->timestamps();
         });
 

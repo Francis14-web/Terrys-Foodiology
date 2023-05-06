@@ -61,7 +61,7 @@ class AddUserOrder extends ModalComponent
         }
 
         $check = OrderGroup::where('customer_id', auth()->guard('user')->user()->id)
-                    ->where('status', 'Not yet Paid')
+                    ->where('status', 'Cart')
                     ->whereDate('created_at', now()->format('Y-m-d'))
                     ->first();
 
@@ -96,11 +96,11 @@ class AddUserOrder extends ModalComponent
                 ]);
             }
         } else {
-            // Create a new OrderGroup and Order
+            // Create a new OrderGroup and Order 
             $orderGroup = OrderGroup::create([
                 'total_price' => $this->food->food_price * $this->orderQuantity,
                 'customer_id' => auth()->guard('user')->user()->id,
-                'status' => 'Not yet Paid',
+                'status' => 'Cart',
             ]);
 
             $orderGroup->orders()->create([

@@ -15,6 +15,11 @@ class OrderGroup extends Model
         'total_price',
         'customer_id',
         'status',
+        'pickup_date'
+    ];
+
+    protected $date = [
+        'pickup_date'
     ];
 
     public function user()
@@ -42,6 +47,7 @@ class OrderGroup extends Model
             ->leftJoin('foods', 'foods.id', '=', 'orders.food_id')
             ->join('users', 'users.id', '=', 'order_groups.customer_id')
             ->where('foods.owner_id', $userId)
+            ->where('order_groups.status', 'Serving')
             ->groupBy('order_groups.id')
             ->whereDate('order_groups.created_at', today())
             ->limit(10);

@@ -2,7 +2,7 @@
     'order' => 'order'
 ])
 
-<div class="grid grid-cols-7 auto-rows-fr p-5 my-3 shadow-md rounded bg-white">
+<div class="grid grid-cols-8 auto-rows-fr p-5 my-3 shadow-md rounded bg-white">
     <p>{{$order->firstname . " " . $order->lastname}}</p>
     <p>{{"Order #" . substr($order->id, 0, 8)}}</p>
     <div>
@@ -17,5 +17,6 @@
     </div>
     <p>{{$order->total_price}}</p>
     <p>{{$order->status}}</p>
-    <p>{{$order->updated_at}}</p>
+    <p>{{\Carbon\Carbon::parse($order->updated_at)->diffForhumans()}}</p>
+    <p>{{\Carbon\Carbon::parse($order->pickup_date)->diffForhumans()}}</p>
 </div>
