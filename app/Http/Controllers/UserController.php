@@ -30,7 +30,7 @@ class UserController extends Controller
     public function order(){
         $order = OrderGroup::where([
             'customer_id' => auth()->guard('user')->user()->id,
-            'status' => 'Not yet Paid',
+            'status' => 'Cart',
         ])->whereDate('created_at', date('Y-m-d'))->first();
         
         return view('user.order', [
@@ -64,7 +64,7 @@ class UserController extends Controller
 
     public function paymentSuccess($id){
         $order = OrderGroup::find($id);
-        $order->status = 'Paid';
+        $order->status = 'Serving';
         $order->save();
 
         //Get all food and reduce the quantity
@@ -79,11 +79,11 @@ class UserController extends Controller
         // Broadcast the new order
         event(new UserMenuPageEvent());
 
-        notyf()
-            ->position('x', 'right')->position('y', 'top')
-            ->dismissible(true)
-            ->ripple(true)
-            ->addSuccess('New order has arrived!');
+        // notyf()
+        //     ->position('x', 'right')->position('y', 'top')
+        //     ->dismissible(true)
+        //     ->ripple(true)
+        //     ->addSuccess('New order has arrived!');
 
         return redirect()->route('user.order', ['success' => $order->id]);
     }
