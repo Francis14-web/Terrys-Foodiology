@@ -14,10 +14,9 @@ class CanteenSeeder extends Seeder
      */
     public function run()
     {
-        \App\Models\Canteen::factory(10)->create();
         \App\Models\Canteen::create([
-            'username' => 'Test Canteen',
-            'email' => 'jericovic64@gmail.com',
+            'username' => 'Terry\'s Foodiology',
+            'email' => 'terry.canteen@gmail.com',
             'password' => bcrypt('password'),
             'profile_image' => 'https://picsum.photos/200/300',
         ]);

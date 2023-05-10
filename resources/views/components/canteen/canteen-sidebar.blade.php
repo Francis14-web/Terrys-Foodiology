@@ -6,7 +6,7 @@
                 <div class="flex flex-col h-full gap-2 ml-10">
                     <x-sidebar-link route="canteen.dashboard" icon="bx bxs-home" label="Home" />
                     <x-sidebar-link route="canteen.menu" icon="bx bxs-book" label="Menu" />
-                    <x-sidebar-link route="" icon="bx bxs-credit-card-front" label="Sales" />
+                    <x-sidebar-link route="canteen.sales" icon="bx bxs-credit-card-front" label="Sales" />
                     <x-sidebar-link route="canteen.order" icon="bx bxs-cart-alt" label="Order" />
                     <x-sidebar-link route="canteen.pos" icon="bx bxs-basket" label="Point of Sale" />
                     <x-sidebar-link route="" icon="bx bxs-message" label="Messages" />
