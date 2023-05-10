@@ -29,7 +29,4 @@
     @else
         <p class="date">{{ Carbon\Carbon::parse($order->pickup_date)->diffForHumans() }}</p>
     @endif
-
-
-
 </div>
