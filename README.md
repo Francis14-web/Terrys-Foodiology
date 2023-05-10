@@ -23,6 +23,9 @@ This is a simple canteen ordering system for Terry's Foodiology. It is a web app
 9. Run `php artisan serve`
 10. Run `php artisan websockets:serve`
 
+# For problems:
+Run `php artisan optimize:clear`
+
 ## Usage
 
 1. Run `php artisan serve`
