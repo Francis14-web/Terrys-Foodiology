@@ -15,7 +15,7 @@
             <p>{{$quantity}}</p>
         @endforeach
     </div>
-    <p>{{$order->total_price}}</p>
+    <p>{{$order->t_price}}</p>
     <div>
         <x-dropdown-field-orders :id="$order->id" name="status" :selected="$order->status" :options="[
             'Serving' => 'Serving',

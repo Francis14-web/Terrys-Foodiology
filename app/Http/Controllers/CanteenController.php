@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Canteen;
 use App\Http\Requests\StoreCanteenRequest;
 use App\Http\Requests\UpdateCanteenRequest;
+use Carbon\Carbon;
 
 class CanteenController extends Controller
 {
@@ -18,6 +19,15 @@ class CanteenController extends Controller
 
     public function pos() {
         return view('canteen.pos');
+    }
+
+    public function sales() {
+        return view('canteen.sales');
+    }
+
+    public function salesOverview($date){
+        $formattedDate = Carbon::parse($date)->format('F j, Y');
+        return view('canteen.sales-overview', compact('formattedDate'));
     }
 
     public function order() {
