@@ -47,7 +47,9 @@ class OrderGroup extends Model
             ->leftJoin('foods', 'foods.id', '=', 'orders.food_id')
             ->join('users', 'users.id', '=', 'order_groups.customer_id')
             ->where('foods.owner_id', $userId)
-            ->where('order_groups.status', 'Serving')
+            ->where(function($query) {
+                $query->whereIn('order_groups.status', ['Serving', 'Failed', 'Success']);
+            })
             ->groupBy('order_groups.id')
             ->whereDate('order_groups.created_at', today())
             ->limit(10);
