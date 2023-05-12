@@ -19,9 +19,6 @@ class SalesTable extends DataTableComponent
     public function mount($date)
     {
         $this->date = $date;
-        // dd( OrderGroup::query()
-            // ->whereBetween('created_at', [$start, $end])->pluck('id'));
-        // dd($start, $end);
     }
 
     public function configure(): void
