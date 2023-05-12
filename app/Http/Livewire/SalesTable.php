@@ -5,6 +5,7 @@ namespace App\Http\Livewire;
 use Carbon\Carbon;
 use App\Models\OrderGroup;
 use Illuminate\Foundation\Auth\User;
+
 use Rappasoft\LaravelLivewireTables\Views\Column;
 use Illuminate\Database\Eloquent\Builder;
 use Rappasoft\LaravelLivewireTables\DataTableComponent;
@@ -13,10 +14,28 @@ use Rappasoft\LaravelLivewireTables\Views\Columns\ComponentColumn;
 class SalesTable extends DataTableComponent
 {
     protected $model = OrderGroup::class;
+    public $date;
+
+    public function mount($date)
+    {
+        $this->date = $date;
+        // dd( OrderGroup::query()
+            // ->whereBetween('created_at', [$start, $end])->pluck('id'));
+        // dd($start, $end);
+    }
 
     public function configure(): void
     {
         $this->setPrimaryKey('id');
+    }
+
+    public function builder(): Builder
+    {
+        $start = Carbon::createFromFormat('Y-m-d H:i:s', $this->date . ' 00:00:00');
+        $end = Carbon::createFromFormat('Y-m-d H:i:s', $this->date . ' 23:59:59');
+
+        return OrderGroup::query()
+            ->whereBetween('created_at', [$start, $end]);
     }
 
     public function columns(): array

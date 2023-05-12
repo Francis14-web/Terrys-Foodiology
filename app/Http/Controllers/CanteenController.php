@@ -27,7 +27,7 @@ class CanteenController extends Controller
 
     public function salesOverview($date){
         $formattedDate = Carbon::parse($date)->format('F j, Y');
-        return view('canteen.sales-overview', compact('formattedDate'));
+        return view('canteen.sales-overview', compact('formattedDate', 'date'));
     }
 
     public function order() {
