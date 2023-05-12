@@ -13,7 +13,7 @@
         <div class="ml-[270px]" id="main-window">
             <x-heading title="Sales for {{ $formattedDate }}" />
             <div class="p-10">
-                <livewire:sales-table/>
+                <livewire:sales-table :date="$date"/>
             </div>
         </div>
     </div>
