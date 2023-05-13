@@ -1,6 +1,6 @@
 @extends('../layouts.main')
 
-@section('title', 'Canteen Order')
+@section('title', 'Canteen Sales Overview')
 
 @section('js')
     <script src="{{ asset('javascript/sidebar.js') }}"></script>
@@ -11,8 +11,10 @@
     <div class="relative w-screen h-screen">
         <x-canteen.canteen-sidebar />
         <div class="ml-[270px]" id="main-window">
-            <x-heading title="Order" />
-            @livewire('canteen-order')
+            <x-heading title="Sales for {{ $formattedDate }}" />
+            <div class="p-10">
+                <livewire:sales-table :date="$date"/>
+            </div>
         </div>
     </div>
 @endsection
