@@ -11,9 +11,10 @@
 
     "require": {
         "php": "^8.0.2",
+        "aldeebhasan/lottie-laravel": "^1.0",
+        "asantibanez/livewire-calendar": "dev-master",
         "beyondcode/laravel-websockets": "^1.14",
         "diglactic/laravel-breadcrumbs": "^8.1",
-        "asantibanez/livewire-calendar": "dev-master",
         "guzzlehttp/guzzle": "^7.2",
         "jzonta/faker-restaurant": "^2.0",
         "laravel/framework": "^10.0",

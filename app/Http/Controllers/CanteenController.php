@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Canteen;
 use App\Http\Requests\StoreCanteenRequest;
 use App\Http\Requests\UpdateCanteenRequest;
+use App\Models\OrderGroup;
 use Carbon\Carbon;
 
 class CanteenController extends Controller
@@ -22,7 +23,13 @@ class CanteenController extends Controller
     }
 
     public function sales() {
-        return view('canteen.sales');
+        $year = Carbon::now()->year;
+        $month = Carbon::now()->month;
+        $statistics = OrderGroup::statistics($year, $month);
+
+        return view('canteen.sales', [
+            'statistics' => $statistics,
+        ]);
     }
 
     public function salesOverview($date){

@@ -9,10 +9,48 @@ use Illuminate\Support\Collection;
 
 class CanteenSalesCalendar extends LivewireCalendar
 {
+    public $month;
+    public $year;
+
+    public function goToPreviousMonth()
+    {
+        $this->startsAt->subMonthNoOverflow();
+        $this->endsAt->subMonthNoOverflow();
+
+        $data = [
+            'month' => intval($this->startsAt->format('m')),
+            'year' => intval($this->startsAt->format('Y')),
+        ];
+
+        $this->month = $data['month'];
+        $this->year = $data['year'];
+
+        $this->emit('renderMonth', $data);
+        $this->calculateGridStartsEnds();
+    }
+
+    public function goToNextMonth()
+    {
+        $this->startsAt->addMonthNoOverflow();
+        $this->endsAt->addMonthNoOverflow();
+
+        $data = [
+            'month' => intval($this->startsAt->format('m')),
+            'year' => intval($this->startsAt->format('Y')),
+        ];
+
+        $this->month = $data['month'];
+        $this->year = $data['year'];
+
+        $this->emit('renderMonth', $data);
+        $this->calculateGridStartsEnds();
+    }
+
     public function events() : Collection
     {
-        return OrderGroup::getAllSalesMonth(2023, 5);
-
+        $year = Carbon::now()->year;
+        $month = Carbon::now()->month;
+        return OrderGroup::getAllSalesMonth($year, $month);
         // must return a Laravel collection
     }
 

@@ -10,14 +10,17 @@
 @section('content')
     <div class="relative w-screen h-screen">
         <x-canteen.canteen-sidebar />
-        <div class="ml-[270px]" id="main-window">
-            <x-heading title="Sales" />
-            <div class=" mx-8 flex w-full justify-center pb-8">
-                <livewire:canteen-sales-calendar 
-                    :day-click-enabled="false"
-                    :drag-and-drop-enabled="false"
-                    before-calendar-view="calendar/header"/>
+        <div class="flex min-h-screen justify-between">
+            <div class="ml-[270px] flex-1 grow" id="main-window">
+                <x-heading title="Sales" />
+                <div class="mx-auto flex w-full justify-center pb-8">
+                    <livewire:canteen-sales-calendar 
+                        :day-click-enabled="false"
+                        :drag-and-drop-enabled="false"
+                        before-calendar-view="calendar/header"/>
+                    </div>
             </div>
+            @livewire('statistics', ['statistics' => $statistics])
         </div>
     </div>
 @endsection
