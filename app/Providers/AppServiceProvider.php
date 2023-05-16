@@ -37,6 +37,6 @@ class AppServiceProvider extends ServiceProvider
         });
 
         //disable debugbar
-        Debugbar::disable();
+        // Debugbar::disable();
     }
 }

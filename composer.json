@@ -4,9 +4,16 @@
     "description": "The Laravel Framework.",
     "keywords": ["framework", "laravel"],
     "license": "MIT",
-    "repositories": [ { "type": "vcs", "url": "https://github.com/dormammuuuuu/laravel-paymongo" } ],
+    "repositories": [ 
+        { "type": "vcs", "url": "https://github.com/dormammuuuuu/laravel-paymongo" },
+        { "type": "vcs", "url": "https://github.com/dormammuuuuu/livewire-calendar" } 
+    ],
+
     "require": {
         "php": "^8.0.2",
+        "aldeebhasan/lottie-laravel": "^1.0",
+        "asantibanez/livewire-calendar": "dev-master",
+        "beyondcode/laravel-websockets": "^1.14",
         "diglactic/laravel-breadcrumbs": "^8.1",
         "guzzlehttp/guzzle": "^7.2",
         "jzonta/faker-restaurant": "^2.0",
@@ -16,6 +23,7 @@
         "livewire/livewire": "^2.11",
         "luigel/laravel-paymongo": "2.x-dev",
         "php-flasher/flasher-notyf-laravel": "^1.13",
+        "pusher/pusher-php-server": "^7.2",
         "rappasoft/laravel-livewire-tables": "^2.11",
         "wire-elements/modal": "^1.0"
     },

@@ -3,7 +3,10 @@ module.exports = {
     content: [
         "./resources/**/*.blade.php",
         "./resources/**/*.js",
-        "./vendor/rappasoft/laravel-livewire-tables/resources/views/**/*.blade.php",
+    ],
+    safelist: [
+        "max-w-sidebar",
+        "max-w-0",
     ],
     theme: {
         fontFamily: {
@@ -18,6 +21,33 @@ module.exports = {
                 "fill-available": "-webkit-fill-available",
                 "moz-available": "-moz-available",
             },
+            maxWidth: {
+                'sidebar': '270px',
+            },
+            maxHeight: {
+                "sm": "24rem",
+                "md": "28rem",
+                "lg": "32rem",
+                "xl": "36rem",
+                "2xl": "42rem",
+                "3xl": "48rem",
+                "4xl": "56rem",
+                "5xl": "64rem",
+                "6xl": "72rem",
+                "7xl": "80rem",
+            },
+            minHeight: {
+                "sm": "24rem",
+                "md": "28rem",
+                "lg": "32rem",
+                "xl": "36rem",
+                "2xl": "42rem",
+                "3xl": "48rem",
+                "4xl": "56rem",
+                "5xl": "64rem",
+                "6xl": "72rem",
+                "7xl": "80rem",
+            }, 
             keyframes: {
                 FadeIn: {
                     "0%": { transform: "translateX(-120px)", opacity: "0" },

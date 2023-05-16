@@ -4,7 +4,7 @@ namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
-
+use Carbon\Carbon;
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\User>
  */
@@ -17,14 +17,23 @@ class UserFactory extends Factory
      */
     public function definition()
     {
-        return [
-            'firstname' => fake()->name(),
-            'lastname' => fake()->lastName(),
-            'email' => fake()->unique()->safeEmail(),
-            'username' => fake()->unique()->userName(),
-            'profile_image' => fake()->imageUrl(),
+        $role = $this->faker->randomElement(['Students', 'Faculty', 'Hospital Staff', 'Visitor']);
+
+        $attributes = [
+            'firstname' => $this->faker->name(),
+            'lastname' => $this->faker->lastName(),
+            'email' => $this->faker->unique()->safeEmail(),
+            'username' => $this->faker->unique()->userName(),
+            'role' => $role,
+            'profile_image' => $this->faker->imageUrl(),
             'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
         ];
+
+        if ($role === 'Visitor') {
+            $attributes['until_when'] = Carbon::now()->addWeek();
+        }
+
+        return $attributes;
     }
 
     /**

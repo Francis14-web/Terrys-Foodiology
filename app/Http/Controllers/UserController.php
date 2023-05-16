@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Events\CanteenMenuPageEvent;
 use App\Models\Food;
 use App\Models\OrderGroup;
+use App\Events\UserMenuPageEvent;
+use App\Events\CanteenOrderPageEvent;
 use Luigel\Paymongo\Facades\Paymongo;
 
 class UserController extends Controller
@@ -27,7 +30,7 @@ class UserController extends Controller
     public function order(){
         $order = OrderGroup::where([
             'customer_id' => auth()->guard('user')->user()->id,
-            'status' => 'Not yet Paid',
+            'status' => 'Cart',
         ])->whereDate('created_at', date('Y-m-d'))->first();
         
         return view('user.order', [
@@ -61,16 +64,28 @@ class UserController extends Controller
 
     public function paymentSuccess($id){
         $order = OrderGroup::find($id);
-        $order->status = 'Paid';
+        $order->status = 'Serving';
         $order->save();
 
-        notyf()
-            ->position('x', 'right')->position('y', 'top')
-            ->dismissible(true)
-            ->ripple(true)
-            ->addSuccess('Payment successful!');
+        //Get all food and reduce the quantity
+        foreach($order->orders as $userOrder){
+            $food = Food::find($userOrder->food_id);
+            $food->food_stock = $food->food_stock - $userOrder->quantity;
+            event(new CanteenMenuPageEvent($food->owner_id)); // Broadcast the new menu to canteen
+            event(new CanteenOrderPageEvent($food->owner_id));
+            $food->save();
+        }
 
-        return redirect()->route('user.order');
+        // Broadcast the new order
+        event(new UserMenuPageEvent());
+
+        // notyf()
+        //     ->position('x', 'right')->position('y', 'top')
+        //     ->dismissible(true)
+        //     ->ripple(true)
+        //     ->addSuccess('New order has arrived!');
+
+        return redirect()->route('user.order', ['success' => $order->id]);
     }
 
     public function paymentFailed(){

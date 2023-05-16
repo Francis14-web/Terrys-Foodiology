@@ -11,9 +11,24 @@ class OrderTable extends DataTableComponent
 {
     protected $model = Order::class;
 
+    public array $bulkActions = [
+        'deleteSelected' => 'Delete',
+    ];
+
     public function configure(): void
     {
-        $this->setPrimaryKey('id');
+        $this->setPrimaryKey('id')
+             ->setBulkActionsEnabled();
+
+    }
+
+    public function deleteSelected()
+    {
+        foreach($this->getSelected() as $item)
+        {
+            Order::find($item)->delete();
+        }
+
     }
 
     public function builder(): Builder
@@ -21,7 +36,7 @@ class OrderTable extends DataTableComponent
         return Order::query()
             ->join('order_groups', 'orders.order_group_id', '=', 'order_groups.id')
             ->where([
-                'order_groups.status' => 'Not yet Paid',
+                'order_groups.status' => 'Cart',
                 'orders.customer_id' => auth()->guard('user')->user()->id,
             ])
             ->whereDate('orders.created_at', today());
@@ -30,15 +45,20 @@ class OrderTable extends DataTableComponent
     public function columns(): array
     {
         return [
+            Column::make("Order ID", "id")
+                ->hideIf(true), // hide this column
             Column::make("Food name", "food.food_name")
                 ->sortable()
                 ->searchable(),
             Column::make("Quantity", "quantity")
-                ->sortable(),
+                ->sortable()
+                ->collapseOnTablet(),
             Column::make("Price", "price")
-                ->sortable(),
-            Column::make("Created at", "created_at")
-                ->sortable(),
+                ->sortable()
+                ->collapseOnTablet(),
+            Column::make("Added at", "created_at")
+                ->sortable()
+                ->collapseOnTablet(),
         ];
     }
 }

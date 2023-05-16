@@ -8,27 +8,23 @@
 
 @section('content')
 <div>
-    <div class="h-screen w-screen flex items-center justify-center overflow-hidden ">
-        <div class="flex justify-center shadow-lg">
-            <div class="bg-green-500 max-h-[500px] h-full flex flex-col justify-end">
-                <img src="{{asset('pictures/user-login.png')}}" alt="sign-in" class=" object-cover">
-            </div>
-            <div class="max-w-sm w-full flex items-center bg-white px-6 ">
-                <form action="{{route('canteen.authenticate')}}" method="post" class="w-full">
+    <div class="h-screen w-screen flex items-center justify-center ">
+            <div class="bg-white max-w-lg w-full max-h-2xl h-full shadow-md rounded-2xl overflow-hidden p-10">
+                <form action="{{route('canteen.authenticate')}}" method="post" class="w-full h-full flex flex-col justify-center">
                     @csrf
-                    <p class="text-2xl font-bold font-nunito mb-8 text-gray-700">Sign in to your account</p>
+                    <img src="{{ asset('img/TF.jpg')}}" alt="Logo" class="rounded-full w-28 h-28 mx-auto">
+                    <p class="text-2xl text-center font-bold font-nunito mb-8 text-gray-700">Sign in to your account</p>
                     <x-input-field label="Email" type="email" name="email"/>
                     <x-input-field label="Password" type="password" name="password"/>
-                    <div class="w-full flex flex-row justify-between items-center mb-4">
-                        <div class="flex items-center">
-                            <input type="checkbox" name="checkbox" id="checkbox" class="mr-2 rounded border-gray-300">
-                            <label for="checkbox" class="text-xs">Remember me?</label>
+                    <div class="w-full flex justify-center items-center my-4">
+                <div class="flex justify-between w-full">
+                        <div class="flex items-center gap-x-1">
+                            <input type="checkbox" name="checkbox" id="checkbox">
+                            <label for="checkbox" class="text-xs ml-2">Remember me?</label>
                         </div>
-                        <a href="#" id="forgot-pass" class="text-xs text-green-500 hover:underline">Forgot password?</a>
+                        <a href="{{route('user.forgotPassword')}}" class="text-xs font-semibold text-green-600">Forgot password?</a>
                     </div>
-                    @error('email')
-                        <p class="text-xs text-red-500 my-5">{{$message}}</p>
-                    @enderror
+                </div>
                     <x-submit-button value="Login"/>
                 </form>
             </div>

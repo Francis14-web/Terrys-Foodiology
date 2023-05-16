@@ -23,9 +23,9 @@ class FoodFactory extends Factory
             'owner_id' => \App\Models\Canteen::pluck('id')->random(),
             'food_name' => $faker->foodName(),
             'food_description' => $this->faker->text,
-            'food_image' => 'photos/temp-img.png.png',
+            'food_image' => 'photos/no-image.png',
             'food_price' => $this->faker->numberBetween(1, 300),
-            'food_stock' => $this->faker->numberBetween(1, 100),
+            'food_stock' => $this->faker->numberBetween(1, 20),
             'food_category' => $this->faker->randomElement(['Rice Meal', 'Pasta', 'Snacks', 'Coffee', 'Drinks', 'Dessert']),
             'food_rating' => 0,
         ];

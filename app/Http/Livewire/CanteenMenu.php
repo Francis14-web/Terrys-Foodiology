@@ -5,6 +5,7 @@ namespace App\Http\Livewire;
 use App\Models\Food;
 use Livewire\Component;
 use Livewire\WithPagination;
+use App\Events\UserMenuPageEvent;
 
 class CanteenMenu extends Component
 {
@@ -17,6 +18,13 @@ class CanteenMenu extends Component
     public $listeners = [
         'refreshMenu' => 'render',
     ];
+    
+    public function getListeners()
+    {
+        return [
+            "echo:canteen-menu-". auth()->guard('canteen')->user()->id .",CanteenMenuPageEvent" => 'updateMenu',
+        ];
+    }
 
     public function delete($id)
     {
@@ -42,12 +50,14 @@ class CanteenMenu extends Component
         $food->food_stock = $food->food_stock - 1;
         $food->save();
         $this->emit('refreshMenu');
+        event(new UserMenuPageEvent());
     }
 
     public function increaseQuantity(Food $food){
         $food->food_stock = $food->food_stock + 1;
         $food->save();
         $this->emit('refreshMenu');
+        event(new UserMenuPageEvent());
     }
 
     public function inputQuantity(Food $food, $newQuantity){
@@ -57,6 +67,11 @@ class CanteenMenu extends Component
         $food->food_stock = $newQuantity;
         $food->save();
         $this->emit('refreshMenu');
+        event(new UserMenuPageEvent());
+    }
+
+    public function updateMenu(){
+        $this->render();
     }
 
     public function render()
