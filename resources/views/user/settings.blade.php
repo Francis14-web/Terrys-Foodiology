@@ -1,4 +1,4 @@
-@extends('../layouts.main')
+nmp@extends('../layouts.main')
 
 @section('title', 'User Settings')
 
