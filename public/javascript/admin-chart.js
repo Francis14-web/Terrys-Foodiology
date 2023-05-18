@@ -1,6 +1,5 @@
 const ctx = document.getElementById("myChart");
-const allMonths = () =>{
-
+const allMonths = () => {
     const months = [];
     for (let i = 0; i < 12; i++) {
         const date = new Date(2000, i, 1);
@@ -8,7 +7,7 @@ const allMonths = () =>{
         months.push(monthName);
     }
     return months;
-}
+};
 
 new Chart(ctx, {
     type: "line",
@@ -16,23 +15,18 @@ new Chart(ctx, {
         labels: allMonths(),
         datasets: [
             {
-                label: "Daily Income",
+                label: "Monthly Income",
                 data: [12, 19, 13, 52, 22, 33, 28, 36, 50, 47, 73, 10],
                 borderWidth: 1,
+                borderColor: 'rgb(34, 197, 94)',
             },
         ],
     },
     options: {
-        maintainAspectRatio: false,
         scales: {
             y: {
                 beginAtZero: true,
             },
         },
-        
     },
 });
-
-
-
-
