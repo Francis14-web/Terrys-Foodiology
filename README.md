@@ -23,12 +23,15 @@ This is a simple canteen ordering system for Terry's Foodiology. It is a web app
 9. Run `php artisan serve`
 10. Run `php artisan websockets:serve`
 
+# For problems:
+Run `php artisan optimize:clear`
+
 ## Usage
 
 1. Run `php artisan serve`
 2. Open the application in your browser
 3. Login using the following credentials:
-    - Username: `testadmin@example.com`
+    - Username: `terry.canteen@example.com`
     - Password: `password`
 
 ## Project Development:
@@ -36,4 +39,4 @@ https://github.com/users/dormammuuuuu/projects/3/views/1
 
 ## Figma:
 Canteen/User: https://www.figma.com/file/BE7lf7tLYVwLGbc7ijsfcD/Untitled?node-id=0-1&t=mH4UpEFo4wilTflt-0
-Admin: https://www.figma.com/file/QE4rUmMiqm2oWBaDUXNKid/CAPSTONE-UI?t=uDw8FrtBDN9fESzx-6
+Admin: https://www.figma.com/file/QE4rUmMiqm2oWBaDUXNKid/CAPSTONE-UI?t=uDw8FrtBDN9fESzx-6#

@@ -1,5 +1,5 @@
 <div class="p-10">
-    <button wire:click="$emit('openModal', 'add-food-modal')" class="fixed bottom-10 right-10 bg-green-700 w-12 h-12 flex items-center justify-center text-3xl rounded-full text-white hover:bg-green-800 hover:shadow-xl"><i class='bx bx-plus' ></i></button>
+    <button wire:click="$emit('openModal', 'add-food-modal')" class="fixed z-20 bottom-10 right-10 bg-green-700 w-12 h-12 flex items-center justify-center text-3xl rounded-full text-white hover:bg-green-800 hover:shadow-xl"><i class='bx bx-plus' ></i></button>
     <div class="w-full flex justify-between">
         <div class="flex gap-5 bg-red-500">
             <button class="{{ ($category) == '' ? 'text-white bg-green-800 py-1 px-3 rounded-full' : 'text-green-800 transition duration-300 ease-in-out hover:bg-green-800 hover:text-white px-2 py-2 rounded-full'}}" wire:click="change('')">All</button>
@@ -27,7 +27,9 @@
                     <x-canteen.canteen-menu-card :food="$food" :lastImagePath="$lastImagePath" />
                 @endforeach
             </div>
-            {{ $foods->links() }}
+            <div class="my-10 mx-auto flex justify-center">
+                {{ $foods->links() }}
+            </div>
         @endif
     </div>
     
