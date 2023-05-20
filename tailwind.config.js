@@ -69,5 +69,13 @@ module.exports = {
             },
         },
     },
-    plugins: [],
+    plugins: [
+    
+        {
+            '@layers': 'pasta-button',
+            '.pasta-button':{
+                color: '#fff',
+            },
+        },
+    ],
 };
