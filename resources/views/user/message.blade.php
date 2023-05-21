@@ -9,10 +9,11 @@
 @section('content')
     <div class="relative w-screen h-screen">
         <x-user.user-sidebar />
+
         <div class="ml-[270px] gap-5 flex-col">
             <div id="main-window">
                 <x-heading title="Messages" />
-            </div>
+            </div>   
         </div>
 
         <div class=" ml-[365px] mr-28 mt-4 flex w-fit max-w-max h-full">
@@ -174,6 +175,8 @@
                         </div>
                     </div>
                 </div>
-        </div>
-    -->
-    @endsection
+
+            </div>
+    </div>
+
+@endsection

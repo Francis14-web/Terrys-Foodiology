@@ -4,12 +4,10 @@
             <div>
                 <img src="{{ asset('img/TF.jpg')}}" alt="Logo" class="rounded-full my-10 w-28 h-28 mx-auto">
                 <div class="flex flex-col h-full gap-2 ml-10">
-                    <x-sidebar-link route="canteen.dashboard" icon="bx bxs-home" label="Home" />
-                    <x-sidebar-link route="canteen.menu" icon="bx bxs-book" label="Menu" />
-                    <x-sidebar-link route="canteen.sales" icon="bx bxs-credit-card-front" label="Sales" />
+                    <x-sidebar-link route="" icon="bx bxs-home" label="Dashboard" />
                     <x-sidebar-link route="canteen.order" icon="bx bxs-cart-alt" label="Order" />
-                    <x-sidebar-link route="canteen.pos" icon="bx bxs-basket" label="Point of Sale" />
                     <x-sidebar-link route="" icon="bx bxs-message" label="Messages" />
+                    <x-sidebar-link route="" icon="bx bxs-no-entry" label="Restricted Account" />
                 </div>
             </div>
             <div class="ml-10">
@@ -19,5 +17,3 @@
         </div>
     </aside>
 </div>
-
-

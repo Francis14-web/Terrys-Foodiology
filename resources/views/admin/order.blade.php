@@ -1,10 +1,16 @@
 @extends('../layouts.main')
 
-@section('title', 'Canteen Order')
+@section('title', 'Admin Order')
 
 @section('js')
     <script src="{{ asset('javascript/sidebar.js') }}"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js" integrity="sha512-CryKbMe7sjSCDPl18jtJI5DR5jtkUWxPXWaLCst6QjH8wxDexfRJic2WRmRXmstr2Y8SxDDWuBO6CQC6IE4KTA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    {{-- <script type="module">
+        Echo.channel('seller.{{ $user }}')
+            .listen('CanteenOrderPageEvent', (event) => {
+                // Handle the new order
+                console.log('New order:', event);
+            });
+    </script> --}}
 @endsection
 
 @section('content')
