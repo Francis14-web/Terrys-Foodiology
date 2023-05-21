@@ -10,7 +10,7 @@
     <div class="h-full">
         @foreach($tabs as $index => $tab)
             <div wire:key="{{ $index }}" 
-                class="{{ $activeTab === ($index + 1) ? '' : 'hidden' }} relative h-full">
+                class="{{ $activeTab === ($index) ? '' : 'hidden' }} relative h-full">
                 @include($tab['view'], ['data' => $tab['data']])
             </div>
         @endforeach
