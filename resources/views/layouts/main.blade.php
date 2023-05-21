@@ -18,6 +18,7 @@
 
     <!-- Focus plugin -->
     <script defer src="https://unpkg.com/@alpinejs/focus@3.x.x/dist/cdn.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.9.6/lottie.min.js" ></script>
     @livewireStyles
 </head>
 <body>

@@ -24,6 +24,7 @@ class UserOrderHistory extends DataTableComponent
         return OrderGroup::query()
             ->where([
                 'customer_id' => auth()->guard('user')->user()->id,
+                'status' => 'Serving',
             ]);
     }
 
@@ -41,7 +42,7 @@ class UserOrderHistory extends DataTableComponent
             BooleanColumn::make("Status", "status")
                 ->view('partials.status-widget')
                 ->setCallback(function(string $value, $row) {
-                    if ($value == 'Paid')
+                    if ($value == 'Serving')
                         return true;
                     return false;
                 })

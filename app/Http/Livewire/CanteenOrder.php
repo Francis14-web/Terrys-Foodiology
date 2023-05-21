@@ -10,6 +10,8 @@ class CanteenOrder extends Component
 {
     use WithPagination;
 
+    public $status;
+
     public function getListeners()
     {
         return [
@@ -19,6 +21,13 @@ class CanteenOrder extends Component
 
     public function notifyNewOrder($payload)
     {
+        $this->render();
+    }
+
+    public function statusChange($id, $value){
+        $order = OrderGroup::find($id);
+        $order->status = $value;
+        $order->save();
         $this->render();
     }
 
