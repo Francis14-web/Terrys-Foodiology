@@ -14,26 +14,7 @@
         <div class=" flex h-screen w-full scroll-smooth">
             <div class="flex h-full w-full relative">
                 <div id="menu-side" class="h-full w-full">
-                    <div id="carouselExampleSlidesOnly" class="relative p-5" data-te-carousel-init data-te-carousel-slide>
-                        <div class="relative rounded-md w-full overflow-hidden after:clear-both after:block after:content-['']">
-                            <div class="relative float-left -mr-[100%] w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none"
-                                data-te-carousel-item data-te-carousel-active>
-                                <img src="https://mdbcdn.b-cdn.net/img/new/slides/041.webp" class="block w-full"
-                                    alt="Wild Landscape" />
-                            </div>
-                            <div class="relative float-left -mr-[100%] hidden w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none"
-                                data-te-carousel-item>
-                                <img src="https://mdbcdn.b-cdn.net/img/new/slides/042.webp" class="block w-full"
-                                    alt="Camera" />
-                            </div>
-                            <div class="relative float-left -mr-[100%] hidden w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none"
-                                data-te-carousel-item>
-                                <img src="https://mdbcdn.b-cdn.net/img/new/slides/043.webp" class="block w-full"
-                                    alt="Exotic Fruits" />
-                            </div>
-                        </div>
-                    </div>
-
+                    <x-canteen.canteen-carousel></x-canteen.canteen-carousel>
                     <p id="best-seller-title" class="text-center text-3xl m-5">Best Sellers</p>
                     <div id="best-seller" class="w-full flex flex-row justify-center items-center p-8 gap-x-[5%]">
                         <div class="cards">
