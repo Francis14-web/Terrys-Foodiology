@@ -6,7 +6,7 @@ use Livewire\Component;
 
 class Tabs extends Component
 {
-    public $activeTab = 1;
+    public $activeTab = 0;
     public $tabs = [];
 
     public function setActiveTab($tab)

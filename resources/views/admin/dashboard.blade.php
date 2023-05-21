@@ -3,12 +3,7 @@
 @section('title', 'Admin Dashboard')
 
 @section('js')
-    <script src="//unpkg.com/alpinejs" defer></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="{{ asset('javascript/admin-chart.js') }}"></script>    
 @endsection
-
-
 
 @section('content')
 
@@ -18,47 +13,34 @@
             
             <div class="w-full flex p-10 justify-center">
                 <div class=" flex h-full flex-col p-5">
-                    <div class="flex flex-col gap-4 items-center">
-                        <h1 class="text-2xl font-semibold">Sales</h1>
-                        <div class="flex w-full justify-between">
-                            <p class="font-semibold text-2xl text-green-600">Statistics</p>                       
-                            <x-admin.dropdown-admin label="" name="role" :options="
-                            ['Daily' => 'Daily',    
-                            'Weekly' => 'Weekly',
-                            'Monthly' => 'Monthly',
-                            'Yearly' => 'Yearly',]" />  
-                        </div>                     
+                    @livewire('statistics-graph', [ 'graphs' => [
+                        ['view' => 'tabs.admin.weekly-graph', 'data' =>  $weeklySales],
+                        ['view' => 'tabs.admin.monthly-graph', 'data' => $monthlySales],
+                        ['view' => 'tabs.admin.yearly-graph', 'data' =>  $yearlySales],
+                    ]])  
+                    <div class="flex gap-4">
+                        <div class=" h-28 w-56">
+                            <p class="p-2 font-semibold">Total sales Today:</p>
+                            <p class="text-5xl text-center text-green-600">{{ $statistics['total_today_sales'] }} </p>
+                        </div>
+
+                        <div class=" h-28 w-56">
+                            <p class="p-2 font-semibold">Total sales this Week:</p>
+                            <p class="text-5xl text-center text-green-600">{{ $statistics['total_week_sales'] }} </p>
+                        </div>
                     </div>
-
                     
-                    <div class="py-5 rounded-lg">
-                        <canvas class="bg-white rounded-md" id="myChart"></canvas>
-                    </div>    
-                    
-
-                        <div class="flex gap-4">
-                            <div class=" h-28 w-56">
-                                <p class="p-2 font-semibold">Total sales Today:</p>
-                                <p class="text-5xl text-center text-green-600">5,200 </p>
-                            </div>
-
-                            <div class=" h-28 w-56">
-                                <p class="p-2 font-semibold">Total sales this Week:</p>
-                                <p class="text-5xl text-center text-green-600">5,200 </p>
-                            </div>
+                    <div class="flex gap-4">
+                        <div class=" h-28 w-56">
+                            <p class="p-2 font-semibold">Total sales this Month:</p>
+                            <p class="text-5xl text-center text-green-600">{{ $statistics['total_month_sales'] }} </p>
                         </div>
-                        
-                        <div class="flex gap-4">
-                            <div class=" h-28 w-56">
-                                <p class="p-2 font-semibold">Total sales this Month:</p>
-                                <p class="text-5xl text-center text-green-600">5,200 </p>
-                            </div>
 
-                            <div class=" h-28 w-56">
-                                <p class="p-2 font-semibold">Total sales this Year:</p>
-                                <p class="text-5xl text-center text-green-600">5,200 </p>
-                            </div>
+                        <div class=" h-28 w-56">
+                            <p class="p-2 font-semibold">Total sales this Year:</p>
+                            <p class="text-5xl text-center text-green-600">{{ $statistics['total_year_sales'] }} </p>
                         </div>
+                    </div>
 
                 </div>
 
@@ -132,7 +114,6 @@
             </div>
 
         </div>
-
     </div>
 
 @endsection

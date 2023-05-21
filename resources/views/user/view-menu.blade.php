@@ -8,7 +8,7 @@
 
 @section('content')
     <div class="relative w-screen h-screen">
-        <!-- <x-user.user-sidebar /> -->
+        <x-user.user-sidebar />
         <div class="ml-[270px]" id="main-window">
             <x-heading title="Menu" />
             <div class="px-10">
