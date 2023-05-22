@@ -12,7 +12,10 @@
     @forelse ($orders as $order)
         <x-canteen.canteen-order-list-card :order="$order"/>
     @empty
-        No orders found
+    <div class="flex flex-col items-center justify-center">
+        <img class="h-52 w-auto" src="/img/deadline.png">   
+        <p class="text-xl font-light ">No orders found!</p> 
+    </div>
     @endforelse
     <div class="my-10 mx-auto flex justify-end">
         {{ $orders->links() }}
