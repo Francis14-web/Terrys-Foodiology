@@ -1,0 +1,19 @@
+@extends('../layouts.main')
+
+@section('title', 'Admin | User Management')
+
+@section('js')
+    <script src="{{ asset('javascript/sidebar.js') }}"></script>
+@endsection
+
+@section('content')
+    <div class="relative w-screen h-screen">
+        <x-admin.admin-sidebar />
+        <div class="ml-[270px]" id="main-window">
+            <x-heading title="User Management" />
+            <div class="px-10 mt-10">
+                @livewire('user-table')
+            </div>
+        </div>
+    </div>
+@endsection
