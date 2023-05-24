@@ -6,7 +6,7 @@ use Closure;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
 
-class AccountRestricted
+class ExpiredAccount
 {
     /**
      * Handle an incoming request.
@@ -15,11 +15,11 @@ class AccountRestricted
      */
     public function handle(Request $request, Closure $next): Response
     {
-        // Check if the user is restricted
+        // Check if the user account is expired
         $user = auth()->guard('user')->user();
-        if ($user && $user->is_restricted) {
+        if ($user && $user->role == "Visitor" && $user->until_when < now()) {
                 // Customize the error message and return a 403 response
-            $errorMessage = 'Your account is restricted.';
+            $errorMessage = 'Your account access is over.';
             //return to login page
             abort(403, $errorMessage);
         }

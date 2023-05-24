@@ -37,7 +37,7 @@ Route::middleware('canteen')->group(function () {
     Route::get('/canteen/logout', 'App\Http\Controllers\Auth\CanteenAuthController@logout')->name('canteen.logout');
 });
 
-Route::middleware(['user', 'is_restricted'])->group(function () {
+Route::middleware(['user', 'is_restricted', 'is_expired'])->group(function () {
     Route::get('/user/dashboard', 'App\Http\Controllers\UserController@dashboard')->name('user.dashboard');
     Route::get('/user/menu', 'App\Http\Controllers\UserController@menu')->name('user.menu');
     Route::get('/user/menu/{food}', 'App\Http\Controllers\UserController@viewMenu')->name('user.menu.view');
