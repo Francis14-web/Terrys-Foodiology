@@ -57,6 +57,9 @@ Route::post('/tmp-upload/process', 'App\Http\Controllers\FileUploadController@pr
 Route::delete('/tmp-upload/revert', 'App\Http\Controllers\FileUploadController@revert')->name('uploads.revert');
 // Route::post('/upload/import', 'App\Http\Controllers\FileUploadController@store')->name('uploads.import');
 
+Route::get('/error', function() {
+    return view('error/error403');
+});
 
 Route::get('/test-payment', 'App\Http\Controllers\UserController@test')->name('user.test');
 Route::get('/failed', 'App\Http\Controllers\UserController@paymentFailed')->name('user.payment.failed');
