@@ -16,23 +16,25 @@ class UserSeeder extends Seeder
     {
         \App\Models\User::factory(20)->create();
         \App\Models\User::create([
-            'firstname' => 'Test',
-            'lastname' => 'User',
-            'username' => 'dormammu',
-            'email' => 'user1@gmail.com',
+            'firstname' => 'Terry',
+            'lastname' => 'Dummy',
+            'username' => 'terry1',
+            'email' => 'terry.user@gmail.com',
             'role' => 'Student',
             'password' => bcrypt('password'),
             'profile_image' => 'https://picsum.photos/200/300',
+            'account_verified' => true,
         ]);
 
         \App\Models\User::create([
-            'firstname' => 'Test',
-            'lastname' => 'User',
-            'username' => 'dormammu2',
-            'email' => 'user2@gmail.com',
+            'firstname' => 'Dummy',
+            'lastname' => 'Terry',
+            'username' => 'terry2',
+            'email' => 'terry.user2@gmail.com',
             'role' => 'Student',
             'password' => bcrypt('password'),
             'profile_image' => 'https://picsum.photos/200/300',
+            'account_verified' => true,
         ]);
     }
 }

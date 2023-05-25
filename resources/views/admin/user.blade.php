@@ -12,7 +12,10 @@
         <div class="ml-[270px]" id="main-window">
             <x-heading title="User Management" />
             <div class="px-10 mt-10">
-                @livewire('user-table')
+                @livewire('tabs', ['tabs' => [
+                    ['title' => 'User Verification', 'view' => 'tabs.admin.user-verification', 'data' => null],
+                    ['title' => 'User Restriction', 'view' => 'tabs.admin.user-restriction', 'data' => null],
+                ]])
             </div>
         </div>
     </div>

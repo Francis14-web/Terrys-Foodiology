@@ -68,5 +68,6 @@ class Kernel extends HttpKernel
         'user' => \App\Http\Middleware\UserAuthMiddleware::class,
         'is_restricted' => \App\Http\Middleware\AccountRestricted::class,
         'is_expired' => \App\Http\Middleware\ExpiredAccount::class,
+        'is_verified' => \App\Http\Middleware\AccountVerified::class,
     ];
 }

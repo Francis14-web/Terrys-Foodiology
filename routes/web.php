@@ -21,6 +21,9 @@ Route::post('/user/create-account', 'App\Http\Controllers\Auth\UserAuthControlle
 
 Route::get('/user/forgot-password', 'App\Http\Controllers\Auth\UserAuthController@forgotPassword')->name('user.forgotPassword')->middleware('guest:user');
 
+Route::get('/user/logout', 'App\Http\Controllers\Auth\UserAuthController@logout')->name('user.logout')->middleware('user');
+Route::get('/user/verification', 'App\Http\Controllers\UserController@verification')->name('user.verification')->middleware('user');
+
 Route::middleware('admin')->group(function () {
     Route::get('/admin/dashboard', 'App\Http\Controllers\AdminController@dashboard')->name('admin.dashboard');
     Route::get('/admin/user', 'App\Http\Controllers\AdminController@user')->name('admin.user');
@@ -37,22 +40,22 @@ Route::middleware('canteen')->group(function () {
     Route::get('/canteen/logout', 'App\Http\Controllers\Auth\CanteenAuthController@logout')->name('canteen.logout');
 });
 
-Route::middleware(['user', 'is_restricted', 'is_expired'])->group(function () {
+Route::middleware(['user', 'is_restricted', 'is_expired', 'is_verified'])->group(function () {
     Route::get('/user/dashboard', 'App\Http\Controllers\UserController@dashboard')->name('user.dashboard');
     Route::get('/user/menu', 'App\Http\Controllers\UserController@menu')->name('user.menu');
     Route::get('/user/menu/{food}', 'App\Http\Controllers\UserController@viewMenu')->name('user.menu.view');
     Route::get('/user/order', 'App\Http\Controllers\UserController@order')->name('user.order');
     Route::get('/user/order/{orders}', 'App\Http\Controllers\UserController@viewOrder')->name('user.order.view');
-    Route::get('user/settings', 'App\Http\Controllers\UserController@settings')->name('user.settings');
+    Route::get('/user/settings', 'App\Http\Controllers\UserController@settings')->name('user.settings');
     Route::get('/user/payment-success/{id}', 'App\Http\Controllers\UserController@paymentSuccess')->name('user.payment.success');
-    Route::get('/user/logout', 'App\Http\Controllers\Auth\UserAuthController@logout')->name('user.logout');
     Route::get('/user/message', 'App\Http\Controllers\UserController@message')->name('user.message');
 });
 
-Route::get('/logout', function(){
-    Auth::logout();
-    return redirect()->route('login');
-})->name('logout');
+//File upload controller endpoints
+Route::post('/tmp-upload/upload', 'App\Http\Controllers\FileUploadController@store')->name('upload');
+Route::post('/tmp-upload/process', 'App\Http\Controllers\FileUploadController@process')->name('uploads.process');
+Route::delete('/tmp-upload/revert', 'App\Http\Controllers\FileUploadController@revert')->name('uploads.revert');
+// Route::post('/upload/import', 'App\Http\Controllers\FileUploadController@store')->name('uploads.import');
 
 
 Route::get('/test-payment', 'App\Http\Controllers\UserController@test')->name('user.test');

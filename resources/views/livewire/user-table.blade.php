@@ -1,4 +1,4 @@
-<div class="p-10">
+<div class="p-5">
     <div class="flex justify-between items-center text-neutral-500 ">
         <p>
             Total Users: 

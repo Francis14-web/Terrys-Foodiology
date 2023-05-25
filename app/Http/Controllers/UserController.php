@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Events\CanteenMenuPageEvent;
 use App\Models\Food;
 use App\Models\OrderGroup;
+use App\Models\Verification;
 use App\Events\UserMenuPageEvent;
+use App\Events\CanteenMenuPageEvent;
 use App\Events\CanteenOrderPageEvent;
 use Luigel\Paymongo\Facades\Paymongo;
 
@@ -96,5 +97,14 @@ class UserController extends Controller
             ->addWarning('Payment failed!');
 
         return redirect()->route('user.order');
+    }
+
+    public function verification(){
+        if (auth()->guard('user')->user()->account_verified) {
+            return redirect()->route('user.dashboard');
+        }
+        $verification = Verification::where('user_id', auth()->guard('user')->user()->id)->first();
+        // dd ($verification);
+        return view('user.verification', compact('verification'));
     }
 }
