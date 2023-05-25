@@ -54,6 +54,9 @@ Route::get('/logout', function(){
     return redirect()->route('login');
 })->name('logout');
 
+Route::get('/error', function() {
+    return view('error/error403');
+});
 
 Route::get('/test-payment', 'App\Http\Controllers\UserController@test')->name('user.test');
 Route::get('/failed', 'App\Http\Controllers\UserController@paymentFailed')->name('user.payment.failed');
