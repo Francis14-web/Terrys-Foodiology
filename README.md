@@ -31,8 +31,12 @@ Run `php artisan optimize:clear`
 1. Run `php artisan serve`
 2. Open the application in your browser
 3. Login using the following credentials:
-    - Username: `terry.canteen@example.com`
-    - Password: `password`
+    - Canteen
+      - Email: `terry.canteen@example.com`
+      - Password: `password`
+    - User
+      - Email: `terry.user1@gmail.com` | `terry.user2@gmail.com`
+      - Password: `password`
 
 ## Project Development:
 https://github.com/users/dormammuuuuu/projects/3/views/1
