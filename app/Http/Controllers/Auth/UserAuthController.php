@@ -34,6 +34,7 @@ class UserAuthController extends Controller
             'role' => 'required',
             'email' => 'required|unique:users',
             'password' => 'required|confirmed',
+            'until_when' => 'nullable|date',
         ]);
 
         $user = User::create([
@@ -43,6 +44,7 @@ class UserAuthController extends Controller
             'role' => $request->role,
             'email' => $request->email,
             'password' => bcrypt($request->password),
+            'until_when' => $request->until_when,
         ]);
 
         $credentials = ([

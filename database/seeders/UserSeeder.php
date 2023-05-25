@@ -14,12 +14,12 @@ class UserSeeder extends Seeder
      */
     public function run()
     {
-        \App\Models\User::factory()->create();
+        \App\Models\User::factory(20)->create();
         \App\Models\User::create([
             'firstname' => 'Test',
             'lastname' => 'User',
             'username' => 'dormammu',
-            'email' => 'jericovic64@gmail.com',
+            'email' => 'user1@gmail.com',
             'role' => 'Student',
             'password' => bcrypt('password'),
             'profile_image' => 'https://picsum.photos/200/300',
@@ -29,11 +29,10 @@ class UserSeeder extends Seeder
             'firstname' => 'Test',
             'lastname' => 'User',
             'username' => 'dormammu2',
-            'email' => 'jericovic65@gmail.com',
+            'email' => 'user2@gmail.com',
             'role' => 'Student',
             'password' => bcrypt('password'),
             'profile_image' => 'https://picsum.photos/200/300',
         ]);
-
     }
 }

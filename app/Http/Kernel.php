@@ -66,5 +66,7 @@ class Kernel extends HttpKernel
         'admin' => \App\Http\Middleware\AdminAuthMiddleware::class,
         'canteen' => \App\Http\Middleware\CanteenAuthMiddleware::class,
         'user' => \App\Http\Middleware\UserAuthMiddleware::class,
+        'is_restricted' => \App\Http\Middleware\AccountRestricted::class,
+        'is_expired' => \App\Http\Middleware\ExpiredAccount::class,
     ];
 }

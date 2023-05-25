@@ -23,6 +23,7 @@ return new class extends Migration
             $table->date('until_when')->nullable();
             $table->string('profile_image')->nullable();
             $table->string('password');
+            $table->boolean('is_restricted')->default(false);
             $table->rememberToken();
             $table->timestamps();
         });

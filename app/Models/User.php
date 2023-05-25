@@ -28,6 +28,7 @@ class User extends Authenticatable
         'until_when',
         'profile_image',
         'password',
+        'is_restricted',
     ];
 
     /**
@@ -48,6 +49,10 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    // public static function adminList(){
+    //     return User::all;
+    // }
 
     public function orderGroups()
     {

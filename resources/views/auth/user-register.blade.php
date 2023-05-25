@@ -3,12 +3,12 @@
 @section('title', 'User Registration')
 
 @section('js')
-    <script src="{{ asset('javascript/dropdown.js') }}"></script>
+    {{-- <script src="{{ asset('javascript/dropdown.js') }}"></script> --}}
 @endsection
 
 @section('content')
 <div class="flex justify-center items-center h-screen w-full">
-    <div class="bg-white flex justify-center overflow-hidden rounded-2xl shadow-md items-center max-h-3xl h-full max-w-md md:max-w-5xl w-full">
+    <div class="bg-white flex justify-center overflow-hidden rounded-2xl shadow-md items-center max-h-3xl h-full max-w-md md:max-w-5xl w-full" x-data="{visitor: false}" x-cloak>
         <form action="{{ route('user.createAccount') }}" method="POST" class="flex justify-center items-center animate-Opac flex-col p-7 md:p-14 w-full">
             @csrf
             <p class="text-xl text-gray-800 font-bold font-nunito my-8 text-center">Create an account</p>
@@ -24,7 +24,7 @@
                      'Hospital Staff' => 'Hospital Staff',
                      'Visitor' => 'Visitor',]" />
             </div>
-            <div id="visitor-parent" class="hidden w-full justify-center">
+            <div id="visitor-parent" class="w-full justify-center" x-show="visitor">
                 <x-input-field label="Until When?" type="date" name="until_when" />
             </div>
             <x-input-field label="Email" type="email" name="email" />

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Carbon\Carbon;
+use App\Models\User;
 use App\Models\Admin;
 use App\Models\OrderGroup;
 
@@ -21,6 +22,13 @@ class AdminController extends Controller
             'yearlySales' => $yearlySales,
             'monthlySales' => $monthlySales,
             'weeklySales' => $weeklySales
+        ]);
+    }
+
+    public function user(){
+        $users = User::all();
+        return view('admin.user', [
+            'users' => $users
         ]);
     }
 }
