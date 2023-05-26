@@ -23,8 +23,34 @@
     }
     
 }
+
+
 @layer hover{
     .options:hover{
         @apply bg-green-500 text-white;
     }
 }
+
+@layer utilities {
+    .scrollbar::-webkit-scrollbar {
+      @apply w-1;
+      @apply h-3;
+    }
+  
+    .scrollbar::-webkit-scrollbar-track {
+        @apply rounded-full;
+        @apply bg-neutral-100;
+    }
+  
+    .scrollbar::-webkit-scrollbar-thumb {
+        @apply rounded-full;
+        @apply border-2;
+        @apply border-solid;
+        @apply border-transparent;
+        @apply bg-green-200;
+    }
+  
+    .scrollbar::-webkit-scrollbar-thumb:hover {
+        @apply bg-green-300;
+    }
+  }

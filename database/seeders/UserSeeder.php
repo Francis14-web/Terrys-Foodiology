@@ -36,5 +36,16 @@ class UserSeeder extends Seeder
             'profile_image' => 'https://picsum.photos/200/300',
             'account_verified' => true,
         ]);
+
+        \App\Models\User::create([
+            'firstname' => 'Walk In',
+            'lastname' => 'Order',
+            'username' => 'walkInOrder',
+            'email' => 'walkInOrder@terrys.live',
+            'role' => 'Student',
+            'password' => bcrypt('password'),
+            'profile_image' => 'https://picsum.photos/200/300',
+            'account_verified' => true,
+        ]);
     }
 }
