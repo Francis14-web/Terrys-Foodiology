@@ -1,3 +1,3 @@
 <div>
-    Verification
+    @livewire('user-verification-table')
 </div>

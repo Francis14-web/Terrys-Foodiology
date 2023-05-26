@@ -29,6 +29,7 @@ class User extends Authenticatable
         'profile_image',
         'password',
         'is_restricted',
+        'account_verified',
     ];
 
     /**
