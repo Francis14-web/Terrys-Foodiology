@@ -17,6 +17,7 @@
                     ['title' => 'User Restriction', 'view' => 'tabs.admin.user-restriction', 'data' => null],
                 ]])
             </div>
+            
         </div>
     </div>
 @endsection
