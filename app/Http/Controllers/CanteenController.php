@@ -22,6 +22,11 @@ class CanteenController extends Controller
         return view('canteen.pos');
     }
 
+    public function message() {
+        return view('canteen.message');
+    }
+
+
     public function sales() {
         $year = Carbon::now()->year;
         $month = Carbon::now()->month;
