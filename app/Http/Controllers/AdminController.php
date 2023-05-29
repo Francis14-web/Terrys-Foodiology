@@ -9,6 +9,10 @@ use App\Models\OrderGroup;
 
 class AdminController extends Controller
 {
+    public function message() {
+        return view('admin.message');
+    }
+
     public function dashboard(){
         $year = Carbon::now()->year;
         $month = Carbon::now()->month;
