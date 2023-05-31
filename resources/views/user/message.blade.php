@@ -7,22 +7,20 @@
 @endsection
 
 @section('content')
-    <div class="relative w-screen h-screen">
+
+    <div class="relative w-screen h-screen overflow-y-hidden ">
         <x-user.user-sidebar />
         <div class="ml-[270px] h-full" id="main-window">
-            <x-heading title="Messages" />           
+            <x-heading title="Restricted Account" />           
         
-            <div class="mt-4 flex justify-center sm:w-full gap-4">
-                <div class="overflow-x-hidden sm:w-[22vw] w-full justify-center ">
-
-                    <x-chat-message title="Canteen"/>                
-                    <x-chat-message title="Admin" />                                     
-                </div>
-            
-                <x-chat-box title="Admin"/>
-
+            <div class="flex flex-col items-center w-full">
+                <img src="/img/account-res.jpg" class="h-[700px] w-[700px]">
+                <p class="text-red-500 font-bold text-5xl">Account Restricted</p>
+                <p class="text-gray-600 font-medium text-xl">Kindly Message the Admin for more information</p>
             </div>
         </div>
+    </div>
+    
 
 
 @endsection

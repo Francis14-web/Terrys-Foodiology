@@ -26,6 +26,11 @@ class CanteenController extends Controller
         return view('canteen.message');
     }
 
+    public function setting() {
+        return view('canteen.setting');
+    }
+
+
 
     public function sales() {
         $year = Carbon::now()->year;

@@ -1,28 +1,44 @@
-<div class="flex sm:flex-row sm:w-auto w-full m-4 flex-col p-4 gap-5 border border-dashed border-red-500">
-    <div class="flex h-full justify-center">
-        <div class="flex flex-col h-40 w-40 relative">
-            <img class="h-full rounded-full" src="/pictures/Unggoy.jpg" alt="Profile">
-            <div class="flex z-10 items-center justify-center absolute h-6 w-6 bottom-4 right-3 bg-amber-50 rounded-full border-green-700 border cursor-pointer">
-                <i class="bx bx-edit text-green-500"></i>
+<div class="flex relative sm:flex-row flex-col justify-between sm:w-[1000px] w-full m-4 p-8 bg-gray-200 rounded-lg">
+    <p class="text-2xl text-center mb-4 font-semibold">Change Profile Picture</p>
+        <div class="flex justify-center items-center h-full">
+            <div class="flex flex-col justify-center items-center mb-4">
+                <img class="sm:h-52 sm:w-52 rounded-full mb-4" src="/pictures/Unggoy.jpg" alt="Profile">
+                <div class="flex sm:flex-row flex-col gap-4">
+                    <div class="w-full flex  justify-end gap-4">
+                        <button class="border rounded-lg border-green-500 h-10 w-auto px-8 font-medium">
+                            Change
+                        </button>
+                    </div>            
+                    <x-admin.button-admin title="Update"/> 
+                </div>              
+            </div>            
+        </div>
+</div>
+
+
+<div class="flex sm:flex-row flex-col justify-between sm:w-[1000px] w-full m-4 p-8 bg-gray-200 rounded-lg">
+    <p class="text-2xl text-center mb-4 font-semibold">Account Settings</p>
+        <div class="flex sm:w-auto w-full flex-col px-4 gap-5">
+            <div class="flex flex-col sm:w-96">
+                <x-livewire-input-field label="Username" type="text" model="username"/>
+                <x-livewire-input-field label="First name" type="text" model="firstname"/>
+                <x-livewire-input-field label="Last name" type="text" model="lastname"/>
+                <x-livewire-input-field label="Birthday" type="date" model="birthday"/>
+                <div class="flex justify-end gap-4">
+                    <x-admin.button-admin title="Update"/>
+                </div>
+            </div>  
+        </div>
+</div>
+
+<div class="flex sm:flex-row flex-col justify-between sm:w-[1000px] w-full m-4 p-8 bg-gray-200 rounded-lg">
+    <p class="text-2xl text-center mb-4 font-semibold">Change Password</p>
+        <div class="flex sm:w-auto w-full flex-col px-4 gap-5">
+            <div class="flex flex-col sm:w-96">
+                <x-livewire-input-field label="Current Password" type="password" model="username"/>
+                <x-livewire-input-field label="New Password" type="password" model="firstname"/>
+                <x-livewire-input-field label="Confirm Password" type="password" model="firstname"/>
+                <x-admin.button-admin title="Save"/>
             </div>
-            <p class="text-center">
-                Student
-            </p>
         </div>
-    </div>
-    <div class="flex flex-col sm:w-96">
-        <x-livewire-input-field label="Username" type="text" model="username"/>
-        <x-livewire-input-field label="First name" type="text" model="firstname"/>
-        <x-livewire-input-field label="Last name" type="text" model="lastname"/>
-        <x-livewire-input-field label="Birthday" type="date" model="birthday"/>
-        <div class="flex justify-end gap-4">
-            <button class="border border-green-500 px-4 py-2 rounded-full">
-                Cancel
-            </button>
-            <button class="bg-green-500 px-4 py-2 text-white font-semibold rounded-full">
-                Save
-            </button>
-        </div>
-    </div>
-    
 </div>
