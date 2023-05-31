@@ -19,7 +19,7 @@ class AdminController extends Controller
         $statistics = OrderGroup::adminStatistics($year, $month);
         $yearlySales = OrderGroup::getAllTotalPerYear();
         $monthlySales = OrderGroup::getAllTotalPerMonth();
-        $weeklySales = [65, 59, 80, 81, 56, 55, 40];
+        $weeklySales = OrderGroup::getAllTotalPerWeek();
 
         return view('admin.dashboard', [
             'statistics' => $statistics,
