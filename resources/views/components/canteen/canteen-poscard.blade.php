@@ -3,7 +3,7 @@
     'lastImagePath' => 'lastImagePath'
 ])
 
-<div class="cursor-pointer bg-white flex items-center justify-evenly flex-col shadow-md rounded-3xl hover:bg-green-200">     
+<div class="cursor-pointer bg-white flex items-center justify-evenly flex-col shadow-md rounded-3xl hover:bg-green-200" wire:click="addToOrder('{{$food->id}}')">     
     <div class="flex items-center justify-center w-full h-full">
         <img src="{{ asset('storage/'.$lastImagePath) }}" class=" h-64 w-full object-cover object-center rounded-t-3xl">
     </div>

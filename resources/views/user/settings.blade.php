@@ -1,4 +1,4 @@
-nmp@extends('../layouts.main')
+@extends('../layouts.main')
 
 @section('title', 'User Settings')
 
@@ -23,13 +23,14 @@ nmp@extends('../layouts.main')
                     <a href="#" class=" ml-[100px] mt-[15px] pl-[30px] py-1 pr-[10px] rounded-l-3xl font-semibold text-green-900 hover:bg-lime-200 active:text-lime-200 active:bg-green-900"> Account</a>
                     <a href="#" class=" ml-[100px] mt-[5px] pl-[30px] py-1 pr-[10px] rounded-l-3xl font-semibold text-green-900  hover:bg-lime-200 active:text-lime-200 active:bg-green-900">Password</a>
                  </div>
-                 <form>
-                    <div class="flex gap-[20px] ml-[250px] p-[2em] w-full items-center mt-7" >
-                    <div class="flex justify-center relative  bg-red-900 h-[200px] w-[200px] rounded-full">
-                    <img class="bg-white object-cover h-full w-full rounded-full content-center" src="unggoy.jpg" alt="Profile">
-                    <div class="absolute top-0 h-full w-full bg-white opacity-0 transition-all duration-150 ease-in-out cursor-pointer">
-                        <i class="bx bx-edit"></i>
-                    </div>
+                 <form class="border-2 border-dashed border-red-500">
+                    <div class="flex gap-[20px] ml-[250px] p-[2em] w-full items-center mt-7 border-2 border-dashed border-red-500">
+                        <!-- <div class="flex justify-center relative  bg-red-900 h-[200px] w-[200px] rounded-full border-2 border-dashed border-red-500">
+                            <img class="bg-white object-cover h-full w-full rounded-full content-center border-2 border-dashed border-red-500" src="unggoy.jpg" alt="Profile">
+                                <div class="border-2 border-dashed border-red-500 absolute top-0 h-full w-full bg-white opacity-0 transition-all duration-150 ease-in-out cursor-pointer">
+                                    <i class="bx bx-edit"></i>
+                                </div>
+                        </div> -->
                     </div>
                     <div class="flex flex-col mt-1 gap-3">
                     <div class="flex flex-col">

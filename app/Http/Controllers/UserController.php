@@ -28,6 +28,10 @@ class UserController extends Controller
         return view('user.message');
     }
 
+    public function restricted(){
+        return view('error/error403');
+    }
+
     public function order(){
         $order = OrderGroup::where([
             'customer_id' => auth()->guard('user')->user()->id,
