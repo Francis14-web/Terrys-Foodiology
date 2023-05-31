@@ -17,7 +17,7 @@
                         
                         <div class="flex gap-4 pt-4">
                                 <div class="p-2 h-28 w-40 bg-white rounded-lg">
-                                    <p class="pb-4 font-semibold text-gray-400">Total sales Today:</p>
+                                    <p class="pb-4 font-semibold text-gray-400">Total sales this Today:</p>
                                     <p class="text-3xl text-green-600">{{ $statistics['total_today_sales'] }} </p>
                                 </div>
 
@@ -45,6 +45,15 @@
                                     ['view' => 'tabs.admin.yearly-graph', 'data' =>  $yearlySales],
                                 ]])  
                             </div>              
+                        </div>
+                        <div class="w-full bg-white mt-4 p-4 rounded-md">
+                            <p class=" text-green-600 font-bold">Top product</p>
+                            <div class="flex mt-4 justify-between w-full">
+                                <p class="font-semibold text-gray-400">Name</p>
+                                <p class="font-semibold text-gray-400">Product's I.D</p>
+                                <p class="font-semibold text-gray-400">Total Sold</p>
+                                <p class="font-semibold text-gray-400">Total Sales</p>
+                            </div>
                         </div>
                     </div>                              
                     <div class="w-96 h-full p-4">
@@ -109,8 +118,7 @@
                                 </div>
                             </div>
                             
-                            <button class="bg-green-500 w-full py-2 rounded-md text-white font-semibold mt-4">Print Bills</button>
-                                                            
+                            <button class="bg-green-500 w-full py-2 rounded-md text-white font-semibold mt-4">Print Bills</button>                                                           
                             </div>
 
                         
