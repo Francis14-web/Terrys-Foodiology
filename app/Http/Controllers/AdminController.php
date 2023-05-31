@@ -9,13 +9,17 @@ use App\Models\OrderGroup;
 
 class AdminController extends Controller
 {
+    public function message() {
+        return view('admin.message');
+    }
+
     public function dashboard(){
         $year = Carbon::now()->year;
         $month = Carbon::now()->month;
         $statistics = OrderGroup::adminStatistics($year, $month);
         $yearlySales = OrderGroup::getAllTotalPerYear();
         $monthlySales = OrderGroup::getAllTotalPerMonth();
-        $weeklySales = OrderGroup::getAllTotalPerWeek();
+        $weeklySales = [65, 59, 80, 81, 56, 55, 40];
 
         return view('admin.dashboard', [
             'statistics' => $statistics,
