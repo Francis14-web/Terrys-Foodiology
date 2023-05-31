@@ -31,4 +31,11 @@ class AdminController extends Controller
             'users' => $users
         ]);
     }
+
+    public function order(){
+        $orders = OrderGroup::all();
+        return view('admin.order', [
+            'orders' => $orders
+        ]);
+    }
 }

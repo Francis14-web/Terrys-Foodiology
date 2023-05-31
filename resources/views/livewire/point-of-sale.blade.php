@@ -45,37 +45,41 @@
             </div>
         </div>
     </div>
-    <div class="bg-white max-w-xs w-full max-h-screen border-l relative p-5 flex flex-col">
-        <div class=" flex-1">
-            <p class="font-semibold text-base mt-4 mb-2">Orders Details</p>
-            <!-- Border -->
-            <div class="relative flex pb-5 items-center">
-                <div class="flex-grow border-t  border-gray-400"></div>
-            </div>  
-            <!-- Order Section -->
-            <div class="overflow-y-auto max-h-[65vh] scrollbar">
-                <x-canteen.canteen-order-card/>                  
+    @if($userOrder)
+        <div class="bg-white max-w-xs w-full max-h-screen border-l relative p-5 flex flex-col">
+            <div class=" flex-1">
+                <p class="font-semibold text-base mt-4 mb-2">Orders Details</p>
+                <!-- Border -->
+                <div class="relative flex pb-5 items-center">
+                    <div class="flex-grow border-t  border-gray-400"></div>
+                </div>  
+                <!-- Order Section -->
+                <div class="overflow-y-auto max-h-[65vh] scrollbar">
+                    @foreach ($userOrder->orders as $order)
+                        <x-canteen.canteen-order-card :order="$order"/>
+                    @endforeach
+                </div>
             </div>
-        </div>
-        <div>
-            <!-- Border -->
-            <div class="relative flex py-5 items-center">
-                <div class="flex-grow border-t border-dashed border-gray-400"></div>
-            </div>  
-            
-            <div class="text-sm">                            
-                <p class="flex justify-between">Subtotal:<span class="text-green-500">₱ 440.00</span></p>
-                <p class="flex justify-between">Discount:<span class="text-green-500">₱ 0.00</span></p>                            
-            </div>
-            <!-- Border -->
-            <div class="relative flex py-5 items-center">
-                <div class="flex-grow border-t  border-gray-400"></div>
-            </div>  
-            
             <div>
-                <p class="flex justify-between font-bold">Total:<span class="text-green-500 font-bold">₱ 440.00</span></p>
+                <!-- Border -->
+                <div class="relative flex py-5 items-center">
+                    <div class="flex-grow border-t border-dashed border-gray-400"></div>
+                </div>  
+                
+                <div class="text-sm">                            
+                    <p class="flex justify-between">Subtotal:<span class="text-green-500">₱ {{ $userOrder->total_price }}</span></p>
+                    <p class="flex justify-between">Discount:<span class="text-green-500">₱ 0.00</span></p>                            
+                </div>
+                <!-- Border -->
+                <div class="relative flex py-5 items-center">
+                    <div class="flex-grow border-t  border-gray-400"></div>
+                </div>  
+                
+                <div>
+                    <p class="flex justify-between font-bold">Total:<span class="text-green-500 font-bold">₱ {{ $userOrder->total_price }}</span></p>
+                </div>
+                <button class="bg-green-500 py-2 rounded-lg text-white font-medium w-full my-4">Pay now</button>
             </div>
-            <button class="bg-green-500 py-2 rounded-lg text-white font-medium w-full my-4">Pay now</button>
         </div>
-    </div>
+    @endif
 </div>

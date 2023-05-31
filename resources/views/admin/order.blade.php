@@ -15,10 +15,10 @@
 
 @section('content')
     <div class="relative w-screen h-screen">
-        <x-canteen.canteen-sidebar />
+        <x-admin.admin-sidebar />
         <div class="ml-[270px]" id="main-window">
             <x-heading title="Order" />
-            @livewire('canteen-order')
+            @livewire('admin-order')
         </div>
     </div>
 @endsection
