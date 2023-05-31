@@ -31,9 +31,10 @@
     <div class=" bg-green-700 bg-opacity-30 bottom-0 mb-8 h-auto w-[40vw] align-center rounded-b-lg">
     <hr class="border-green-600">
         <div class="flex items-center gap-x-2 justify-center w-full h-auto p-4">
-            <textarea class="w-full p-2 h-10 rounded-full items-center bg-white text-sm text-black" name="message" placeholder="Send a message" rows="2" cols="20"></textarea>
-                <i class='bx bxs-smile bx-xs text-green-500  p-2  cursor-pointer' ></i>
-                <i class='bx bxs-send bx-xs bg-green-500 p-2 rounded-full text-white cursor-pointer' ></i>
+            <textarea class="w-full p-2 h-10 rounded-full items-center bg-white text-sm text-black" name="message" placeholder="Send a message" rows="2" cols="20">
+            </textarea>
+            <i class='bx bxs-smile bx-xs bg-green-500 p-2 rounded-full text-white cursor-pointer' ></i>
+            <i class='bx bxs-send bx-xs bg-green-500 p-2 rounded-full text-white cursor-pointer' ></i>
         </div>
     </div>
 

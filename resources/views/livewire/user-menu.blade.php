@@ -1,15 +1,15 @@
 <div class="p-10">
     <div class="w-full flex justify-between">
-        <div class="fixed mt-0 md:flex gap-5">
-            <button class="{{ ($category) == '' ? 'text-white bg-green-800 py-1 px-3 rounded-full' : 'text-green-800 transition duration-300 ease-in-out hover:bg-green-800 hover:text-white px-2 py-2 rounded-full'}}" wire:click="change('')">All</button>
-            <button class="{{ ($category) == 'Rice Meal' ? 'text-white bg-green-800 py-1 px-3 rounded-full' : 'text-green-800 transition duration-300 ease-in-out hover:bg-green-800 hover:text-white px-2 py-2 rounded-full'}}"wire:click="change('Rice Meal')">Rice Meal</button>
-            <button class="{{ ($category) == 'Pasta' ? 'text-white bg-green-800 py-1 px-3 rounded-full' : 'text-green-800 transition duration-300 ease-in-out hover:bg-green-800 hover:text-white px-2 py-2 rounded-full'}}"wire:click="change('Pasta')">Pasta</button>
-            <button class="{{ ($category) == 'Snacks' ? 'text-white bg-green-800 py-1 px-3 rounded-full' : 'text-green-800 transition duration-300 ease-in-out hover:bg-green-800 hover:text-white px-2 py-2 rounded-full'}}"wire:click="change('Snacks')">Snacks</button>
-            <button class="{{ ($category) == 'Coffee' ? 'text-white bg-green-800 py-1 px-3 rounded-full' : 'text-green-800 transition duration-300 ease-in-out hover:bg-green-800 hover:text-white px-2 py-2 rounded-full'}}"wire:click="change('Coffee')">Coffee</button>
-            <button class="{{ ($category) == 'Drinks' ? 'text-white bg-green-800 py-1 px-3 rounded-full' : 'text-green-800 transition duration-300 ease-in-out hover:bg-green-800 hover:text-white px-2 py-2 rounded-full'}}"wire:click="change('Drinks')">Drinks</button>
-            <button class="{{ ($category) == 'Desserts' ? 'text-white bg-green-800 py-1 px-3 rounded-full' : 'text-green-800 transition duration-300 ease-in-out hover:bg-green-800 hover:text-white px-2 py-2 rounded-full'}}"wire:click="change('Desserts')">Desserts</button>
+        <div class="flex gap-3 ">
+            <button class="{{ ($category) == '' ? 'text-white text-sm bg-green-800 w-24 h-10 rounded-lg' : 'text-green-800 text-sm bg-slate-100 transition duration-300 ease-in-out hover:bg-green-800 hover:text-white w-24 h-10 rounded-lg'}}" wire:click="change('')">All</button>
+            <button class="{{ ($category) == 'Rice Meal' ? 'text-white text-sm bg-green-800 w-24 h-10 rounded-lg' : 'text-green-800 text-sm bg-slate-100 transition duration-300 ease-in-out hover:bg-green-800 hover:text-white w-24 h-10 rounded-lg'}}"wire:click="change('Rice Meal')">Rice Meal</button>
+            <button class="{{ ($category) == 'Pasta' ? 'text-white text-sm bg-green-800 w-24 h-10 rounded-lg' : 'text-green-800 text-sm bg-slate-100 transition duration-300 ease-in-out hover:bg-green-800 hover:text-white w-24 h-10 rounded-lg'}}"wire:click="change('Pasta')">Pasta</button>
+            <button class="{{ ($category) == 'Snacks' ? 'text-white bg-green-800 w-24 h-10 rounded-lg' : 'text-green-800 bg-slate-100 transition duration-300 ease-in-out hover:bg-green-800 hover:text-white w-24 h-10 rounded-lg'}}"wire:click="change('Snacks')">Snacks</button>
+            <button class="{{ ($category) == 'Coffee' ? 'text-white text-sm bg-green-800 w-24 h-10 rounded-lg' : 'text-green-800 text-sm bg-slate-100 transition duration-300 ease-in-out hover:bg-green-800 hover:text-white w-24 h-10 rounded-lg'}}"wire:click="change('Coffee')">Coffee</button>
+            <button class="{{ ($category) == 'Drinks' ? 'text-white text-sm bg-green-800 w-24 h-10 rounded-lg' : 'text-green-800 text-sm bg-slate-100 transition duration-300 ease-in-out hover:bg-green-800 hover:text-white w-24 h-10 rounded-lg'}}"wire:click="change('Drinks')">Drinks</button>
+            <button class="{{ ($category) == 'Desserts' ? 'text-white text-sm bg-green-800 w-24 h-10 rounded-lg' : 'text-green-800 text-sm bg-slate-100 transition duration-300 ease-in-out hover:bg-green-800 hover:text-white w-24 h-10 rounded-lg'}}"wire:click="change('Desserts')">Desserts</button>
         </div>
-        <div class="flex gap-5">
+        <div class="flex gap-5 ">
             <input type="text" wire:model="search" class=" text-sm border-transparent font-semibold bg-slate-100 rounded-3xl py-2 px-4" placeholder="Search">
         </div>
     </div>
