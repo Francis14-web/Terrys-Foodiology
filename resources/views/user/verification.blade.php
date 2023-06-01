@@ -25,13 +25,14 @@
                         <p class="text-base md:text-lg pb-6">Hello <strong>{{ ucfirst(auth()->guard('user')->user()->firstname) . ' ' . auth()->guard('user')->user()->lastname }}</strong>! please upload a valid ID to verify your account.</p>
                         <form action="{{ route('upload') }}" method="POST" enctype="multipart/form-data" class="flex flex-col pb-8">
                             @csrf
-                            <input type="file" name="image" id="image" class="filepond"/>
-                            
+                            <div class="mb-5">
+                                <input type="file" name="image" id="image" class="filepond"/>
+                            </div>
+                            <div class="flex justify-between">
+                                <a href="{{ route('user.logout') }}" class="border px-4 py-2 rounded-lg text-center hover:bg-slate-200 text-green-500">Logout</a>
+                                <button type="submit" class="px-4 py-2 rounded-lg text-center bg-green-500 hover:bg-green-800 text-white">Verify Account</button>
+                            </div>
                         </form>
-                        <div class="flex justify-between">
-                            <a href="{{ route('user.logout') }}" class="border px-4 py-2 rounded-lg text-center hover:bg-slate-200 text-green-500">Logout</a>
-                            <button type="submit" class="px-4 py-2 rounded-lg text-center bg-green-500 hover:bg-green-800 text-white">Verify Account</button>
-                        </div>
                     </div>
                 </div>
                 @endif
