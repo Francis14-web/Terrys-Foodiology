@@ -3,7 +3,7 @@
     'message' => 'message',
 ])
 
-<a href="{{ route('canteen.conversation', $data->id) }}" class="flex w-auto px-4 py-2 mb-4 items-center rounded-lg bg-gray-200 cursor-pointer">
+<a href="{{ route('user.conversation', $data->id) }}" class="flex w-auto px-4 py-2 mb-4 items-center rounded-lg bg-gray-200 cursor-pointer">
     <div class="pr-2 max-w-[50px]">
         <img class="object-cover  rounded-full" src="{{ $data->profile_image }}">
     </div>

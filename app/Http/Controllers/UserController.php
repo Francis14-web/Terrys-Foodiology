@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Food;
+use App\Models\Canteen;
+use App\Models\Admin;
 use App\Models\OrderGroup;
 use App\Models\Verification;
 use App\Events\UserMenuPageEvent;
@@ -25,7 +27,19 @@ class UserController extends Controller
     }
 
     public function message(){
-        return view('user.message');
+        $canteen = Canteen::where('email', 'terry.canteen@gmail.com')->first();
+        $admin = Admin::where('email', 'admin@admin.com')->first();
+        return view('user.message', compact('canteen', 'admin'));
+    }
+
+    public function conversation($user){
+        $canteen = Canteen::where('email', 'terry.canteen@gmail.com')->first();
+        $admin = Admin::where('email', 'admin@admin.com')->first();
+        $target = Canteen::where('id', $user)->first();
+        if ($target == null) {
+            $target = Admin::where('id', $user)->first();
+        }
+        return view('user.conversation', compact('target', 'canteen', 'admin'));
     }
 
     public function restricted(){
