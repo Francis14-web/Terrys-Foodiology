@@ -15,5 +15,6 @@
             <img src="https://mdbcdn.b-cdn.net/img/new/slides/043.webp" class="block w-full"
                 alt="Exotic Fruits" />
         </div>
+        <x-edit-btn />
     </div>
 </div>

@@ -31,6 +31,9 @@ class UserVerificationTable extends Component
 
         $query = $query->where('account_verified', 0);
 
+         // Retrieve only the users with a record in the verifications table
+        $query->whereHas('verifications');
+
         $users = $query->search([
             'firstname',
             'lastname',

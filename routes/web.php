@@ -27,6 +27,7 @@ Route::get('/user/verification', 'App\Http\Controllers\UserController@verificati
 Route::middleware('admin')->group(function () {
     Route::get('/admin/dashboard', 'App\Http\Controllers\AdminController@dashboard')->name('admin.dashboard');
     Route::get('/admin/user', 'App\Http\Controllers\AdminController@user')->name('admin.user');
+    Route::get('/admin/order', 'App\Http\Controllers\AdminController@order')->name('admin.order');
     Route::get('/admin/message', 'App\Http\Controllers\AdminController@message')->name('admin.message');
     Route::get('/admin/profile', 'App\Http\Controllers\AdminController@profile')->name('admin.profile');
     Route::get('/admin/logout', 'App\Http\Controllers\Auth\AdminAuthController@logout')->name('admin.logout');
@@ -41,6 +42,7 @@ Route::middleware('canteen')->group(function () {
     Route::get('/canteen/order', 'App\Http\Controllers\CanteenController@order')->name('canteen.order');
     Route::get('/canteen/message', 'App\Http\Controllers\CanteenController@message')->name('canteen.message');
     Route::get('/canteen/setting', 'App\Http\Controllers\CanteenController@setting')->name('canteen.setting');
+    Route::get('/canteen/message/{user}', 'App\Http\Controllers\CanteenController@conversation')->name('canteen.conversation');
     Route::get('/canteen/logout', 'App\Http\Controllers\Auth\CanteenAuthController@logout')->name('canteen.logout');
 });
 
@@ -53,6 +55,7 @@ Route::middleware(['user', 'is_restricted', 'is_expired', 'is_verified'])->group
     Route::get('/user/settings', 'App\Http\Controllers\UserController@settings')->name('user.settings');
     Route::get('/user/payment-success/{id}', 'App\Http\Controllers\UserController@paymentSuccess')->name('user.payment.success');
     Route::get('/user/message', 'App\Http\Controllers\UserController@message')->name('user.message');
+    Route::get('/user/message/{user}', 'App\Http\Controllers\UserController@conversation')->name('user.conversation');
 });
 
 //File upload controller endpoints
@@ -61,9 +64,7 @@ Route::post('/tmp-upload/process', 'App\Http\Controllers\FileUploadController@pr
 Route::delete('/tmp-upload/revert', 'App\Http\Controllers\FileUploadController@revert')->name('uploads.revert');
 // Route::post('/upload/import', 'App\Http\Controllers\FileUploadController@store')->name('uploads.import');
 
-Route::get('/error', function() {
-    return view('error/error403');
-});
+Route::get('/error', 'App\Http\Controllers\UserController@restricted')->name('user.restricted');
 
 Route::get('/test-payment', 'App\Http\Controllers\UserController@test')->name('user.test');
 Route::get('/failed', 'App\Http\Controllers\UserController@paymentFailed')->name('user.payment.failed');

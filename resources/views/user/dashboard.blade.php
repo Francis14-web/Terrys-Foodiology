@@ -10,16 +10,13 @@
 
 @section('content')
     <div class="relative w-screen h-screen">
-        <div class="fixed top-0 flex items-center pl-8 h-uto w-full bg-[#1e4d2b] z-30 max-w-[762px] md:hidden">
-            <i class='bx bx-menu bx-sm' style="color:#FFFFFF"></i>  
-            <img class="h-auto w-40 " src="/img/landlogo.png">          
-        </div>
+     <x-navbar />
         <x-user.user-sidebar />
         <div class="sm:mt-14 md:ml-[270px] md:mt-5" id="main-window">
             <div class=" flex h-screen w-full scroll-smooth">
                 <div class="flex h-full w-full relative">
                     <div id="menu-side" class="h-full w-full">
-                        <div id="carouselExampleSlidesOnly" class="mx-5 my-12 rounded-md sm:relative lg:mx-5 lg:my-5" data-te-carousel-init data-te-carousel-slide>
+                        <div id="carouselExampleSlidesOnly" class=" my-10 rounded-md sm:relative lg:mx-5 lg:my-5" data-te-carousel-init data-te-carousel-slide>
                             <div class=" relative w-full overflow-hidden after:clear-both after:block after:content-['']">
                                 <div class="relative float-left -mr-[100%] w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none"
                                     data-te-carousel-item data-te-carousel-active>

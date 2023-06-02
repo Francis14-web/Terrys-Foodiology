@@ -2,9 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Canteen;
-use App\Http\Requests\StoreCanteenRequest;
-use App\Http\Requests\UpdateCanteenRequest;
+use App\Models\Admin;
+use App\Models\User;
 use App\Models\OrderGroup;
 use Carbon\Carbon;
 
@@ -22,15 +21,50 @@ class CanteenController extends Controller
         return view('canteen.pos');
     }
 
-    public function message() {
-        return view('canteen.message');
+    public function message()
+    {
+        $conversations = User::whereHas('messagesSent', function ($query) {
+            $query->where([
+                'recipient_id' => auth()->guard('canteen')->user()->id,
+                'recipient_type' => 'App\Models\Canteen',
+            ]);
+        })->orWhereHas('messagesReceived', function ($query) {
+            $query->where([
+                'sender_id' => auth()->guard('canteen')->user()->id,
+                'sender_type' => 'App\Models\Canteen',
+            ]);
+        })->get();
+
+        return view('canteen.message', compact('conversations'));
     }
 
     public function setting() {
         return view('canteen.setting');
     }
 
+    public function conversation($user){
+        $conversations = User::whereHas('messagesSent', function ($query) {
+            $query->where([
+                'recipient_id' => auth()->guard('canteen')->user()->id,
+                'recipient_type' => 'App\Models\Canteen',
+            ]);
+        })->orWhereHas('messagesReceived', function ($query) {
+            $query->where([
+                'sender_id' => auth()->guard('canteen')->user()->id,
+                'sender_type' => 'App\Models\Canteen',
+            ]);
+        })->get();
 
+        $target = User::where('id', $user)->first();
+        $user = User::where('id', $user)->first();
+
+        // $admin = Admin::where('email', 'admin@admin.com')->first();
+        // if ($target == null) {
+        //     $target = Admin::where('id', $user)->first();
+        // }
+        // dd ($target);
+        return view('canteen.conversation', compact('conversations','target', 'user'));
+    }
 
     public function sales() {
         $year = Carbon::now()->year;

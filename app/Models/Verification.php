@@ -13,4 +13,9 @@ class Verification extends Model
         'user_id',
         'id_path',
     ];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }
