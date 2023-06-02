@@ -29,6 +29,7 @@ Route::middleware('admin')->group(function () {
     Route::get('/admin/user', 'App\Http\Controllers\AdminController@user')->name('admin.user');
     Route::get('/admin/order', 'App\Http\Controllers\AdminController@order')->name('admin.order');
     Route::get('/admin/message', 'App\Http\Controllers\AdminController@message')->name('admin.message');
+    Route::get('/admin/profile', 'App\Http\Controllers\AdminController@profile')->name('admin.profile');
     Route::get('/admin/logout', 'App\Http\Controllers\Auth\AdminAuthController@logout')->name('admin.logout');
 });
 
@@ -40,6 +41,7 @@ Route::middleware('canteen')->group(function () {
     Route::get('/canteen/point-of-sale', 'App\Http\Controllers\CanteenController@pos')->name('canteen.pos');
     Route::get('/canteen/order', 'App\Http\Controllers\CanteenController@order')->name('canteen.order');
     Route::get('/canteen/message', 'App\Http\Controllers\CanteenController@message')->name('canteen.message');
+    Route::get('/canteen/setting', 'App\Http\Controllers\CanteenController@setting')->name('canteen.setting');
     Route::get('/canteen/message/{user}', 'App\Http\Controllers\CanteenController@conversation')->name('canteen.conversation');
     Route::get('/canteen/logout', 'App\Http\Controllers\Auth\CanteenAuthController@logout')->name('canteen.logout');
 });

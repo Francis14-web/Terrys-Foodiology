@@ -38,6 +38,10 @@ class CanteenController extends Controller
         return view('canteen.message', compact('conversations'));
     }
 
+    public function setting() {
+        return view('canteen.setting');
+    }
+
     public function conversation($user){
         $conversations = User::whereHas('messagesSent', function ($query) {
             $query->where([

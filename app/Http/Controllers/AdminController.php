@@ -13,6 +13,10 @@ class AdminController extends Controller
         return view('admin.message');
     }
 
+    public function profile() {
+        return view('admin.profile');
+    }
+
     public function dashboard(){
         $year = Carbon::now()->year;
         $month = Carbon::now()->month;

@@ -13,7 +13,7 @@
                 </div>
             </div>
             <div class="ml-10">
-                <x-sidebar-link route="" icon="bx bxs-user-circle" label="Profile" />
+                <x-sidebar-link route="canteen.setting" icon="bx bxs-user-circle" label="Profile" />
                 <x-sidebar-link route="canteen.logout" icon="bx bxs-exit" label="Logout" />
             </div>
         </div>
