@@ -11,13 +11,40 @@
                     <div>
                         <input class="p-2 rounded border text-xs border-gray-300 focus:outline-none focus:ring-2 focus:ring-green-400" type="file" wire:model="photo">
                     </div>
-                    @error('photo') <span class="error">{{ $message }}</span> @enderror
+                    @error('photo') <span class="text-red-500 text-xs mt-2">{{ $message }}</span> @enderror
                     <div class="flex justify-end gap-4 mt-5">
                         <button class="text-white rounded-lg bg-green-500 h-10 w-auto px-8 font-medium" type="submit">Update Photo</button>
                     </div>
                 </form>
             </div>            
         </div>
+    </div>
+
+    <div class="flex sm:flex-row flex-col justify-between sm:w-[1000px] w-full m-4 mx-auto p-8 bg-white shadow rounded-lg">
+        <div>
+            <p class="text-2xl text-black/75 text-left mb-4">Operation Hour</p>
+            <p class="text-black/60">Change the operation hour of your canteen</p>
+        </div>
+        <div class="w-96">
+            <div class="w-full">
+                <label for="opening_time" class="text-sm my-2">Opening hour</label>
+                <input wire:model="opening_time" type="time" name="opening_time" class="flex w-full p-2 rounded border text-xs border-gray-300 focus:outline-none focus:ring-2 focus:ring-green-400"></input>
+                @error('opening_time') <span class="text-red-500 text-xs mt-2">{{ $message }}</span> @enderror
+            </div>
+        
+            <div class="w-full my-4">
+                <label for="closing_time" class="text-sm pb-2">Closing hour</label>
+                <input wire:model="closing_time" type="time" name="closing_time" class="flex w-full mb-4 p-2 rounded border text-xs border-gray-300 focus:outline-none focus:ring-2 focus:ring-green-400"></input>
+                @error('closing_time') <span class="text-red-500 text-xs mt-2">{{ $message }}</span> @enderror
+            </div>
+            <div class="flex justify-end gap-4">
+                <div class="w-full flex justify-end gap-4" >
+                    <button class="text-white rounded-lg bg-green-500 h-10 w-auto px-8 font-medium" wire:click="updateOperatingHours">
+                        Update Time
+                    </button>
+                </div>
+            </div>
+        </div>    
     </div>
     
     
@@ -28,12 +55,10 @@
         </div>
         <div class="flex sm:w-auto w-full flex-col px-4 gap-5">
             <div class="flex flex-col sm:w-96">
+                <x-livewire-input-field value="{{ $display_name }}" label="Display name" type="text" model="display_name"/>
                 <x-livewire-input-field value="{{ $username }}" label="Username" type="text" model="username"/>
-                <x-livewire-input-field value="{{ $firstname }}" label="First name" type="text" model="firstname"/>
-                <x-livewire-input-field value="{{ $lastname }}" label="Last name" type="text" model="lastname"/>
                 <x-livewire-input-field value="{{ $email }}" label="Email" type="email" model="email"/>
                 <x-livewire-input-field value="{{ $phone_number }}" label="Phone Number" type="text" model="phone_number"/>
-                {{-- <x-livewire-input-field value="birthday" label="Birthday" type="date" model="birthday"/> --}}
                 <div class="flex justify-end gap-4">
                     <div class="w-full flex justify-end gap-4" >
                         <button class="text-white rounded-lg bg-green-500 h-10 w-auto px-8 font-medium" wire:click="updateAccount">

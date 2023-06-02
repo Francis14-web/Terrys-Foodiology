@@ -15,11 +15,12 @@ class AdminSeeder extends Seeder
     public function run()
     {
         \App\Models\Admin::create([
-            'firstname' => 'System',
-            'lastname' => 'Admin',
+            'display_name' => 'System Admin',
             'email' => 'admin@admin.com',
+            'phone_number' => '09150471026',
             'username' => 'admin',
             'password' => bcrypt('password'),
+            'profile_image' => '/photos/no-avatar.png',
         ]);
     }
 }

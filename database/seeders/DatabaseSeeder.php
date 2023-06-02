@@ -6,6 +6,7 @@ namespace Database\Seeders;
 
 use App\Models\Canteen;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class DatabaseSeeder extends Seeder
 {
@@ -28,6 +29,12 @@ class DatabaseSeeder extends Seeder
             AdminSeeder::class,
             CanteenSeeder::class,
             FoodSeeder::class,
+        ]);
+
+        // Insert operation hour data
+        DB::table('operation_hour')->insert([
+            'opening_time' => '08:00:00',
+            'closing_time' => '17:00:00',
         ]);
     }
 }

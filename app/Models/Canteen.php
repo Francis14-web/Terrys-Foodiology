@@ -22,6 +22,8 @@ class Canteen extends Authenticatable
      */
     protected $fillable = [
         'email',
+        'display_name',
+        'phone_number',
         'username',
         'profile_image',
         'password',
