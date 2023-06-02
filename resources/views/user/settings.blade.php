@@ -11,11 +11,13 @@
         <x-user.user-sidebar />
         <div class="ml-[270px] h-full" id="main-window">
             <x-heading title="Settings" />
-            <div class="px-10 h-[90vh]">
-                @livewire('tabs', ['tabs' => [
+            <div class="mb-10 px-10 h-[90vh] mx-auto">
+                {{-- @livewire('tabs', ['tabs' => [
                     ['title' => 'Account Settings', 'view' => 'tabs.user.account', 'data' => null],
                     ['title' => 'Password', 'view' => 'tabs.user.password', 'data' => null],
-                ]])
+                ]]) --}}
+                @livewire('user-account-settings')
+
             </div>
             {{-- <div class="flex gap-20">
                 <div class="flex flex-col mt-[30px] fixed h-full max-w-[250px] text-sm">

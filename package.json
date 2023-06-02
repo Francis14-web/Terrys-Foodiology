@@ -16,6 +16,9 @@
         "vite": "^4.0.0"
     },
     "dependencies": {
+        "@alpinejs/focus": "^3.12.2",
+        "@alpinejs/mask": "^3.12.2",
+        "alpinejs": "^3.12.2",
         "chart.js": "^4.3.0",
         "filepond": "^4.30.4",
         "filepond-plugin-image-preview": "^4.6.11"
