@@ -12,8 +12,8 @@
     @forelse ($orders as $order)
         <x-canteen.canteen-order-list-card :order="$order"/>
     @empty
-    <div class="flex flex-col items-center justify-center">
-        <img class="h-52 w-auto" src="/img/deadline.png">   
+    <div class="flex flex-col h-full items-center justify-center">
+        <img class="h-52 w-auto" src="/pictures/deadline.png">   
         <p class="text-xl font-light ">No orders found!</p> 
     </div>
     @endforelse
