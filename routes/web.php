@@ -40,6 +40,7 @@ Route::middleware('canteen')->group(function () {
     Route::get('/canteen/point-of-sale', 'App\Http\Controllers\CanteenController@pos')->name('canteen.pos');
     Route::get('/canteen/order', 'App\Http\Controllers\CanteenController@order')->name('canteen.order');
     Route::get('/canteen/message', 'App\Http\Controllers\CanteenController@message')->name('canteen.message');
+    Route::get('/canteen/message/{user}', 'App\Http\Controllers\CanteenController@conversation')->name('canteen.conversation');
     Route::get('/canteen/logout', 'App\Http\Controllers\Auth\CanteenAuthController@logout')->name('canteen.logout');
 });
 
@@ -52,6 +53,7 @@ Route::middleware(['user', 'is_restricted', 'is_expired', 'is_verified'])->group
     Route::get('/user/settings', 'App\Http\Controllers\UserController@settings')->name('user.settings');
     Route::get('/user/payment-success/{id}', 'App\Http\Controllers\UserController@paymentSuccess')->name('user.payment.success');
     Route::get('/user/message', 'App\Http\Controllers\UserController@message')->name('user.message');
+    Route::get('/user/message/{user}', 'App\Http\Controllers\UserController@conversation')->name('user.conversation');
 });
 
 //File upload controller endpoints

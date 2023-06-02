@@ -16,7 +16,7 @@
                     <x-user-chat-message :data="$canteen"/>                
                     <x-user-chat-message :data="$admin" />                                     
                 </div>
-                {{-- <x-chat-box :target="$target"/> --}}
+                <x-user-chat-box :target="$target->id" :data="$target"/>
             </div>
         </div>
 @endsection
