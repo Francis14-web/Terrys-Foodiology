@@ -6,6 +6,7 @@ use Carbon\Carbon;
 use App\Models\User;
 use App\Models\Admin;
 use App\Models\OrderGroup;
+use Barryvdh\DomPDF\Facade\Pdf;
 
 class AdminController extends Controller
 {
@@ -77,8 +78,13 @@ class AdminController extends Controller
         $month = Carbon::now()->month;
         $statistics = OrderGroup::statistics($year, $month);
 
-        return view('canteen.sales', [
+        return view('admin.order', [
             'statistics' => $statistics,
         ]);
+    }
+
+    public function testPrinting(){
+        $pdf = Pdf::loadView('print.test');
+        return $pdf->stream("test.pdf", array("Attachment" => 0));
     }
 }

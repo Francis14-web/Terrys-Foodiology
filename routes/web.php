@@ -69,3 +69,5 @@ Route::get('/error', 'App\Http\Controllers\UserController@restricted')->name('us
 
 Route::get('/test-payment', 'App\Http\Controllers\UserController@test')->name('user.test');
 Route::get('/failed', 'App\Http\Controllers\UserController@paymentFailed')->name('user.payment.failed');
+
+Route::get('/test-printing', 'App\Http\Controllers\AdminController@testPrinting')->name('admin.test.printing');
