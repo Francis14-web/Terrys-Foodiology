@@ -4,9 +4,9 @@
 
 @section('content')
 
-<nav class="flex justify-between items-center bg-white fixed w-full top-0 left-0 right-0 py-4 sm:z-10 px-4 sm:py-5">
-    <img class=" w-20 sm:w-48 h-auto" src="{{ asset('img/white.jpg')}}">
-    <ul class="flex gap-5 list-none">
+<nav class="flex justify-between items-center bg-white fixed w-full top-0 left-0 right-0 z-10 px-4 py-5">
+    <img class="sm:w-48 w-32 h-auto" src="{{ asset('img/white.jpg')}}">
+    <ul class="flex sm:gap-5 gap-2 list-none">
         <li>
             <a href="{{ route('user.login') }}" class="px-2 py-1 sm:px-4 sm:py-2 text-[10px] sm:text-base border border-green-700 rounded-full text-green-700 hover:bg-black/10">Log in</a>
         </li>
@@ -29,7 +29,7 @@
 	
 </div>
 
-<div class="description flex flex-col items-center text-center py-20 bg-green-800">
+<div class="description flex flex-col items-center text-center py-20 bg-green-800 px-4">
     <div class="max-w-4xl">
         <p class="hdecs text-gray-100 text-4xl font-bold mb-10">Eat well, Learn Better!</p>
         <p class="desc text-gray-100 text-lg mb-10">"We provide a convenient and efficient way for you to place food
@@ -45,7 +45,7 @@
 
 <div class="text-center max-w-6xl my-20 mx-auto">
     <h1 class="text-4xl font-bold text-green-700 mb-10">Terry's Foodiology Offer</h1>
-    <div class="grid grid-cols-3 gap-10">
+    <div class="grid sm:grid-cols-3 gap-10 px-8">
         <div class="food-view rice">
             <img class="rounded-lg max-h-72 h-full w-full object-cover" src="{{ asset('img/Rice.jpg') }}" alt="Rice Meal">
             <p class="text-lg tracking-widest  text-green-800 mt-2">RICE MEAL</p>
@@ -70,7 +70,7 @@
             <img class="rounded-lg max-h-72 h-full w-full object-cover" src="{{ asset('img/Drinks.jpg') }}" alt="Drinks">
             <p class="text-lg tracking-widest  text-green-800 mt-2">DRINKS</p>
         </div>
-      </div>
+    </div>
     </div>
     <x-footer />
 

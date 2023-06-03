@@ -7,7 +7,7 @@
             </button>
         @endforeach
     </div>
-    <div class="h-full">
+    <div class="h-full py-5">
         @foreach($tabs as $index => $tab)
             <div wire:key="{{ $index }}" 
                 class="{{ $activeTab === ($index + 1) ? '' : 'hidden' }} relative h-full">
