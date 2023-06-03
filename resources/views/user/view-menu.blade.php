@@ -9,11 +9,11 @@
 @section('content')
     <div class="relative w-screen h-screen">
         <x-user.user-sidebar />
-        <div class="ml-[270px]" id="main-window">
+        <div class="sm:ml-[270px]" id="main-window">
             <x-heading title="Menu" />
             <div class="px-10">
                 {{ Breadcrumbs::render('user.menu', $food->food_name) }}
-                <div class="h-[80vh] flex justify-center items-center gap-12">
+                <div class="h-[80vh] flex sm:flex-row flex-col justify-center items-center gap-12">
                     <img src="{{ asset('storage/' . $food->food_image ) }}" alt="Uploaded Images Preview" class=" w-72 h-96 object-cover rounded">
                     <div class="h-96 max-w-lg w-full flex flex-col justify-between py-5">
                         <div>
@@ -27,7 +27,7 @@
                                 <p class=" font-semibold text-sm text-black/50">Price</p>
                                 <p class=" text-2xl font-bold">₱ {{$food->food_price}}</p>
                             </div>
-                            <button onclick="Livewire.emit('openModal', 'add-user-order', {{ json_encode([$food->id]) }})" class="bg-green-500 text-white px-5 py-2 rounded-full text-sm">Order Now!</button>
+                            <button onclick="Livewire.emit('openModal', 'add-user-order', {{ json_encode([$food->id]) }})" class="bg-green-500 text-white px-5 py-2 rounded-lg text-sm">Order Now!</button>
                         </div>
                     </div>
                 </div>

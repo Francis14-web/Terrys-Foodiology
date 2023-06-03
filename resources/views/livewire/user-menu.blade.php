@@ -1,16 +1,16 @@
 <div class="p-10">
-    <div class="w-full flex justify-between">
-        <div class="flex gap-5">
-            <button class="{{ ($category) == '' ? 'text-white text-sm bg-green-800 w-24 h-10 rounded-lg' : 'text-green-800 text-sm bg-slate-100 transition duration-300 ease-in-out hover:bg-green-800 hover:text-white w-24 h-10 rounded-lg'}}" wire:click="change('')">All</button>
-            <button class="{{ ($category) == 'Rice Meal' ? 'text-white text-sm bg-green-800 w-24 h-10 rounded-lg' : 'text-green-800 text-sm bg-slate-100 transition duration-300 ease-in-out hover:bg-green-800 hover:text-white w-24 h-10 rounded-lg'}}"wire:click="change('Rice Meal')">Rice Meal</button>
-            <button class="{{ ($category) == 'Pasta' ? 'text-white text-sm bg-green-800 w-24 h-10 rounded-lg' : 'text-green-800 text-sm bg-slate-100 transition duration-300 ease-in-out hover:bg-green-800 hover:text-white w-24 h-10 rounded-lg'}}"wire:click="change('Pasta')">Pasta</button>
-            <button class="{{ ($category) == 'Snacks' ? 'text-white text-sm bg-green-800 w-24 h-10 rounded-lg' : 'text-green-800 text-sm bg-slate-100 transition duration-300 ease-in-out hover:bg-green-800 hover:text-white w-24 h-10 rounded-lg'}}"wire:click="change('Snacks')">Snacks</button>
-            <button class="{{ ($category) == 'Coffee' ? 'text-white text-sm bg-green-800 w-24 h-10 rounded-lg' : 'text-green-800 text-sm bg-slate-100 transition duration-300 ease-in-out hover:bg-green-800 hover:text-white w-24 h-10 rounded-lg'}}"wire:click="change('Coffee')">Coffee</button>
-            <button class="{{ ($category) == 'Drinks' ? 'text-white text-sm bg-green-800 w-24 h-10 rounded-lg' : 'text-green-800 text-sm bg-slate-100 transition duration-300 ease-in-out hover:bg-green-800 hover:text-white w-24 h-10 rounded-lg'}}"wire:click="change('Drinks')">Drinks</button>
-            <button class="{{ ($category) == 'Desserts' ? 'text-white text-sm bg-green-800 w-24 h-10 rounded-lg' : 'text-green-800 text-sm bg-slate-100 transition duration-300 ease-in-out hover:bg-green-800 hover:text-white w-24 h-10 rounded-lg'}}"wire:click="change('Desserts')">Desserts</button>
+    <div class="sm:w-full sm:flex-row flex-col-reverse flex justify-between gap-4">
+        <div class="flex gap-5 overflow-x-scroll sm:overflow-x-hidden">
+            <button class="{{ ($category) == '' ? 'text-white text-sm bg-green-800 w-auto h-10 sm:px-4 px-8 rounded-lg' : 'text-green-800 text-sm bg-slate-100 transition duration-300 ease-in-out hover:bg-green-800 hover:text-white w-auto h-10 sm:px-4 px-8 rounded-lg'}}" wire:click="change('')">All</button>
+            <button class="{{ ($category) == 'Rice Meal' ? 'text-white text-sm bg-green-800 w-auto h-10 px-8 sm:px-4 rounded-lg' : 'text-green-800 text-sm bg-slate-100 transition duration-300 ease-in-out hover:bg-green-800 hover:text-white w-auto h-10 sm:px-4 px-8 rounded-lg'}}"wire:click="change('Rice Meal')">Rice Meal</button>
+            <button class="{{ ($category) == 'Pasta' ? 'text-white text-sm bg-green-800 w-auto h-10 sm:px-4 px-8 rounded-lg' : 'text-green-800 text-sm bg-slate-100 transition duration-300 ease-in-out hover:bg-green-800 hover:text-white w-auto h-10 sm:px-4 px-8 rounded-lg'}}"wire:click="change('Pasta')">Pasta</button>
+            <button class="{{ ($category) == 'Snacks' ? 'text-white text-sm bg-green-800 w-auto h-10 sm:px-4 px-8 rounded-lg' : 'text-green-800 text-sm bg-slate-100 transition duration-300 ease-in-out hover:bg-green-800 hover:text-white w-auto h-10 sm:px-4 px-8 rounded-lg'}}"wire:click="change('Snacks')">Snacks</button>
+            <button class="{{ ($category) == 'Coffee' ? 'text-white text-sm bg-green-800 w-auto h-10 sm:px-4 px-8 rounded-lg' : 'text-green-800 text-sm bg-slate-100 transition duration-300 ease-in-out hover:bg-green-800 hover:text-white w-auto h-10 sm:px-4 px-8 rounded-lg'}}"wire:click="change('Coffee')">Coffee</button>
+            <button class="{{ ($category) == 'Drinks' ? 'text-white text-sm bg-green-800 w-auto h-10 sm:px-4 px-8 rounded-lg' : 'text-green-800 text-sm bg-slate-100 transition duration-300 ease-in-out hover:bg-green-800 hover:text-white w-auto h-10 sm:px-4 px-8 rounded-lg'}}"wire:click="change('Drinks')">Drinks</button>
+            <button class="{{ ($category) == 'Desserts' ? 'text-white text-sm bg-green-800 w-auto h-10 sm:px-4 px-8 rounded-lg' : 'text-green-800 text-sm bg-slate-100 transition duration-300 ease-in-out hover:bg-green-800 hover:text-white w-auto h-10 sm:px-4 px-8 rounded-lg'}}"wire:click="change('Desserts')">Desserts</button>
         </div>
-        <div class="flex gap-5">
-            <input type="text" wire:model="search" class=" text-sm border-transparent font-semibold bg-slate-100 rounded-3xl py-2 px-4" placeholder="Search">
+        <div class="">
+            <input type="text" wire:model="search" class="text-sm border-transparent font-semibold bg-slate-100 rounded-3xl py-2 px-4 " placeholder="Search">
         </div>
     </div>
     <div class="w-full mt-10">

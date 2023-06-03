@@ -51,6 +51,7 @@ Route::middleware(['user', 'is_restricted', 'is_expired', 'is_verified'])->group
     Route::get('/user/order', 'App\Http\Controllers\UserController@order')->name('user.order');
     Route::get('/user/order/{orders}', 'App\Http\Controllers\UserController@viewOrder')->name('user.order.view');
     Route::get('/user/settings', 'App\Http\Controllers\UserController@settings')->name('user.settings');
+    Route::get('/user/restricted', 'App\Http\Controllers\UserController@restricted')->name('user.restricted');
     Route::get('/user/payment-success/{id}', 'App\Http\Controllers\UserController@paymentSuccess')->name('user.payment.success');
     Route::get('/user/message', 'App\Http\Controllers\UserController@message')->name('user.message');
 });

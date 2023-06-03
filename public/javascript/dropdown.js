@@ -1,16 +1,18 @@
-const select = document.getElementById("dropdown");
-const visitor = document.getElementById("visitor-parent");
+const menuBurger = document.getElementById('burger');
+const cancelBtn = document.getElementById('cancel')
+const mobileBar = document.getElementById('mobile-bar')
 
-select.addEventListener("change", () => {
-    const selectIndex = select.selectedIndex; // kinukuha yung index ni select
-    const selectOption = select.options[selectIndex]; // kinukuha yung options ni select gamit yung select index
-
-    if(selectOption.value === "Visitor"){ 
-        visitor.classList.remove('hidden')
-        visitor.classList.add('flex')
-    }
-    else{
-        visitor.classList.add('hidden')
-    }
+menuBurger.addEventListener("click", () => {
+    mobileBar.classList.remove('hidden')
+    cancelBtn.classList.remove('hidden')
+    menuBurger.classList.add('hidden')
+    mobileBar.classList.add('animate-FadeInTop')
 });
+cancelBtn.addEventListener("click", () => {
+    mobileBar.classList.add("hidden");
+    cancelBtn.classList.add("hidden");
+    menuBurger.classList.remove("hidden");
+    mobileBar.classList.add("animate-FadeInDown");
+});
+
 
