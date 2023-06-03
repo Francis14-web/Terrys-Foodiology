@@ -3,7 +3,7 @@
 @section('title', 'User Registration')
 
 @section('js')
-    {{-- <script src="{{ asset('javascript/dropdown.js') }}"></script> --}}
+
 @endsection
 
 @section('content')
@@ -28,6 +28,15 @@
                 <x-input-field label="Until When?" type="date" name="until_when" />
             </div>
             <x-input-field label="Email" type="email" name="email" />
+            <div class="flex w-full justify-center">
+                <div class="w-full flex flex-col mb-4">
+                    <label for="phone_number" class="text-xs mb-1">Mobile Number</label>
+                    <input name="phone_number" x-mask="99999999999" class="p-2 rounded border text-xs border-gray-300 focus:outline-none focus:ring-2 focus:ring-green-400" value="{{ old('phone_number') }}">
+                    @error('phone_number')
+                        <p class="text-xs text-red-500 mt-2">{{$message}}</p>
+                    @enderror
+                </div>
+            </div>
             <x-input-field label="Password" type="password" name="password" />
             <x-input-field label="Confirm Password" type="password" name="password_confirmation" />
             <x-submit-button value="Register" />

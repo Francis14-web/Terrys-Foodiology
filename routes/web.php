@@ -29,6 +29,7 @@ Route::middleware('admin')->group(function () {
     Route::get('/admin/user', 'App\Http\Controllers\AdminController@user')->name('admin.user');
     Route::get('/admin/order', 'App\Http\Controllers\AdminController@order')->name('admin.order');
     Route::get('/admin/message', 'App\Http\Controllers\AdminController@message')->name('admin.message');
+    Route::get('/admin/message/{user}', 'App\Http\Controllers\AdminController@conversation')->name('admin.conversation');
     Route::get('/admin/profile', 'App\Http\Controllers\AdminController@profile')->name('admin.profile');
     Route::get('/admin/logout', 'App\Http\Controllers\Auth\AdminAuthController@logout')->name('admin.logout');
 });
@@ -69,3 +70,5 @@ Route::get('/error', 'App\Http\Controllers\UserController@restricted')->name('us
 
 Route::get('/test-payment', 'App\Http\Controllers\UserController@test')->name('user.test');
 Route::get('/failed', 'App\Http\Controllers\UserController@paymentFailed')->name('user.payment.failed');
+
+Route::get('/test-printing', 'App\Http\Controllers\AdminController@testPrinting')->name('admin.test.printing');

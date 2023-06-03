@@ -15,10 +15,12 @@ class CanteenSeeder extends Seeder
     public function run()
     {
         \App\Models\Canteen::create([
-            'username' => 'Terry\'s Foodiology',
+            'display_name' => 'Terry\'s Foodiology',
+            'username' => 'terrysfoodiology',
             'email' => 'terry.canteen@gmail.com',
+            'phone_number' => '09150471026',
             'password' => bcrypt('password'),
-            'profile_image' => 'https://picsum.photos/200/300',
+            'profile_image' => '/photos/no-avatar.png',
         ]);
     }
 }

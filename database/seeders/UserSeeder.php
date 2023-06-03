@@ -20,9 +20,10 @@ class UserSeeder extends Seeder
             'lastname' => 'Dummy',
             'username' => 'terry1',
             'email' => 'terry.user@gmail.com',
+            'phone_number' => '09150471026',
             'role' => 'Student',
             'password' => bcrypt('password'),
-            'profile_image' => 'https://picsum.photos/200/300',
+            'profile_image' => '/photos/no-avatar.png',  
             'account_verified' => true,
         ]);
 
@@ -31,9 +32,10 @@ class UserSeeder extends Seeder
             'lastname' => 'Terry',
             'username' => 'terry2',
             'email' => 'terry.user2@gmail.com',
+            'phone_number' => '09150471026',
             'role' => 'Student',
             'password' => bcrypt('password'),
-            'profile_image' => 'https://picsum.photos/200/300',
+            'profile_image' => '/photos/no-avatar.png',
             'account_verified' => true,
         ]);
 
@@ -44,7 +46,7 @@ class UserSeeder extends Seeder
             'email' => 'walkInOrder@terrys.live',
             'role' => 'Student',
             'password' => bcrypt('password'),
-            'profile_image' => 'https://picsum.photos/200/300',
+            'profile_image' => '/photos/no-avatar.png',
             'account_verified' => true,
         ]);
     }

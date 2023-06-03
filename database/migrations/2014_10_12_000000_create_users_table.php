@@ -20,8 +20,9 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->string('username')->unique();
             $table->string('role');
+            $table->string('phone_number')->nullable();
             $table->date('until_when')->nullable();
-            $table->string('profile_image')->nullable();
+            $table->string('profile_image')->default('/photos/no-avatar.png');
             $table->string('password');
             $table->boolean('is_restricted')->default(false);
             $table->boolean('account_verified')->default(false);

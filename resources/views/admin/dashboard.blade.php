@@ -118,9 +118,9 @@
                                 </div>
                             </div>
                             
-                            <button class="bg-green-500 w-full py-2 rounded-md text-white font-semibold mt-4">Print Bills</button>                                                           
-                            </div>
-
+                            <a target="_blank" href="{{ route('admin.test.printing') }}" class="bg-green-500 w-full py-2 rounded-md text-white font-semibold mt-4">Print Bills</a>                                                           
+                        </div>
+                        
                         
                     
                     </div>               

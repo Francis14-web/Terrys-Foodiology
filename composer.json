@@ -13,6 +13,7 @@
         "php": "^8.0.2",
         "aldeebhasan/lottie-laravel": "^1.0",
         "asantibanez/livewire-calendar": "dev-master",
+        "barryvdh/laravel-dompdf": "^2.0",
         "beyondcode/laravel-websockets": "^1.14",
         "diglactic/laravel-breadcrumbs": "^8.1",
         "guzzlehttp/guzzle": "^7.2",

@@ -13,12 +13,9 @@
         <x-user.user-sidebar />
         <div class="sm:ml-[270px] h-full" id="main-window">
             <x-heading title="Settings" />
-            <div class="px-10 relative h-[90vh]">
-                @livewire('tabs', ['tabs' => [
-                    ['title' => 'Account Settings', 'view' => 'tabs.user.account', 'data' => null],
-                ]])
+            <div class="mb-10 px-10 h-[90vh] mx-auto">
+                @livewire('user-account-settings')
             </div>
-            
         </div>
     </div>
 @endsection
