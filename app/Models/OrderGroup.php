@@ -60,6 +60,8 @@ class OrderGroup extends Model
 
     public static function getAllSalesMonth($year, $month)
     {
+        $year = $year ?? now()->year;
+        $month = $month ?? now()->month;
         $userId = auth()->guard('canteen')->user()->id;
 
         return self::select('order_groups.*', DB::raw('JSON_ARRAYAGG(orders.quantity) as order_quantity'), DB::raw('JSON_ARRAYAGG(foods.food_name) as food_name'), 'users.firstname', 'users.lastname')
@@ -70,7 +72,6 @@ class OrderGroup extends Model
             ->where(function($query) {
                 $query->whereIn('order_groups.status', ['Success']);
             })
-            ->whereBetween('order_groups.created_at', ["$year-$month-01", "$year-$month-31 23:59:59"])
             ->groupBy('order_groups.id')
             ->get()
             ->groupBy(function ($sale) {
@@ -248,6 +249,5 @@ class OrderGroup extends Model
         return $this->query()
             ->where('customer_id', $customer_id);
     }
-
 }
 

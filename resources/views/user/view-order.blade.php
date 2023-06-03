@@ -9,7 +9,7 @@
 @section('content')
     <div class="relative w-screen h-screen">
         <x-user.user-sidebar />
-        <div class="ml-[270px] h-full" id="main-window">
+        <div class="sm:ml-[270px] h-full" id="main-window">
             <x-heading title="Orders" />
             <div class="px-10">
                 <livewire:user-view-table :data="$data" />

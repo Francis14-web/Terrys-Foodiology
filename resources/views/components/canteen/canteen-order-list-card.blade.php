@@ -3,7 +3,7 @@
 ])
 
 <div class="grid grid-cols-8 auto-rows-fr p-5 my-3 shadow-md rounded bg-white items-center">
-    <p>{{$order->firstname . " " . $order->lastname}}</p>
+    <p>{{$order->firstname . " " . $order->lastname}} {{ $order->role }}</p>
     <p>{{"Order #" . substr($order->id, 0, 8)}}</p>
     <div>
         @foreach (json_decode($order->food_name) as $food)

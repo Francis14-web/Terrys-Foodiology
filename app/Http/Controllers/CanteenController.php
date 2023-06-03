@@ -58,11 +58,6 @@ class CanteenController extends Controller
         $target = User::where('id', $user)->first();
         $user = User::where('id', $user)->first();
 
-        // $admin = Admin::where('email', 'admin@admin.com')->first();
-        // if ($target == null) {
-        //     $target = Admin::where('id', $user)->first();
-        // }
-        // dd ($target);
         return view('canteen.conversation', compact('conversations','target', 'user'));
     }
 

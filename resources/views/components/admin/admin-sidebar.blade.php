@@ -5,7 +5,7 @@
                 <img src="{{ asset('img/TF.jpg')}}" alt="Logo" class="rounded-full my-10 w-28 h-28 mx-auto">
                 <div class="flex flex-col h-full gap-2 ml-10">
                     <x-sidebar-link route="admin.dashboard" icon="bx bxs-home" label="Dashboard" />
-                    <x-sidebar-link route="admin.order" icon="bx bxs-cart-alt" label="Order" />
+                    <x-sidebar-link route="admin.order" icon="bx bxs-credit-card-front" label="Sales" />
                     <x-sidebar-link route="admin.message" icon="bx bxs-message" label="Messages" />
                     <x-sidebar-link route="admin.user" icon="bx bxs-no-entry" label="User Management" />
                 </div>
