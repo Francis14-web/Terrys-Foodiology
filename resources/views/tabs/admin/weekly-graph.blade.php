@@ -1,4 +1,4 @@
-<div style="position: relative; height:250px; width:auto;">
+<div class="shadow" style="position: relative; height:250px; width:auto;">
     {{-- {{ $monthlySales }} --}}
     <canvas class="w-full rounded-md bg-white" id="weeklyChart"></canvas>
 </div>

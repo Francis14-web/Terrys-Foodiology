@@ -249,6 +249,5 @@ class OrderGroup extends Model
         return $this->query()
             ->where('customer_id', $customer_id);
     }
-
 }
 

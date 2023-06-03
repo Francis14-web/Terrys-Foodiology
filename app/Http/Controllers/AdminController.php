@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use Carbon\Carbon;
+use App\Models\Food;
 use App\Models\User;
 use App\Models\Admin;
+use App\Models\Order;
 use App\Models\OrderGroup;
 use Barryvdh\DomPDF\Facade\Pdf;
 
@@ -57,12 +59,17 @@ class AdminController extends Controller
         $yearlySales = OrderGroup::getAllTotalPerYear();
         $monthlySales = OrderGroup::getAllTotalPerMonth();
         $weeklySales = OrderGroup::getAllTotalPerWeek();
+        $topProducts = Order::topFood();
+
+        $totalStockForProducts = Food::select('food_name', 'food_stock')->where('food_stock', '>', '0')->orderBy('food_stock', 'desc')->get();
 
         return view('admin.dashboard', [
             'statistics' => $statistics,
             'yearlySales' => $yearlySales,
             'monthlySales' => $monthlySales,
-            'weeklySales' => $weeklySales
+            'weeklySales' => $weeklySales,
+            'totalStockForProducts' => $totalStockForProducts,
+            'topProducts' => $topProducts,
         ]);
     }
 
