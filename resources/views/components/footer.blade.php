@@ -1,5 +1,5 @@
 <div>
-    <footer class="py-4">
+    <footer class="py-4 mx-4">
         <div class="container mx-auto flex justify-between items-center">
             <img class="w-16" src="{{ asset('img/TF.jpg') }}" alt="Logo">			
             <div class="terms flex">

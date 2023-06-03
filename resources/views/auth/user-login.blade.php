@@ -26,7 +26,7 @@
                 
             </form>
             <div class="min-w-sm w-full h-full hidden md:block bg-green-200">
-                <img src="{{asset('pictures/user-login-3.svg')}}" alt="sign-in" class="w-full h-full animate-FadeIn object-contain ">
+                <img src="{{asset('pictures/user-login-3.svg')}}" alt="sign-in" class="w-full h-full animate-FadeInTop object-contain ">
             </div>
         </div>
     </div>
