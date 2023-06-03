@@ -54,7 +54,7 @@ class AddUserOrder extends ModalComponent
 
     public function addOrderToCart()
     {
-        if ($this->orderQuantity < 0) {
+        if ($this->orderQuantity <= 0) {
             return;
         } else if ($this->orderQuantity > $this->food->food_stock) {
             return;

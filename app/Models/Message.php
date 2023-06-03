@@ -11,10 +11,19 @@ class Message extends Model
 
     protected $fillable = [
         'sender_id',
-        'receiver_id',
-        'message',
-        'created_at',
-        'updated_at',
-        'seen',
+        'sender_type',
+        'recipient_id',
+        'recipient_type',
+        'content',
     ];
+
+    public function sender()
+    {
+        return $this->morphTo('sender');
+    }
+
+    public function recipient()
+    {
+        return $this->morphTo('recipient');
+    }
 }

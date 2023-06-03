@@ -23,7 +23,7 @@
             labels: allDaysOfWeek(),
             datasets: [
                 {
-                    label: "Monthly Income",
+                    label: "Weekly Income",
                     data: {{ json_encode($data) }},                   
                     backgroundColor: (context) =>{
                         const bgColor =  [

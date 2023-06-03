@@ -18,7 +18,11 @@
         {{-- <x-canteen.canteen-order-list-card :order="$order"/> --}}
         <x-admin.admin-verification-list :user="$user"/>
     @empty
-        No Users found
+    <div class="flex flex-col h-full items-center justify-center">
+        <img class="h-52 w-auto" src="/img/no-user.png">   
+        <p class="text-xl font-light">No Users found</p> 
+    </div>
+      
     @endforelse
     <div class="my-10 mx-auto flex justify-end">
         {{ $users->links() }}

@@ -3,19 +3,17 @@
 namespace App\View\Components;
 
 use Closure;
-use App\Models\Admin;
-use App\Models\Canteen;
-use Illuminate\View\Component;
 use Illuminate\Contracts\View\View;
+use Illuminate\View\Component;
 
-class ChatBox extends Component
+class edit-btn extends Component
 {
-
     /**
      * Create a new component instance.
      */
     public function __construct()
     {
+        //
     }
 
     /**
@@ -23,6 +21,6 @@ class ChatBox extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components.chat-box');
+        return view('components.edit-btn');
     }
 }

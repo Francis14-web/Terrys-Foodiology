@@ -70,7 +70,7 @@ class OrderGroup extends Model
             ->where(function($query) {
                 $query->whereIn('order_groups.status', ['Success']);
             })
-            ->whereBetween('order_groups.created_at', ["$year-$month-01", "$year-$month-31"])
+            ->whereBetween('order_groups.created_at', ["$year-$month-01", "$year-$month-31 23:59:59"])
             ->groupBy('order_groups.id')
             ->get()
             ->groupBy(function ($sale) {

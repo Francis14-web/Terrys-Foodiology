@@ -4,28 +4,29 @@
 
 @section('content')
 
-<nav class="flex justify-between items-center bg-white fixed w-full top-0 left-0 right-0 z-10 sm:px-4 px-2 py-5">    
+<nav class="flex justify-between items-center bg-white fixed w-full top-0 left-0 right-0 z-10 px-4 py-5">
     <img class="sm:w-48 w-32 h-auto" src="{{ asset('img/white.jpg')}}">
-    <ul class="sm:gap-5 gap-2 list-none flex ">
+    <ul class="flex sm:gap-5 gap-2 list-none">
         <li>
-            <a href="{{ route('user.login') }}" class="sm:text-base text-xs px-4 py-2 border border-green-700 rounded-full text-green-700 hover:bg-black/10">Log in</a>
+            <a href="{{ route('user.login') }}" class="px-2 py-1 sm:px-4 sm:py-2 text-[10px] sm:text-base border border-green-700 rounded-full text-green-700 hover:bg-black/10">Log in</a>
         </li>
         <li>
-            <a href="{{ route('user.register') }}" class="sm:text-base text-xs px-4 py-2 bg-green-700 border border-green-700 rounded-full text-white hover:bg-green-900">Sign up</a>
+            <a href="{{ route('user.register') }}" class="px-2 py-1 sm:px-4 sm:py-2 text-[10px] sm:text-base bg-green-700 border border-green-700 rounded-full text-white hover:bg-green-900">Sign up</a>
         </li>
     </ul>
 </nav>
-
-
-<div id="seclanding" class="flex justify-evenly items-center h-screen ">
+<div id="seclanding" class="flex flex-col mx-4 mt-16 md:flex md:flex-row justify-evenly items-center h-screen">
 	<div class="context px-8 max-w-xl">
-		<h1 class="text-green-800 text-6xl font-bold leading-none">Fresh food for <br>growing minds!</h1>
+		<h1 class="text-green-800 text-2xl sm:text-6xl font-bold leading-none mt-4 md:mt-24 p-2">Fresh food for <br>growing minds!</h1>
 
-		<p class="text-gray-800 text-md my-8">We provide a convenient and efficient way for you to place food orders and reserve
+		<p class="hidden md:block text-gray-800 text-md my-8">We provide a convenient and efficient way for you to place food orders and reserve
 			food at our canteen.</p>
-		<a href="#" class="viewbut border border-green-800 text-green-800 py-2 px-6 text-sm font-bold rounded-full hover:bg-green-800 hover:text-white">View Offer </a>
+		<a href="#" class="hidden md:block viewbut border border-green-800 text-green-800 py-2 px-6 text-sm font-bold rounded-full hover:bg-green-800 hover:text-white w-fit">View Offer </a>
 	</div>
-	<img src="{{ asset('img/logo.png')}}" alt="Hero Image" class="sm:block hidden">
+    <div class="w-auto">
+        <img src="{{ asset('img/logo.png')}}" alt="Hero Image">
+    </div>
+	
 </div>
 
 <div class="description flex flex-col items-center text-center py-20 bg-green-800 px-4">

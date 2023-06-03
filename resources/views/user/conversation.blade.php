@@ -4,22 +4,19 @@
 
 @section('js')
     <script src="{{ asset('javascript/sidebar.js') }}"></script>
-    <script src="{{ asset('javascript/dropdown.js') }}"></script>
 @endsection
-@section('content')
 
+@section('content')
     <div class="relative w-screen h-screen">
-        <x-user.mobile-navbar/>
         <x-user.user-sidebar />
-        <div class="sm:ml-[270px] h-full" id="main-window">
+        <div class="ml-[270px] h-full" id="main-window">
             <x-heading title="Messages" />           
             <div class="mt-4 flex justify-center sm:w-full gap-4">
                 <div class="overflow-x-hidden sm:w-[22vw] w-full justify-center ">
                     <x-user-chat-message :data="$canteen"/>                
                     <x-user-chat-message :data="$admin" />                                     
                 </div>
-                {{-- <x-chat-box :target="$target"/> --}}
+                <x-user-chat-box :target="$target->id" :data="$target"/>
             </div>
         </div>
-
 @endsection

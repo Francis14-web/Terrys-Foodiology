@@ -23,6 +23,11 @@ class Order extends Model
         return $this->belongsTo(OrderGroup::class);
     }
 
+    public function orderGroup()
+    {
+        return $this->belongsTo(OrderGroup::class);
+    }
+
     public function food()
     {
         return $this->belongsTo(Food::class);

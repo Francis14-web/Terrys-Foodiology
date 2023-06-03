@@ -26,9 +26,13 @@ class Statistics extends Component
         'renderMonth' => 'renderStatistics',
     ];
 
-    public function updateMonthlyOrders(){
-        return OrderGroup::whereMonth('created_at', $this->month)->count();
+    public function updateMonthlyOrders()
+    {
+        return OrderGroup::where('status', 'Success')
+            ->whereMonth('created_at', $this->month)
+            ->count();
     }
+
 
     public function renderStatistics($data){
         $this->month = $data['month'];

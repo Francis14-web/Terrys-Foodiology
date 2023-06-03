@@ -17,7 +17,7 @@
                         <x-chat-message :data="$conversation"/>  
                     @endforeach                                
                 </div>
-                {{-- <x-chat-box :target="$target"/> --}}
+                <x-chat-box :target="$target->id" :data="$target"/>
             </div>
         </div>
 @endsection

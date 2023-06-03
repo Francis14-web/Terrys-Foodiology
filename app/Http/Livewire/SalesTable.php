@@ -32,7 +32,8 @@ class SalesTable extends DataTableComponent
         $end = Carbon::createFromFormat('Y-m-d H:i:s', $this->date . ' 23:59:59');
 
         return OrderGroup::query()
-            ->whereBetween('created_at', [$start, $end]);
+            ->whereBetween('created_at', [$start, $end])
+            ->where('status', 'Success');
     }
 
     public function columns(): array

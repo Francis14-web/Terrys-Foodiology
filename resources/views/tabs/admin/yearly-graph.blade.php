@@ -21,7 +21,7 @@
             labels: allMonths(),
             datasets: [
                 {
-                    label: "Monthly Income",
+                    label: "Annual Income",
                     data: {{ json_encode($data) }},
                     backgroundColor: (context) =>{
                         const bgColor =  [
