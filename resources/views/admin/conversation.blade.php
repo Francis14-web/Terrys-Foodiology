@@ -1,7 +1,6 @@
 @extends('../layouts.main')
 
-@section('title', 'Admin Message')
-
+@section('title', 'Admin Messages')
 
 @section('js')
     <script src="{{ asset('javascript/sidebar.js') }}"></script>
@@ -18,7 +17,7 @@
                         <x-admin-chat-message :data="$conversation"/>  
                     @endforeach                                
                 </div>
-                {{-- <x-chat-box :target="$target"/> --}}
+                <x-admin-chat-box :target="$target->id" :data="$target"/>
             </div>
         </div>
 @endsection

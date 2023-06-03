@@ -67,7 +67,7 @@ class UserMenu extends Component
                 'food_name',
             ], $this->search)
             ->orderBy('food_name')
-            ->paginate(10);
+            ->paginate(30);
 
         return view('livewire.user-menu', [
             'foods' => $foods,

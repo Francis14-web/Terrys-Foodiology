@@ -2,13 +2,14 @@
 
 namespace App\Http\Livewire;
 
-use App\Events\UserMessagingEvent;
-use App\Models\Message;
 use App\Models\User;
 use App\Models\Admin;
+use App\Models\Message;
 use Livewire\Component;
+use App\Events\UserMessagingEvent;
+use App\Events\AdminMessagingEvent;
 
-class CanteenMessaging extends Component
+class AdminMessaging extends Component
 {
     public $target;
     public $message = "";
@@ -18,7 +19,7 @@ class CanteenMessaging extends Component
     public function getListeners()
     {
         return [
-            "echo:canteen-messaging-" . auth()->guard('canteen')->user()->id . ",CanteenMessagingEvent" => 'updateConversation',
+            "echo:admin-messaging-" . auth()->guard('admin')->user()->id . ",AdminMessagingEvent" => 'updateConversation',
         ];
     }
 
@@ -32,8 +33,8 @@ class CanteenMessaging extends Component
         }
 
         Message::create([
-            'sender_id' => auth()->guard('canteen')->user()->id,
-            'sender_type' => 'App\Models\Canteen',
+            'sender_id' => auth()->guard('admin')->user()->id,
+            'sender_type' => 'App\Models\Admin',
             'recipient_id' => $this->target->id,
             'recipient_type' => $this->type,
             'content' => $this->message,
@@ -48,12 +49,12 @@ class CanteenMessaging extends Component
 
     public function render()
     {
-        $user = auth()->guard('canteen')->user();
+        $user = auth()->guard('admin')->user();
 
         $messages = Message::where(function ($query) use ($user) {
             $query->where([
                 'sender_id' => $user->id,
-                'sender_type' => 'App\Models\Canteen',
+                'sender_type' => 'App\Models\Admin',
                 'recipient_id' => $this->target->id,
                 'recipient_type' => $this->type,
             ])->orWhere(function ($query) use ($user) {
@@ -61,7 +62,7 @@ class CanteenMessaging extends Component
                     'sender_id' => $this->target->id,
                     'sender_type' => $this->type,
                     'recipient_id' => $user->id,
-                    'recipient_type' => 'App\Models\Canteen',
+                    'recipient_type' => 'App\Models\Admin',
                 ]);
             });
         })
@@ -70,7 +71,7 @@ class CanteenMessaging extends Component
         ->get()
         ->reverse();
 
-        return view('livewire.canteen-messaging', [
+        return view('livewire.admin-messaging', [
             'messages' => $messages,
         ]);
     }

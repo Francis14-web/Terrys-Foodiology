@@ -48,10 +48,10 @@ class CanteenSalesCalendar extends LivewireCalendar
 
     public function events() : Collection
     {
-        $year = Carbon::now()->year;
-        $month = Carbon::now()->month;
-        return OrderGroup::getAllSalesMonth($year, $month);
+        $year = $this->year;
+        $month =$this->month;
         // must return a Laravel collection
+        return OrderGroup::getAllSalesMonth($year, $month);
     }
 
     public function onEventClick($eventId)

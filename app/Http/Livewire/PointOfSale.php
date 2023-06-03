@@ -23,6 +23,10 @@ class PointOfSale extends Component
 
     public User $user;
 
+    protected $listeners = [
+        'transactionCompleted' => 'render'
+    ];
+
     public function updatedSearch()
     {
         $this->resetPage();
@@ -54,12 +58,25 @@ class PointOfSale extends Component
             ]);
             
             $order->delete();
+            
+            $userOrder = OrderGroup::where('customer_id', $this->user->id)
+                ->where('status', 'Cart')
+                ->whereDate('created_at', now()->format('Y-m-d'))
+                ->first();
 
+            if ($userOrder->orders->count() == 0) {
+                $userOrder->delete();
+            }
         }
     }
 
     public function increaseQuantity(Order $order)
     {
+
+        if ($order->quantity >= $order->food->food_stock){
+            return;
+        }
+
         $order->update([
             'quantity' => $order->quantity + 1,
             'price' => $order->price + $order->food->food_price,
@@ -86,6 +103,9 @@ class PointOfSale extends Component
                                 ->first();
             if ($order) {
                 // Order already exists, so increment quantity and price
+                if ($order->quantity >= $order->food->food_stock){
+                    return;
+                }
                 $order->update([
                     'quantity' => $order->quantity + $this->orderQuantity,
                     'price' => $order->price + ($this->orderQuantity * $food->food_price),

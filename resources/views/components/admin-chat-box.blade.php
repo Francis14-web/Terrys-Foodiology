@@ -9,10 +9,10 @@
             <img class="object-cover  rounded-full" src="{{ asset('storage/' . $data->profile_image) }}">
         </div>
         <div class="flex flex-col justify-center">
-            <h1 class="text-md font-medium">{{$data->display_name}}</h1>                                        
+            <h1 class="text-md font-medium">{{$data->firstname . " " . $data->lastname}}</h1>                                        
             {{-- <p class="text-xs">Active</p> --}}
         </div>
     </div>
     <hr class="border-green-600">
-    @livewire('user-messaging', ['target' => $target])
+    @livewire('admin-messaging', ['target' => $target])
 </div

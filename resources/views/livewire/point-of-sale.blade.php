@@ -78,7 +78,7 @@
                 <div>
                     <p class="flex justify-between font-bold">Total:<span class="text-green-500 font-bold">₱ {{ $userOrder->total_price }}</span></p>
                 </div>
-                <button class="bg-green-500 py-2 rounded-lg text-white font-medium w-full my-4">Pay now</button>
+                <button wire:click="$emit('openModal', 'point-of-sale-pay-button', {{ json_encode([$userOrder->id]) }})" class="bg-green-500 py-2 rounded-lg text-white font-medium w-full my-4">Pay now</button>
             </div>
         </div>
     @endif

@@ -9,8 +9,40 @@ use App\Models\OrderGroup;
 
 class AdminController extends Controller
 {
-    public function message() {
-        return view('admin.message');
+    public function message()
+    {
+        $conversations = User::whereHas('messagesSent', function ($query) {
+            $query->where([
+                'recipient_id' => auth()->guard('admin')->user()->id,
+                'recipient_type' => 'App\Models\Admin',
+            ]);
+        })->orWhereHas('messagesReceived', function ($query) {
+            $query->where([
+                'sender_id' => auth()->guard('admin')->user()->id,
+                'sender_type' => 'App\Models\Admin',
+            ]);
+        })->get();
+
+        return view('admin.message', compact('conversations'));
+    }
+
+    public function conversation($user){
+        $conversations = User::whereHas('messagesSent', function ($query) {
+            $query->where([
+                'recipient_id' => auth()->guard('admin')->user()->id,
+                'recipient_type' => 'App\Models\Admin',
+            ]);
+        })->orWhereHas('messagesReceived', function ($query) {
+            $query->where([
+                'sender_id' => auth()->guard('admin')->user()->id,
+                'sender_type' => 'App\Models\Admin',
+            ]);
+        })->get();
+
+        $target = User::where('id', $user)->first();
+        $user = User::where('id', $user)->first();
+
+        return view('admin.conversation', compact('conversations','target', 'user'));
     }
 
     public function profile() {
@@ -41,9 +73,12 @@ class AdminController extends Controller
     }
 
     public function order(){
-        $orders = OrderGroup::all();
-        return view('admin.order', [
-            'orders' => $orders
+        $year = Carbon::now()->year;
+        $month = Carbon::now()->month;
+        $statistics = OrderGroup::statistics($year, $month);
+
+        return view('canteen.sales', [
+            'statistics' => $statistics,
         ]);
     }
 }
