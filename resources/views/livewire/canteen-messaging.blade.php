@@ -1,6 +1,6 @@
 <div>
-    <div class="flex flex-col w-[40vw] h-full">
-        <div class="flex flex-col px-4 bg-green-700 bg-opacity-30 h-full ">
+    <div class="flex flex-col w-[40vw] h-[700px] bg-green-700 bg-opacity-30 overflow-y-auto">
+        <div class="flex flex-col px-4">
             @foreach ($messages as $text)
                 @if ($text->sender_id == Auth::guard('canteen')->user()->id)
                     {{-- Sender --}}

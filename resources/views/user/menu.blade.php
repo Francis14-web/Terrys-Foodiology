@@ -12,7 +12,7 @@
         <x-user.mobile-navbar/>
         <x-user.user-sidebar />
         <div class="sm:ml-[270px]" id="main-window">
-            <x-heading title="Menu" />
+            <x-user.user-heading  title="Menu" />
             @livewire('user-menu')
         </div>
     </div>

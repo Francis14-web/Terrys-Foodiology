@@ -17,7 +17,7 @@
         @if ($foods->count() == 0)
             <p class="text-center">No food found</p>
         @else 
-            <div class="grid place-self-center gap-1 md:gap-4 grid-cols-2 md:grid-cols-3 max-w-[1019px] lg:grid-cols-4 xl:grid-cols-5">
+            <div class="grid place-self-center gap-4 sm:gap-8 grid-cols-2  w-full  sm:grid-cols-5">
                 @foreach ($foods as $food)
                     @php
                         $imagePaths = explode(',', $food->food_image);

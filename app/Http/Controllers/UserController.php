@@ -91,7 +91,6 @@ class UserController extends Controller
             $food = Food::find($userOrder->food_id);
             $food->food_stock = $food->food_stock - $userOrder->quantity;
             event(new CanteenMenuPageEvent($food->owner_id)); // Broadcast the new menu to canteen
-            event(new CanteenOrderPageEvent($food->owner_id));
             $food->save();
         }
 
