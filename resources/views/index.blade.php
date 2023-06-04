@@ -15,15 +15,15 @@
         </li>
     </ul>
 </nav>
-<div id="seclanding" class="flex flex-col mx-4 mt-16 md:flex md:flex-row justify-evenly items-center h-screen">
+<div id="seclanding" class="flex flex-col mx-4  sm:flex sm:flex-row justify-evenly items-center h-screen">
 	<div class="context px-8 max-w-xl">
-		<h1 class="text-green-800 text-2xl sm:text-6xl font-bold leading-none mt-4 md:mt-24 p-2">Fresh food for <br>growing minds!</h1>
+		<h1 class="text-green-800 text-6xl font-bold leading-none mt-4 sm:mt-24 p-2">Fresh food for <br>growing minds!</h1>
 
-		<p class="hidden md:block text-gray-800 text-md my-8">We provide a convenient and efficient way for you to place food orders and reserve
+		<p class="block text-gray-800 text-md my-8">We provide a convenient and efficient way for you to place food orders and reserve
 			food at our canteen.</p>
-		<a href="#" class="hidden md:block viewbut border border-green-800 text-green-800 py-2 px-6 text-sm font-bold rounded-full hover:bg-green-800 hover:text-white w-fit">View Offer </a>
+		<a href="#" class="block viewbut border border-green-800 text-green-800 py-2 px-6 text-sm font-bold rounded-full hover:bg-green-800 hover:text-white w-fit">View Offer </a>
 	</div>
-    <div class="w-auto">
+    <div class="w-auto sm:block hidden">
         <img src="{{ asset('img/logo.png')}}" alt="Hero Image">
     </div>
 	
