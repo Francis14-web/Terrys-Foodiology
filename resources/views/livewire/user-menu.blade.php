@@ -13,9 +13,12 @@
             <input type="text" wire:model="search" class="text-sm border-transparent font-semibold bg-slate-100 rounded-3xl py-2 px-4 " placeholder="Search">
         </div>
     </div>
-    <div class="w-full mt-10 flex flex-col">
+    <div class="w-full h-screen mt-10 flex flex-col">
         @if ($foods->count() == 0)
-            <p class="text-center">No food found</p>
+        <div class="self-center h-auto w-2/5 md:h-auto md:w-1/3 ">
+            <img src="/img/nofood.png" class="h-full w-full object-contain">
+        </div>
+            <p class="text-center text-xl sm:text-3xl font-semibold">No food found</p>
         @else 
             <div class="grid place-self-center gap-4 sm:gap-8 grid-cols-2  w-full  sm:grid-cols-5">
                 @foreach ($foods as $food)
