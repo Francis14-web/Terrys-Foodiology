@@ -62,7 +62,7 @@ class OrderGroup extends Model
     {
         $year = $year ?? now()->year;
         $month = $month ?? now()->month;
-        $userId = auth()->guard('canteen')->user()->id;
+        $userId = Canteen::where('email', 'terry.canteen@gmail.com')->first()->id;
 
         return self::select('order_groups.*', DB::raw('JSON_ARRAYAGG(orders.quantity) as order_quantity'), DB::raw('JSON_ARRAYAGG(foods.food_name) as food_name'), 'users.firstname', 'users.lastname')
             ->leftJoin('orders', 'orders.order_group_id', '=', 'order_groups.id')
