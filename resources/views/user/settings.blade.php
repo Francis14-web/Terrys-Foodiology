@@ -12,7 +12,7 @@
         <x-user.mobile-navbar/>
         <x-user.user-sidebar />
         <div class="sm:ml-[270px] h-full" id="main-window">
-            <x-heading title="Settings" />
+            <x-user.user-heading  title="Settings" />
             <div class="mb-10 px-10 h-[90vh] mx-auto">
                 @livewire('user-account-settings')
             </div>

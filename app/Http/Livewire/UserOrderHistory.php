@@ -46,11 +46,14 @@ class UserOrderHistory extends DataTableComponent
                         return true;
                     return false;
                 })
-                ->sortable(),
+                ->sortable()
+                ->collapseOnTablet(),
             Column::make("Ordered at", "created_at")
-                ->sortable(),
+                ->sortable()
+                ->collapseOnTablet(),
             Column::make("Paid at", "updated_at")
-                ->sortable(),
+                ->sortable()
+                ->collapseOnTablet(),
         ];
     }
 }

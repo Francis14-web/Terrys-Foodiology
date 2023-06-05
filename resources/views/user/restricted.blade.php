@@ -11,7 +11,7 @@
     <div class="relative w-screen h-screen overflow-y-hidden ">
         <x-user.user-sidebar />
         <div class="ml-[270px] h-full" id="main-window">
-            <x-heading title="Restricted Account" />           
+            <x-user.user-heading  title="Restricted Account" />           
         
             <div class="flex flex-col items-center w-full">
                 <img src="/img/account-res.jpg" class="h-[700px] w-[700px]">

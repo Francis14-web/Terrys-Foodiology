@@ -10,7 +10,7 @@
     <div class="relative w-screen h-screen">
         <x-user.user-sidebar />
         <div class="sm:ml-[270px] h-full" id="main-window">
-            <x-heading title="Orders" />
+            <x-user.user-heading title="Orders" />
             <div class="px-10">
                 <livewire:user-view-table :data="$data" />
             </div>

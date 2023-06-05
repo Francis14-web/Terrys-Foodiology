@@ -4,13 +4,16 @@
 
 @section('js')
     <script src="{{ asset('javascript/sidebar.js') }}"></script>
+    <script src="{{ asset('javascript/dropdown.js') }}"></script>
+
 @endsection
 
 @section('content')
     <div class="relative w-screen h-screen">
+        <x-user.mobile-navbar/>
         <x-user.user-sidebar />
         <div class="sm:ml-[270px]" id="main-window">
-            <x-heading title="Menu" />
+            <x-user.user-heading title="Menu" />
             <div class="px-10">
                 {{ Breadcrumbs::render('user.menu', $food->food_name) }}
                 <div class="h-[80vh] flex sm:flex-row flex-col justify-center items-center gap-12">

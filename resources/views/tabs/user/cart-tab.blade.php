@@ -7,7 +7,7 @@
     @else
         <div class="h-5/6 flex justify-center items-center flex-col gap-10">
             <div>
-                <img class=" max-w-sm opacity-50 p-4" src="{{ asset('img/empty2.png') }}" alt="No Food">
+                <img class="max-w-sm opacity-50 p-4" src="{{ asset('img/empty2.png') }}" alt="No Food">
                 <p class="text-center text-gray-500">
                     No data found
                 </p>
