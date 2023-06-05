@@ -21,18 +21,18 @@
                             <div class=" relative w-full overflow-hidden after:clear-both after:block after:content-['']">
                                 <div class="relative float-left -mr-[100%] w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none"
                                     data-te-carousel-item data-te-carousel-active>
-                                    <img src="https://mdbcdn.b-cdn.net/img/new/slides/041.webp" class="w-full rounded-none h-72 sm:block sm:w-full sm:h-auto sm:rounded-md"
-                                        alt="Wild Landscape" />
+                                    <img src="/img/Wel.jpg" class="w-full rounded-none h-72 sm:block sm:w-full sm:h-auto sm:rounded-md"
+                                        alt="Welcome, Dear Customer" />
+                                </div>
+                                <div class="relative float-left -mr-[100%] hidden h-fit w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none"
+                                    data-te-carousel-item>
+                                    <img src="/img/bestcoffee.jpg" class="w-full rounded-none h-72 sm:block sm:w-full sm:h-auto sm:rounded-md"
+                                        alt="Best Seller Coffee" />
                                 </div>
                                 <div class="relative float-left -mr-[100%] hidden w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none"
                                     data-te-carousel-item>
-                                    <img src="https://mdbcdn.b-cdn.net/img/new/slides/042.webp" class="w-full rounded-none h-72 sm:block sm:w-full sm:h-auto sm:rounded-md"
-                                        alt="Camera" />
-                                </div>
-                                <div class="relative float-left -mr-[100%] hidden w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none"
-                                    data-te-carousel-item>
-                                    <img src="https://mdbcdn.b-cdn.net/img/new/slides/043.webp" class=" w-full rounded-none h-72 sm:block sm:w-full sm:h-auto sm:rounded-md"
-                                        alt="Exotic Fruits" />
+                                    <img src="/img/bestfood.jpg" class=" w-full rounded-none h-72 sm:block sm:w-full sm:h-auto sm:rounded-md"
+                                        alt="Best Seller Food" />
                                 </div>
                             </div>
                         </div>
