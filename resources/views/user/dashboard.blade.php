@@ -10,8 +10,8 @@
 @endsection
 
 @section('content')
-    <div class="relative w-screen h-screen">    
-        <x-user.mobile-navbar/>   
+    <div div class="relative w-screen h-screen">    
+        <x-user.mobile-navbar/>
         <x-user.user-sidebar />
         <div class="sm:ml-[270px]" id="main-window">
             <div class=" flex h-screen w-full scroll-smooth">

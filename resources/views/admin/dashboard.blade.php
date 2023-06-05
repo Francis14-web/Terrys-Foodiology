@@ -46,7 +46,7 @@
                             </div>              
                         </div>
                         <div class="w-full bg-white mt-4 p-4 rounded-md shadow">
-                            <p class=" text-green-600 font-bold">Top product</p>
+                            <p class=" text-green-600 font-bold text-lg mb-4">Top product</p>
                             <div class="grid grid-cols-3 justify-between w-full">
                                 <p class="font-semibold text-gray-400">Name</p>
                                 <p class=" text-center font-semibold text-gray-400">Total Sold</p>
@@ -69,7 +69,7 @@
                             <div class="flex flex-col gap-4 ">                   
                                 <div class=" flex flex-col gap-3 p-4 bg-white rounded-lg shadow">                           
                                     <div class="flex gap-3">
-                                        <p class="text-lg font-medium">Total Product: <span class="text-lg text-green-500 font-medium">14</span></p>
+                                        <p class="text-lg font-medium">Total Product Sold: <span class="text-lg text-green-500 font-medium">14</span></p>
                                     </div>
 
                                     <div class="flex flex-col w-full">
