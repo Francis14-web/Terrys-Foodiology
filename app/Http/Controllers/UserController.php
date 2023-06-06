@@ -118,7 +118,7 @@ class UserController extends Controller
             ->ripple(true)
             ->addWarning('Payment failed!');
 
-        return redirect()->route('user.order');
+        return redirect()->route('user.menu');
     }
 
     public function verification(){

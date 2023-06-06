@@ -16,7 +16,7 @@
             -
             </button>
             <div class="relative flex items-stretch focus-within:z-10">
-                <input type="text" wire:change="inputQuantity('{{$food->id}}', $event.target.value)" name="quantity" id="quantity" class="text-center focus:ring-indigo-500 focus:border-indigo-500 block w-full rounded-none pl-3 sm:text-sm border-gray-300" value="{{$food->food_stock}}">
+                <input x-mask="999" type="text" wire:change="inputQuantity('{{$food->id}}', $event.target.value)" name="quantity" id="quantity" class="text-center focus:ring-indigo-500 focus:border-indigo-500 block w-full rounded-none pl-3 sm:text-sm border-gray-300" value="{{$food->food_stock}}">
             </div>
             <button wire:click="increaseQuantity('{{$food->id}}')" type="button" class="ml-1 relative inline-flex items-center space-x-2 px-4 py-2 border border-gray-300 text-sm font-medium rounded-r-md text-gray-700 bg-gray-50 hover:bg-gray-100 focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500">
             +

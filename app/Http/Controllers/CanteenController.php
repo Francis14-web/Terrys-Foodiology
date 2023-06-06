@@ -76,6 +76,11 @@ class CanteenController extends Controller
         return view('canteen.sales-overview', compact('formattedDate', 'date'));
     }
 
+    public function viewOrder(OrderGroup $orders) {
+        $data = $orders->id;
+        return view('canteen.view-order', compact('data'));
+    }
+
     public function order() {
         $user = auth()->guard('canteen')->user()->id;
         return view('canteen.order', compact('user'));

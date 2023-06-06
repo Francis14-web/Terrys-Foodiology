@@ -23,10 +23,7 @@
         <div class="sm:ml-[270px] h-full" id="main-window">
             <x-user.user-heading title="Orders" />
             <div class="px-10">
-                @livewire('tabs', ['tabs' => [
-                    ['title' => 'Cart', 'view' => 'tabs.user.cart-tab', 'data' => $order],
-                    ['title' => 'Order History', 'view' => 'tabs.user.history-tab', 'data' => null],
-                ]])
+                @include('tabs.user.history-tab')
             </div>
         </div>
     </div>

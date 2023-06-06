@@ -6,10 +6,13 @@ use Livewire\Component;
 use App\Models\OrderGroup;
 use Carbon\Carbon;
 use Luigel\Paymongo\Facades\Paymongo;
-use PhpParser\Node\Stmt\Switch_;
 
 class PaymentBar extends Component
 {
+    public $listeners = [
+        'refreshCart' => 'update',
+    ];
+
     public OrderGroup $order;
     public $pickup_time = 0;
     public $order_time = [
@@ -21,6 +24,11 @@ class PaymentBar extends Component
         '3 hours from now',
         '4 hours from now',
     ];
+
+    public function update()
+    {
+        $this->render();
+    }
 
     public function timeMap($time){
         switch($time){
