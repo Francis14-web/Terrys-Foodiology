@@ -3,6 +3,7 @@
 namespace App\Http\Livewire;
 
 use App\Models\Order;
+use App\Models\OrderGroup;
 use Illuminate\Database\Eloquent\Builder;
 use Rappasoft\LaravelLivewireTables\Views\Column;
 use Rappasoft\LaravelLivewireTables\DataTableComponent;
@@ -24,11 +25,31 @@ class OrderTable extends DataTableComponent
 
     public function deleteSelected()
     {
-        foreach($this->getSelected() as $item)
-        {
-            Order::find($item)->delete();
+        if (empty($this->getSelected())) {
+            return;
         }
 
+        $orderId = ''; // Initialize $orderId
+
+        foreach($this->getSelected() as $item)
+        {
+            $order = Order::find($item);
+
+            // Check if $order exists
+            if ($order) {
+                $orderGroup = $order->orderGroup; // Retrieve the order_group relationship
+                
+                // Check if $orderGroup exists
+                if ($orderGroup) {
+                    $orderGroup->total_price -= $order->price; // Subtract the order price from total_price
+                    $orderGroup->save(); // Save the updated total_price
+                }
+                $orderId = $order->order_group_id; // Set $orderId to the current order_group_id
+                $order->delete();
+            }
+        }
+        dd ($orderId);
+        $this->emit('refreshCart');
     }
 
     public function builder(): Builder

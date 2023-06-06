@@ -69,7 +69,7 @@
                             <div class="flex flex-col gap-4 mb-4">                   
                                 <div class=" flex flex-col gap-3 p-4 h-72 overflow-y-auto bg-white rounded-lg shadow">                           
                                     <div class="flex gap-3">
-                                        <p class="text-lg font-medium">Total Product Sold: <span class="text-lg text-green-500 font-medium">14</span></p>
+                                        <p class="text-lg font-medium">Total Product Sold: <span class="text-lg text-green-500 font-medium">{{$totalProductSold}}</span></p>
                                     </div>
 
                                     <div class="flex flex-col w-full">

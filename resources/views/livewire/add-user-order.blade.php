@@ -18,7 +18,14 @@
         <p class="text-black/50 font-bold text-sm">Total</p>
         <p>
             <span class="font-bold text-sm">₱</span>
-            <span class="font-bold text-lg">{{$food->food_price * $orderQuantity}}</span>
+            <span class="font-bold text-lg">
+                {{
+                    is_numeric($food->food_price)
+                    ? (is_numeric($orderQuantity) ? floatval($food->food_price) * $orderQuantity : "0")
+                    : "0"
+                }}
+            </span>
+            
         </p>
     </div>
     

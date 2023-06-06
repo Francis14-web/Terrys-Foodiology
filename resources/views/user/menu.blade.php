@@ -8,13 +8,9 @@
 @endsection
 
 @section('content')
-    <div class="relative w-screen h-screen">
+    <div class="relative w-screen min-h-screen">
         <x-user.mobile-navbar/>
         <x-user.user-sidebar />
-        <div class="sm:ml-[270px]" id="main-window">
-            <x-user.user-heading  title="Menu" />
-            @livewire('user-menu')        
-        </div>
-        </div>
+        @livewire('point-of-sale-user')
     </div>
 @endsection

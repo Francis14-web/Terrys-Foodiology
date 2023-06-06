@@ -23,7 +23,7 @@ return new class extends Migration
             $table->double('food_price');
             $table->integer('food_stock');
             $table->string('food_category'); 
-            $table->double('food_rating');           
+            $table->double('food_rating');
             $table->timestamps();
         });
 
@@ -48,6 +48,7 @@ return new class extends Migration
             $table->uuid('order_group_id');
             $table->foreign('order_group_id')->references('id')->on('order_groups')->onDelete('cascade');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

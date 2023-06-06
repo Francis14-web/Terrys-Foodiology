@@ -24,8 +24,9 @@ class UserOrderHistory extends DataTableComponent
         return OrderGroup::query()
             ->where([
                 'customer_id' => auth()->guard('user')->user()->id,
-                'status' => 'Serving',
-            ]);
+                // 'status' => 'Serving',
+            ])
+            ->orderBy('created_at', 'desc');
     }
 
     public function columns(): array
@@ -39,13 +40,7 @@ class UserOrderHistory extends DataTableComponent
                 ]),
             Column::make("Total price", "total_price")
                 ->sortable(),
-            BooleanColumn::make("Status", "status")
-                ->view('partials.status-widget')
-                ->setCallback(function(string $value, $row) {
-                    if ($value == 'Serving')
-                        return true;
-                    return false;
-                })
+            Column::make("Status", "status")
                 ->sortable()
                 ->collapseOnTablet(),
             Column::make("Ordered at", "created_at")
