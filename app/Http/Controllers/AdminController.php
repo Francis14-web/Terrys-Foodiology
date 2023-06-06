@@ -61,8 +61,14 @@ class AdminController extends Controller
         $weeklySales = OrderGroup::getAllTotalPerWeek();
         $topProducts = Order::topFood();
 
-        $totalStockForProducts = Food::select('food_name', 'food_stock')->where('food_stock', '>', '0')->orderBy('food_stock', 'desc')->get();
+        $totalProductSold = Order::topFood()->sum('total_quantity');
+        $totalProductLeft = Food::left();
+        //  dd ($totalProductLeft);
 
+        $totalStockForProducts = Food::select('food_name', 'food_stock')->where('food_stock', '>', '0')->orderBy('food_stock', 'desc')->get();
+        
+
+        
         return view('admin.dashboard', [
             'statistics' => $statistics,
             'yearlySales' => $yearlySales,
@@ -70,6 +76,8 @@ class AdminController extends Controller
             'weeklySales' => $weeklySales,
             'totalStockForProducts' => $totalStockForProducts,
             'topProducts' => $topProducts,
+            'totalProductSold' => $totalProductSold,
+            'totalProductLeft' => $totalProductLeft,
         ]);
     }
 
