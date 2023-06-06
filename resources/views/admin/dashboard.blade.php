@@ -7,10 +7,9 @@
 @endsection
 
 @section('content')
-
     <div class="relative w-screen h-screen">
-        <x-admin.admin-sidebar />
-        <div class="ml-[270px] h-full " id="main-window">   
+        <div class="ml-[270px] h-full " id="main-window">  
+                <x-admin.admin-sidebar/> 
             <x-heading title="Dashboard" />
                 <div class="flex justify-center">                 
                     <div class="flex p-4 flex-col">
@@ -67,12 +66,33 @@
                     </div>                              
                     <div class="w-96 h-full p-4 mb-8">
                             <div class="flex flex-col gap-4 mb-4">                   
-                                <div class=" flex flex-col gap-3 p-4 h-72 overflow-y-auto bg-white rounded-lg shadow">                           
+                                <div class=" flex flex-col gap-3 p-4 h-72 overflow-y-auto bg-white rounded-lg shadow">
+                                                
                                     <div class="flex gap-3">
-                                        <p class="text-lg font-medium">Total Product Sold: <span class="text-lg text-green-500 font-medium">{{$totalProductSold}}</span></p>
+                                        <p class="text-lg font-medium">Total Product Sold: <span class="text-lg text-green-500 font-medium">{{ $totalProductSold }}</span></p>
+                                    </div>
+                                        
+                                    <div class="flex flex-col w-full">                       
+                                        @foreach ($topProducts as $product)
+                                            <div class="flex justify-between">
+                                                <p>{{ $product->food_name }}</p>
+                                                <p class=" text-center">x{{ $product->total_quantity }}</p>
+                                            </div>
+                                            
+                                        @endforeach
+                                        
+                                    </div>
+                                </div>
+
+                                <div class="flex flex-col gap-3 p-4 h-72 overflow-y-auto bg-white rounded-lg shadow">
+                                    <div class="flex gap-3">                               
+                                        <p class="text-lg font-medium">Product Left: <span class="text-lg text-green-500 font-medium">{{ $totalProductLeft }}</span></p>
                                     </div>
 
+                        
+
                                     <div class="flex flex-col w-full">
+                                        
                                         @foreach ($totalStockForProducts as $product)
                                             <div class="flex justify-between">
                                                 <p>{{ $product->food_name }}</p>
@@ -80,40 +100,7 @@
                                             </div>
                                         @endforeach
                                     </div>
-                                </div>
 
-                                <div class="flex flex-col gap-3 p-4 h-72 overflow-y-auto bg-white rounded-lg shadow">
-                                    <div class="flex gap-3">                               
-                                        <p class="text-lg font-medium">Product Left: <span class="text-lg text-green-500 font-medium">24</span></p>
-                                    </div>
-
-                                    <div class="flex flex-col w-full ">
-                                        <div class="flex justify-between">
-                                            <p>Adobo Rice Meal</p>
-                                            <p>x3</p>
-                                        </div>
-                                        <div class="flex justify-between">
-                                            <p>Burger with Cheese</p>
-                                            <p>x6</p>
-                                        </div>
-                                        <div class="flex justify-between">
-                                            <p>Coffee</p>
-                                            <p>x2</p>
-                                        </div>
-                                        <div class="flex justify-between">
-                                            <p>Pasta</p>
-                                            <p>x3</p>
-                                        </div>
-                                        <div class="flex justify-between">
-                                            <p>Menudo Rice</p>
-                                            <p>x6</p>
-                                        </div>
-                                        <div class="flex justify-between">
-                                            <p>Sinigang Rice</p>
-                                            <p>x4</p>
-                                        </div>
-                                        
-                                    </div>
                                 </div>
                             </div>
                             
