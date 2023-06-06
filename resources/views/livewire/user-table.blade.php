@@ -8,10 +8,11 @@
             <input type="text" wire:model="search" class="p-3 rounded-full" placeholder="Search...">
         </div>
     </div>
-    <div class="grid grid-cols-4 auto-rows-fr p-5 my-3 shadow-md rounded bg-neutral-200">
+    <div class="grid grid-cols-5 auto-rows-fr p-5 my-3 shadow-md rounded bg-neutral-200">
         <p>Customer Name</p>
         <p>Email</p>
         <p>Username</p>
+        <p>Role</p>
         <p>Restricted</p>
     </div>
     @forelse ($users as $user)

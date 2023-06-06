@@ -18,7 +18,7 @@ class OrderTable extends DataTableComponent
     public function configure(): void
     {
         $this->setPrimaryKey('id')
-             ->setBulkActionsEnabled();
+            ->setBulkActionsEnabled();
 
     }
 
