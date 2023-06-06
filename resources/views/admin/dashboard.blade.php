@@ -45,7 +45,7 @@
                                 ]])  
                             </div>              
                         </div>
-                        <div class="w-full bg-white mt-4 p-4 rounded-md shadow">
+                        <div class="w-full overflow-y-auto bg-white mt-4 p-4 rounded-md shadow">
                             <p class=" text-green-600 font-bold text-lg mb-4">Top product</p>
                             <div class="grid grid-cols-3 justify-between w-full">
                                 <p class="font-semibold text-gray-400">Name</p>
@@ -65,9 +65,9 @@
                         {{-- <livewire:top-product-table /> --}}
 
                     </div>                              
-                    <div class="w-96 h-full p-4">
-                            <div class="flex flex-col gap-4 ">                   
-                                <div class=" flex flex-col gap-3 p-4 bg-white rounded-lg shadow">                           
+                    <div class="w-96 h-full p-4 mb-8">
+                            <div class="flex flex-col gap-4 mb-4">                   
+                                <div class=" flex flex-col gap-3 p-4 h-72 overflow-y-auto bg-white rounded-lg shadow">                           
                                     <div class="flex gap-3">
                                         <p class="text-lg font-medium">Total Product Sold: <span class="text-lg text-green-500 font-medium">14</span></p>
                                     </div>
@@ -80,10 +80,9 @@
                                             </div>
                                         @endforeach
                                     </div>
-
                                 </div>
 
-                                <div class="flex flex-col gap-3 p-4 bg-white rounded-lg shadow">
+                                <div class="flex flex-col gap-3 p-4 h-72 overflow-y-auto bg-white rounded-lg shadow">
                                     <div class="flex gap-3">                               
                                         <p class="text-lg font-medium">Product Left: <span class="text-lg text-green-500 font-medium">24</span></p>
                                     </div>
@@ -113,11 +112,12 @@
                                             <p>Sinigang Rice</p>
                                             <p>x4</p>
                                         </div>
+                                        
                                     </div>
                                 </div>
                             </div>
                             
-                            <a target="_blank" href="{{ route('admin.test.printing') }}" class="bg-green-500 w-full py-2 rounded-md text-white font-semibold mt-4">Print Bills</a>                                                           
+                            <a target="_blank" href="{{ route('admin.test.printing') }}" class="bg-green-500 w-full my-4 py-2 px-4 rounded-md text-white font-semibold mt-4">Print Bills</a>                                                           
                         </div>
                         
                         

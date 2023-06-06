@@ -52,6 +52,7 @@ Route::middleware(['user', 'is_restricted', 'is_expired', 'is_verified'])->group
     Route::get('/user/menu', 'App\Http\Controllers\UserController@menu')->name('user.menu');
     Route::get('/user/menu/{food}', 'App\Http\Controllers\UserController@viewMenu')->name('user.menu.view');
     Route::get('/user/order', 'App\Http\Controllers\UserController@order')->name('user.order');
+    Route::get('/user/promo', 'App\Http\Controllers\UserController@promo')->name('user.promo');
     Route::get('/user/order/{orders}', 'App\Http\Controllers\UserController@viewOrder')->name('user.order.view');
     Route::get('/user/settings', 'App\Http\Controllers\UserController@settings')->name('user.settings');
     Route::get('/user/restricted', 'App\Http\Controllers\UserController@restricted')->name('user.restricted');

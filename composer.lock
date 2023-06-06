@@ -3466,16 +3466,16 @@
         },
         {
             "name": "php-flasher/flasher",
-            "version": "v1.13.1",
+            "version": "v1.14.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/php-flasher/flasher.git",
-                "reference": "4f75f1d3638522db2531e76a27e96075432011c8"
+                "reference": "46e8754421477475a5228aa45329da171c3e1a54"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-flasher/flasher/zipball/4f75f1d3638522db2531e76a27e96075432011c8",
-                "reference": "4f75f1d3638522db2531e76a27e96075432011c8",
+                "url": "https://api.github.com/repos/php-flasher/flasher/zipball/46e8754421477475a5228aa45329da171c3e1a54",
+                "reference": "46e8754421477475a5228aa45329da171c3e1a54",
                 "shasum": ""
             },
             "require": {
@@ -3528,7 +3528,7 @@
                 "yoeunes"
             ],
             "support": {
-                "source": "https://github.com/php-flasher/flasher/tree/v1.13.1"
+                "source": "https://github.com/php-flasher/flasher/tree/v1.14.1"
             },
             "funding": [
                 {
@@ -3552,20 +3552,20 @@
                     "type": "patreon"
                 }
             ],
-            "time": "2023-01-15T22:24:30+00:00"
+            "time": "2023-06-04T01:11:12+00:00"
         },
         {
             "name": "php-flasher/flasher-laravel",
-            "version": "v1.13.1",
+            "version": "v1.14.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/php-flasher/flasher-laravel.git",
-                "reference": "19a6f8402747cc99350e1f340a851fa47fda4929"
+                "reference": "d50d47b403e8da8ab485a9e3667891f5143441af"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-flasher/flasher-laravel/zipball/19a6f8402747cc99350e1f340a851fa47fda4929",
-                "reference": "19a6f8402747cc99350e1f340a851fa47fda4929",
+                "url": "https://api.github.com/repos/php-flasher/flasher-laravel/zipball/d50d47b403e8da8ab485a9e3667891f5143441af",
+                "reference": "d50d47b403e8da8ab485a9e3667891f5143441af",
                 "shasum": ""
             },
             "require": {
@@ -3627,7 +3627,7 @@
                 "yoeunes"
             ],
             "support": {
-                "source": "https://github.com/php-flasher/flasher-laravel/tree/v1.13.1"
+                "source": "https://github.com/php-flasher/flasher-laravel/tree/v1.14.1"
             },
             "funding": [
                 {
@@ -3651,20 +3651,20 @@
                     "type": "patreon"
                 }
             ],
-            "time": "2023-01-21T13:25:13+00:00"
+            "time": "2023-01-30T00:29:35+00:00"
         },
         {
             "name": "php-flasher/flasher-notyf",
-            "version": "v1.13.1",
+            "version": "v1.14.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/php-flasher/flasher-notyf.git",
-                "reference": "74f55ecce15285b82a0f330d272e9983f65ceff3"
+                "reference": "40a5b914c370a09a7f92347b5570a9605e17caf9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-flasher/flasher-notyf/zipball/74f55ecce15285b82a0f330d272e9983f65ceff3",
-                "reference": "74f55ecce15285b82a0f330d272e9983f65ceff3",
+                "url": "https://api.github.com/repos/php-flasher/flasher-notyf/zipball/40a5b914c370a09a7f92347b5570a9605e17caf9",
+                "reference": "40a5b914c370a09a7f92347b5570a9605e17caf9",
                 "shasum": ""
             },
             "require": {
@@ -3718,7 +3718,7 @@
                 "yoeunes"
             ],
             "support": {
-                "source": "https://github.com/php-flasher/flasher-notyf/tree/v1.13.1"
+                "source": "https://github.com/php-flasher/flasher-notyf/tree/v1.14.1"
             },
             "funding": [
                 {
@@ -3742,20 +3742,20 @@
                     "type": "patreon"
                 }
             ],
-            "time": "2023-01-15T22:30:32+00:00"
+            "time": "2023-01-21T15:16:28+00:00"
         },
         {
             "name": "php-flasher/flasher-notyf-laravel",
-            "version": "v1.13.1",
+            "version": "v1.14.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/php-flasher/flasher-notyf-laravel.git",
-                "reference": "dbdff5ad7256a8ec8b7aecdf84089fac6f435743"
+                "reference": "abd412d71296aa1dde696f399f10624bb0dd9d42"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-flasher/flasher-notyf-laravel/zipball/dbdff5ad7256a8ec8b7aecdf84089fac6f435743",
-                "reference": "dbdff5ad7256a8ec8b7aecdf84089fac6f435743",
+                "url": "https://api.github.com/repos/php-flasher/flasher-notyf-laravel/zipball/abd412d71296aa1dde696f399f10624bb0dd9d42",
+                "reference": "abd412d71296aa1dde696f399f10624bb0dd9d42",
                 "shasum": ""
             },
             "require": {
@@ -3817,7 +3817,7 @@
                 "yoeunes"
             ],
             "support": {
-                "source": "https://github.com/php-flasher/flasher-notyf-laravel/tree/v1.13.1"
+                "source": "https://github.com/php-flasher/flasher-notyf-laravel/tree/v1.14.1"
             },
             "funding": [
                 {
@@ -3841,7 +3841,7 @@
                     "type": "patreon"
                 }
             ],
-            "time": "2023-01-15T22:30:32+00:00"
+            "time": "2023-01-21T15:16:28+00:00"
         },
         {
             "name": "phpoption/phpoption",
@@ -8764,28 +8764,30 @@
         },
         {
             "name": "mockery/mockery",
-            "version": "1.5.1",
+            "version": "1.6.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/mockery/mockery.git",
-                "reference": "e92dcc83d5a51851baf5f5591d32cb2b16e3684e"
+                "reference": "a8dd186f07ea667c1e3abd2176bfab0ab161ea94"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mockery/mockery/zipball/e92dcc83d5a51851baf5f5591d32cb2b16e3684e",
-                "reference": "e92dcc83d5a51851baf5f5591d32cb2b16e3684e",
+                "url": "https://api.github.com/repos/mockery/mockery/zipball/a8dd186f07ea667c1e3abd2176bfab0ab161ea94",
+                "reference": "a8dd186f07ea667c1e3abd2176bfab0ab161ea94",
                 "shasum": ""
             },
             "require": {
                 "hamcrest/hamcrest-php": "^2.0.1",
                 "lib-pcre": ">=7.0",
-                "php": "^7.3 || ^8.0"
+                "php": "^7.4 || ^8.0"
             },
             "conflict": {
                 "phpunit/phpunit": "<8.0"
             },
             "require-dev": {
-                "phpunit/phpunit": "^8.5 || ^9.3"
+                "phpunit/phpunit": "^8.5 || ^9.3",
+                "psalm/plugin-phpunit": "^0.18",
+                "vimeo/psalm": "^5.9"
             },
             "type": "library",
             "extra": {
@@ -8794,8 +8796,12 @@
                 }
             },
             "autoload": {
-                "psr-0": {
-                    "Mockery": "library/"
+                "files": [
+                    "library/helpers.php",
+                    "library/Mockery.php"
+                ],
+                "psr-4": {
+                    "Mockery\\": "library/Mockery"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -8830,9 +8836,9 @@
             ],
             "support": {
                 "issues": "https://github.com/mockery/mockery/issues",
-                "source": "https://github.com/mockery/mockery/tree/1.5.1"
+                "source": "https://github.com/mockery/mockery/tree/1.6.1"
             },
-            "time": "2022-09-07T15:32:08+00:00"
+            "time": "2023-06-05T13:59:03+00:00"
         },
         {
             "name": "myclabs/deep-copy",

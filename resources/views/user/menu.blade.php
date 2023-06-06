@@ -13,7 +13,8 @@
         <x-user.user-sidebar />
         <div class="sm:ml-[270px]" id="main-window">
             <x-user.user-heading  title="Menu" />
-            @livewire('user-menu')
+            @livewire('user-menu')        
+        </div>
         </div>
     </div>
 @endsection

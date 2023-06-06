@@ -35,7 +35,7 @@ class CanteenOrder extends Component
         switch($value)
         {
             case 'Success':
-                $content = 'Your ' . $orderID . ' has been completed. You can pick-up your order now.';
+                $content = 'Your ' . $orderID . ' has been completed. You can pick-up your order now.' . $order;
                 break;
             case 'Failed':
                 $content = 'Your ' . $orderID . ' has been rejected. Please try again.';
