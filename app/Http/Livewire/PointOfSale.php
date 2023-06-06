@@ -91,6 +91,9 @@ class PointOfSale extends Component
 
     public function addToOrder(Food $food){
 
+        if ($food->food_stock <= 0){
+            return;
+        }
         
         $check = OrderGroup::where('customer_id', $this->user->id)
             ->where('status', 'Cart')

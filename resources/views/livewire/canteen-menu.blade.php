@@ -16,9 +16,9 @@
     </div>
     <div class="w-full mt-10 flex flex-col ">
         @if ($foods->count() == 0)
-        <div class="self-center h-auto w-2/5 md:h-auto md:w-1/3 ">
-            <img src="/img/nofood.png" class="h-full w-full object-contain">
-        </div>
+            <div class="self-center h-auto w-2/5 md:h-auto md:w-1/3 ">
+                <img src="/img/nofood.png" class="h-full w-full object-contain">
+            </div>
             <p class="text-center text-xl sm:text-3xl font-semibold">No food found</p>
         @else 
             <div class="grid gap-5 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5">

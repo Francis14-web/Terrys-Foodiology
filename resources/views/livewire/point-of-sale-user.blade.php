@@ -30,15 +30,24 @@
                     </div>
                 </div>        
                 <!---card -->
-                <div class="grid gap-5 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 mt-4">
-                    @foreach ($foods as $food)
-                        @php
-                            $imagePaths = explode(',', $food->food_image);
-                            $lastImagePath = end($imagePaths);
-                        @endphp
-                        <x-canteen.canteen-poscard :food="$food" :lastImagePath="$lastImagePath"/>
-                    @endforeach
-                </div>
+                @if ($foods->count() > 0)
+                    <div class="grid gap-5 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 mt-4">
+                        @foreach ($foods as $food)
+                            @php
+                                $imagePaths = explode(',', $food->food_image);
+                                $lastImagePath = end($imagePaths);
+                            @endphp
+                            <x-canteen.canteen-poscard :food="$food" :lastImagePath="$lastImagePath"/>
+                        @endforeach
+                    </div>
+                @else
+                    <div class="w-full mt-10 flex flex-col ">
+                        <div class="self-center h-auto w-2/5 md:h-auto md:w-1/3 ">
+                            <img src="/img/nofood.png" class="h-full w-full object-contain">
+                        </div>
+                        <p class="text-center text-xl sm:text-3xl font-semibold">No food found</p>
+                    </div>
+                @endif
                 <div class="mt-10 w-full flex justify-end">
                     {{ $foods->links() }}
                 </div>
@@ -68,7 +77,7 @@
                 
                 <div class="text-sm">                            
                     <p class="flex justify-between">Subtotal:<span class="text-green-500">₱ {{ $userOrder->total_price }}</span></p>
-                    <p class="flex justify-between">Discount:<span class="text-green-500">₱ 0.00</span></p>                            
+                    {{-- <p class="flex justify-between">Discount:<span class="text-green-500">₱ 0.00</span></p>                             --}}
                 </div>
                 <!-- Border -->
                 <div class="relative flex py-5 items-center">

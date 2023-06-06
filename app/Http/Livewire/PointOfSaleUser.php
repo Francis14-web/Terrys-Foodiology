@@ -129,7 +129,7 @@ class PointOfSaleUser extends Component
     }
 
     public function addToOrder(Food $food){
-        if ($food->food_stock == 0){
+        if ($food->food_stock <= 0){
             return;
         }
         
