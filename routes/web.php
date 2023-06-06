@@ -33,6 +33,7 @@ Route::middleware('admin')->group(function () {
     Route::get('/admin/message', 'App\Http\Controllers\AdminController@message')->name('admin.message');
     Route::get('/admin/message/{user}', 'App\Http\Controllers\AdminController@conversation')->name('admin.conversation');
     Route::get('/admin/profile', 'App\Http\Controllers\AdminController@profile')->name('admin.profile');
+    Route::get('/admin/printing-daily', 'App\Http\Controllers\AdminController@printingDaily')->name('admin.printing.daily');
     Route::get('/admin/logout', 'App\Http\Controllers\Auth\AdminAuthController@logout')->name('admin.logout');
 });
 
@@ -58,8 +59,12 @@ Route::middleware(['user', 'is_restricted', 'is_expired', 'is_verified'])->group
     Route::get('/user/promo', 'App\Http\Controllers\UserController@promo')->name('user.promo');
     Route::get('/user/order/{orders}', 'App\Http\Controllers\UserController@viewOrder')->name('user.order.view');
     Route::get('/user/settings', 'App\Http\Controllers\UserController@settings')->name('user.settings');
+    Route::get('/user/expired', 'App\Http\Controllers\UserController@expired')->name('user.expired');
     Route::get('/user/restricted', 'App\Http\Controllers\UserController@restricted')->name('user.restricted');
     Route::get('/user/payment-success/{id}', 'App\Http\Controllers\UserController@paymentSuccess')->name('user.payment.success');
+});
+
+Route::middleware(['user', 'is_expired', 'is_verified'])->group(function () {
     Route::get('/user/message', 'App\Http\Controllers\UserController@message')->name('user.message');
     Route::get('/user/message/{user}', 'App\Http\Controllers\UserController@conversation')->name('user.conversation');
 });
@@ -74,5 +79,3 @@ Route::get('/error', 'App\Http\Controllers\UserController@restricted')->name('us
 
 Route::get('/test-payment', 'App\Http\Controllers\UserController@test')->name('user.test');
 Route::get('/failed', 'App\Http\Controllers\UserController@paymentFailed')->name('user.payment.failed');
-
-Route::get('/test-printing', 'App\Http\Controllers\AdminController@testPrinting')->name('admin.test.printing');

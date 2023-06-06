@@ -35,7 +35,11 @@ class CanteenController extends Controller
             ]);
         })->get();
 
-        return view('canteen.message', compact('conversations'));
+        if ($conversations->count() > 0)
+            return redirect()->route('canteen.conversation', $conversations->first()->id);
+        else
+            return view('canteen.message', compact('conversations'));
+            
     }
 
     public function setting() {

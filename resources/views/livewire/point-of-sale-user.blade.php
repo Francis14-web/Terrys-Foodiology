@@ -1,6 +1,6 @@
 <div class="flex h-screen justify-between">
     <div class="ml-[270px] flex-1 grow" id="main-window">
-        <x-heading title="Menu" />
+        <x-user.user-heading title="Menu" />
         <div class="mx-auto flex w-full justify-center px-5 pb-8 scrollbar-thumb-red-400">
             <div class="w-full flex flex-col p-5">
                 <!-- category title -->                      

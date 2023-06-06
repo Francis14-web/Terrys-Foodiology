@@ -34,7 +34,9 @@ class UserController extends Controller
     public function message(){
         $canteen = Canteen::where('email', 'terry.canteen@gmail.com')->first();
         $admin = Admin::where('email', 'admin@admin.com')->first();
-        return view('user.message', compact('canteen', 'admin'));
+        return redirect()->route('user.conversation', $canteen->id);
+        return view('user.conversation', compact('canteen', 'admin'));
+
     }
 
     public function conversation($user){
@@ -47,8 +49,15 @@ class UserController extends Controller
         return view('user.conversation', compact('target', 'canteen', 'admin'));
     }
 
+    public function expired(){
+        return view('error.error403');
+    }
+
     public function restricted(){
-        return view('error/error403');
+        if (auth()->guard('user')->user()->is_restricted == 0) {
+            // return redirect()->route('user.dashboard');
+        }
+        return view('user.restricted');
     }
 
     public function order(){

@@ -9,6 +9,7 @@ use App\Models\Order;
 use Livewire\Component;
 use App\Models\OrderGroup;
 use Livewire\WithPagination;
+use Illuminate\Support\Facades\DB;
 use Luigel\Paymongo\Facades\Paymongo;
 
 class PointOfSaleUser extends Component
@@ -26,9 +27,17 @@ class PointOfSaleUser extends Component
 
     public User $user;
 
-    // protected $listeners = [
-    //     'transactionCompleted' => 'render'
-    // ];
+    public function getListeners()
+    {
+        return [
+            "echo:user-menu-page,UserMenuPageEvent" => 'updateFoodMenu',
+        ];
+    }
+
+    public function updateFoodMenu()
+    {
+        $this->render();
+    }
 
     public function updatedSearch()
     {
@@ -183,7 +192,7 @@ class PointOfSaleUser extends Component
     {
         $error = false;
         $time = $this->timeMap($this->pickup_time);
-        
+
         // Retrieve the user's order group
         $userOrder = OrderGroup::where('customer_id', $this->user->id)
             ->where('status', 'Cart')
@@ -196,8 +205,25 @@ class PointOfSaleUser extends Component
             return;
         }
 
+        // Calculate the pickup time
+        $pickupTime = Carbon::now()->addMinutes($time);
+
+        // Retrieve the closing time from the operation_hours table
+        $closingTime = DB::table('operation_hour')->first()->closing_time;
+
+        // Check if the pickup time is greater than the closing time
+        if ($pickupTime->greaterThan($closingTime)) {
+            // Handle the case when the pickup time is greater than the closing time
+            // You can display an error message or return none
+            notyf()
+                ->position('y', 'top')
+                ->dismissible(true)
+                ->addWarning('Our store will be closed by ' . Carbon::parse($closingTime)->format('g:i A'));
+            return;
+        }
+
         // Save the pickup date
-        $userOrder->pickup_date = Carbon::now()->addMinutes($time)->toDateTimeString();
+        $userOrder->pickup_date = $pickupTime->toDateTimeString();
         $userOrder->save();
 
         // Check for stock availability

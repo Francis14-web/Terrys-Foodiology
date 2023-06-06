@@ -19,9 +19,7 @@ class AccountRestricted
         $user = auth()->guard('user')->user();
         if ($user && $user->is_restricted) {
                 // Customize the error message and return a 403 response
-            $errorMessage = 'Your account is restricted.';
-            //return to login page
-            abort(403, $errorMessage);
+            return redirect()->route('user.restricted');
         }
         return $next($request);
     }

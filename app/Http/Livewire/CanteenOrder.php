@@ -27,6 +27,18 @@ class CanteenOrder extends Component
     }
 
     public function statusChange($id, $value){
+        $data = OrderGroup::getSpecificOrder($id)->first();
+
+        $order_text = '';
+
+        $foodNames = json_decode($data->food_name);
+        $orderQuantities = json_decode($data->order_quantity);
+
+        // Iterate over the food names and quantities
+        for ($i = 0; $i < count($foodNames); $i++) {
+            $order_text .= $foodNames[$i] . ' x' . $orderQuantities[$i] . ', ';
+        }
+
         $order = OrderGroup::find($id);
         $orderID = "Order #" . substr($order->id, 0, 8);
         $order->status = $value;
@@ -35,7 +47,7 @@ class CanteenOrder extends Component
         switch($value)
         {
             case 'Success':
-                $content = 'Your ' . $orderID . ' has been completed. You can pick-up your order now.' . $order;
+                $content = 'Your ' . $orderID . ' has been completed. You can pick-up your order now. ' . $order_text;
                 break;
             case 'Failed':
                 $content = 'Your ' . $orderID . ' has been rejected. Please try again.';

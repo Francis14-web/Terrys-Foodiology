@@ -104,7 +104,7 @@
                                 </div>
                             </div>
                             
-                            <a target="_blank" href="{{ route('admin.test.printing') }}" class="bg-green-500 w-full my-4 py-2 px-4 rounded-md text-white font-semibold mt-4">Print Bills</a>                                                           
+                            <a target="_blank" href="{{ route('admin.printing.daily') }}" class="bg-green-500 w-full my-4 py-2 px-4 rounded-md text-white font-semibold mt-4">Print Bills</a>                                                           
                         </div>
                         
                         

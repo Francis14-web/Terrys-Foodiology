@@ -107,9 +107,17 @@ class AdminController extends Controller
         $data = $orders->id;
         return view('admin.view-order', compact('data'));
     }
+    
+    public function printingDaily()
+    {
+        $date = today();
+        $data = OrderGroup::getAllOrdersTodayPrinting($date)->get();
+        
+        // Calculate the total price
+        $totalPrice = $data->sum('total_price');
 
-    public function testPrinting(){
-        $pdf = Pdf::loadView('print.test');
-        return $pdf->stream("test.pdf", array("Attachment" => 0));
+        $pdf = Pdf::loadView('print.printing-daily', compact('data', 'totalPrice'));
+        return $pdf->stream("daily.pdf", ["Attachment" => 0]);
     }
+
 }

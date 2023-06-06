@@ -18,7 +18,7 @@ class ExpiredAccount
         // Check if the user account is expired
         $user = auth()->guard('user')->user();
         if ($user && $user->role == "Visitor" && $user->until_when < now()) {
-            return redirect()->route('user.restricted');
+            return redirect()->route('user.expired');
         }
         return $next($request);
     }
