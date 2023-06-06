@@ -64,6 +64,12 @@ class CanteenMenu extends Component
         if ($newQuantity < 0) {
             return;
         }
+
+        // if input is not a number, return
+        if (!is_numeric($newQuantity)) {
+            return;
+        }
+
         $food->food_stock = $newQuantity;
         $food->save();
         $this->emit('refreshMenu');

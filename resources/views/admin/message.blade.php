@@ -13,7 +13,7 @@
         <div class="ml-[270px] h-full" id="main-window">
             <x-heading title="Messages" />           
             <div class="mt-4 flex justify-center sm:w-full gap-4">
-                <div class="overflow-x-hidden sm:w-[22vw] w-full justify-center ">
+                <div class="overflow-x-hidden items-center w-[600px] justify-center ">
                     @foreach ($conversations as $conversation)
                         <x-admin-chat-message :data="$conversation"/>  
                     @endforeach                                

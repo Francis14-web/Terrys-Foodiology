@@ -45,6 +45,11 @@ class AddUserOrder extends ModalComponent
 
     public function inputOrderQuantity()
     {
+        // if input is not a number, return
+        if (!is_numeric($this->orderQuantity)) {
+            return;
+        }
+
         if ($this->orderQuantity < 0) {
             $this->orderQuantity = 0;
         } else if ($this->orderQuantity > $this->food->food_stock) {

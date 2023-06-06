@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Database\Eloquent\Concerns\HasUuids;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
@@ -22,6 +23,11 @@ class Food extends Model
         'food_category',
         'food_rating',
     ];
+
+    public static function left()
+    {
+        return self::All()->sum('food_stock');
+    }
 
     public function owner()
     {

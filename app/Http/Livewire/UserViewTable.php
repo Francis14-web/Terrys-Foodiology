@@ -23,7 +23,8 @@ class UserViewTable extends DataTableComponent
             ->join('order_groups', 'orders.order_group_id', '=', 'order_groups.id')
             ->where([
                 'order_group_id' => $this->order_groud_id,
-            ]);
+            ])
+            ->withTrashed();
     }
 
     public function mount($data)

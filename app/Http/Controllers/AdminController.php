@@ -60,9 +60,15 @@ class AdminController extends Controller
         $monthlySales = OrderGroup::getAllTotalPerMonth();
         $weeklySales = OrderGroup::getAllTotalPerWeek();
         $topProducts = Order::topFood();
+        $totalProductSold = Order::topFood()->sum('total_quantity');
+
+        $totalProductLeft = Food::left();
+
 
         $totalStockForProducts = Food::select('food_name', 'food_stock')->where('food_stock', '>', '0')->orderBy('food_stock', 'desc')->get();
+        
 
+        
         return view('admin.dashboard', [
             'statistics' => $statistics,
             'yearlySales' => $yearlySales,
@@ -70,6 +76,8 @@ class AdminController extends Controller
             'weeklySales' => $weeklySales,
             'totalStockForProducts' => $totalStockForProducts,
             'topProducts' => $topProducts,
+            'totalProductSold' => $totalProductSold,
+            'totalProductLeft' => $totalProductLeft,
         ]);
     }
 
@@ -88,6 +96,16 @@ class AdminController extends Controller
         return view('admin.order', [
             'statistics' => $statistics,
         ]);
+    }
+
+    public function salesOverview($date){
+        $formattedDate = Carbon::parse($date)->format('F j, Y');
+        return view('admin.sales-overview', compact('formattedDate', 'date'));
+    }
+
+    public function viewOrder(OrderGroup $orders) {
+        $data = $orders->id;
+        return view('admin.view-order', compact('data'));
     }
 
     public function testPrinting(){

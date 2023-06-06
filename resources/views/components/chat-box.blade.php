@@ -15,4 +15,4 @@
     </div>
     <hr class="border-green-600">
     @livewire('canteen-messaging', ['target' => $target])
-</div
+</div>

@@ -58,6 +58,23 @@ class OrderGroup extends Model
             ->limit(10);
     }
 
+    public static function getSpecificOrder(){
+        $userId = Canteen::where('email', 'terry.canteen@gmail.com')->first()->id;
+
+        return self::select('order_groups.*', DB::raw('JSON_ARRAYAGG(orders.quantity) as order_quantity'), 
+            DB::raw('JSON_ARRAYAGG(foods.food_name) as food_name'), 
+            DB::raw('SUM(orders.quantity * foods.food_price) as t_price'), 
+            'users.firstname', 'users.lastname')
+            ->leftJoin('orders', 'orders.order_group_id', '=', 'order_groups.id')
+            ->leftJoin('foods', 'foods.id', '=', 'orders.food_id')
+            ->join('users', 'users.id', '=', 'order_groups.customer_id')
+            ->where('foods.owner_id', $userId)
+            ->whereIn('order_groups.status', ['Serving', 'Failed'])
+            ->groupBy('order_groups.id')
+            ->whereDate('order_groups.created_at', today())
+            ->limit(10);
+    }
+
     public static function getAllSalesMonth($year, $month)
     {
         $year = $year ?? now()->year;
