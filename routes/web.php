@@ -27,7 +27,7 @@ Route::get('/user/verification', 'App\Http\Controllers\UserController@verificati
 Route::middleware('admin')->group(function () {
     Route::get('/admin/dashboard', 'App\Http\Controllers\AdminController@dashboard')->name('admin.dashboard');
     Route::get('/admin/user', 'App\Http\Controllers\AdminController@user')->name('admin.user');
-    Route::get('/admin/sales', 'App\Http\Controllers\AdminController@order')->name('admin.order');
+    Route::get('/admin/sales', 'App\Http\Controllers\AdmipnController@order')->name('admin.order');
     Route::get('/admin/sales/{date}', 'App\Http\Controllers\AdminController@salesOverview')->name('admin.sales.view');
     Route::get('/admin/user-order/{orders}', 'App\Http\Controllers\AdminController@viewOrder')->name('admin.order.view');
     Route::get('/admin/message', 'App\Http\Controllers\AdminController@message')->name('admin.message');
@@ -51,7 +51,7 @@ Route::middleware('canteen')->group(function () {
     Route::get('/canteen/logout', 'App\Http\Controllers\Auth\CanteenAuthController@logout')->name('canteen.logout');
 });
 
-Route::middleware(['user', 'is_restricted', 'is_expired', 'is_verified'])->group(function () {
+Route::middleware(['user', 'is_restricted', 'is_verified'])->group(function () {
     Route::get('/user/dashboard', 'App\Http\Controllers\UserController@dashboard')->name('user.dashboard');
     Route::get('/user/menu', 'App\Http\Controllers\UserController@menu')->name('user.menu');
     Route::get('/user/menu/{food}', 'App\Http\Controllers\UserController@viewMenu')->name('user.menu.view');
@@ -59,12 +59,12 @@ Route::middleware(['user', 'is_restricted', 'is_expired', 'is_verified'])->group
     Route::get('/user/promo', 'App\Http\Controllers\UserController@promo')->name('user.promo');
     Route::get('/user/order/{orders}', 'App\Http\Controllers\UserController@viewOrder')->name('user.order.view');
     Route::get('/user/settings', 'App\Http\Controllers\UserController@settings')->name('user.settings');
-    Route::get('/user/expired', 'App\Http\Controllers\UserController@expired')->name('user.expired');
+    // Route::get('/user/expired', 'App\Http\Controllers\UserController@expired')->name('user.expired');
     Route::get('/user/restricted', 'App\Http\Controllers\UserController@restricted')->name('user.restricted');
     Route::get('/user/payment-success/{id}', 'App\Http\Controllers\UserController@paymentSuccess')->name('user.payment.success');
 });
 
-Route::middleware(['user', 'is_expired', 'is_verified'])->group(function () {
+Route::middleware(['user', 'is_verified'])->group(function () {
     Route::get('/user/message', 'App\Http\Controllers\UserController@message')->name('user.message');
     Route::get('/user/message/{user}', 'App\Http\Controllers\UserController@conversation')->name('user.conversation');
 });

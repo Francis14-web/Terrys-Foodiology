@@ -21,7 +21,7 @@
 
 		<p class="block text-gray-800 text-md my-8">We provide a convenient and efficient way for you to place food orders and reserve
 			food at our canteen.</p>
-		<a href="#" class="block viewbut border border-green-800 text-green-800 py-2 px-6 text-sm font-bold rounded-full hover:bg-green-800 hover:text-white w-fit">View Offer </a>
+		<a href="#viewOffer" class="scroll-smooth block viewbut border border-green-800 text-green-800 py-2 px-6 text-sm font-bold rounded-full hover:bg-green-800 hover:text-white w-fit">View Offer </a>
 	</div>
     <div class="w-auto sm:block hidden">
         <img src="{{ asset('img/logo.png')}}" alt="Hero Image">
@@ -43,7 +43,7 @@
 	
 </div>
 
-<div class="text-center max-w-6xl my-20 mx-auto">
+<div id="viewOffer" class="text-center max-w-6xl my-20 mx-auto ">
     <h1 class="text-4xl font-bold text-green-700 mb-10">Terry's Foodiology Offer</h1>
     <div class="grid sm:grid-cols-3 gap-10 px-8">
         <div class="food-view rice">

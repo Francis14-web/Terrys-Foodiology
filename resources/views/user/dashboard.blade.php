@@ -46,30 +46,30 @@
                                     </div>
         
                                     <div class="h-fit w-fit sm:flex justify-center flex-col p-4">
-                                                                    <h1 class="text-base sm:text-lg">Adobo</h1>
-                                        <p class="text-sm sm:text-base">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                        <h1 class="text-base sm:text-lg">Adobo</h1>
+                                        <p class="text-sm sm:text-base">A spicy marinade used in Latin American cuisine and usually containing vinegar, garlic, and chili peppers..</p>
                                     </div>
                                 </div>
 
                                 <div class="flex p-2 flex-col w-fit max-content m-5 hover:bg-green-200 hover:rounded-lg hover:bg-opacity-70 sm:m-4 sm:p-4 sm:w-5/6 sm:h-5/6 sm:hover:bg-transparent">
                                     <div class="h-36  w-36 sm:flex justify-center items-center sm:w-full sm:h-52">
-                                        <img src="/img/adobo.jpg" id="adobo" class="h-full w-full object-cover rounded-xl">
+                                        <img src="/img/coffee.jpg" id="adobo" class="h-full w-full object-cover rounded-xl">
                                     </div>
         
                                     <div class="h-fit w-fit sm:flex justify-center flex-col p-4">
-                                                                    <h1 class="text-base sm:text-lg">Adobo</h1>
-                                        <p class="text-sm sm:text-base">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                        <h1 class="text-base sm:text-lg">Coffee Americano</h1>
+                                        <p class="text-sm sm:text-base">An americano is quite simply just hot water and espress</p>
                                     </div>
                                 </div>
 
                                 <div class="flex p-2 flex-col w-fit max-content m-5 hover:bg-green-200 hover:rounded-lg hover:bg-opacity-70 sm:m-4 sm:p-4 sm:w-5/6 sm:h-5/6 sm:hover:bg-transparent">
                                     <div class="h-36  w-36 sm:flex justify-center items-center sm:w-full sm:h-52">
-                                        <img src="/img/adobo.jpg" id="adobo" class="h-full w-full object-cover rounded-xl">
+                                        <img src="/img/sisig.png" id="adobo" class="h-full w-full object-cover rounded-xl">
                                     </div>
         
                                     <div class="h-fit w-fit sm:flex justify-center flex-col p-4">
-                                            <h1 class="text-base sm:text-lg">Adobo</h1>
-                                        <p class="text-sm sm:text-base">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                        <h1 class="text-base sm:text-lg">Sisig</h1>
+                                        <p class="text-sm sm:text-base">The Filipino street food of chopped pig parts and chicken livers tossed with a spicy and sour dressing,.</p>
                                     </div>
                                 </div>
                             </div>
@@ -84,11 +84,8 @@
                                 <img class="object-contain" src="/img/burger.png" alt="new product" id="new-burger" class="h-full w-full object-cover ">
                             </div>
                             <div class="flex flex-col w-auto lg:w-1/2 sm:p-8 ">
-                                <h1 class="hidden sm:min-w-[770px] sm:block text-2xl  text-emerald-900 ">New Product</h1>
-                                <p class="">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque velit nisi, pretium
-                                    ut lacinia in, elementum id enim. Donec sollicitudin molestie malesuada. Curabitur
-                                    non nulla sit amet nisl tempus convallis quis ac lectus. Vivamus suscipit tortor
-                                    eget felis porttitor volutpat. Nulla quis lorem ut libero malesuada feugiat.</p>
+                                <h1 class="hidden sm:min-w-[770px] sm:block text-2xl  text-emerald-900 ">New Product: Cheese Burger</h1>
+                                <p class="">A cheeseburger is a hamburger topped with cheese. Traditionally, the slice of cheese is placed on top of the meat patty. The cheese is usually added to the hamburger patty near the end of the cooking time, which allows the cheese to melt. Cheeseburgers can include variations in structure, ingredients and composition.</p>
                             </div>
                         </div>
 
