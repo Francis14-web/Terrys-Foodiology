@@ -27,7 +27,7 @@ Route::get('/user/verification', 'App\Http\Controllers\UserController@verificati
 Route::middleware('admin')->group(function () {
     Route::get('/admin/dashboard', 'App\Http\Controllers\AdminController@dashboard')->name('admin.dashboard');
     Route::get('/admin/user', 'App\Http\Controllers\AdminController@user')->name('admin.user');
-    Route::get('/admin/sales', 'App\Http\Controllers\AdmipnController@order')->name('admin.order');
+    Route::get('/admin/sales', 'App\Http\Controllers\AdminController@order')->name('admin.order');
     Route::get('/admin/sales/{date}', 'App\Http\Controllers\AdminController@salesOverview')->name('admin.sales.view');
     Route::get('/admin/user-order/{orders}', 'App\Http\Controllers\AdminController@viewOrder')->name('admin.order.view');
     Route::get('/admin/message', 'App\Http\Controllers\AdminController@message')->name('admin.message');
@@ -39,7 +39,8 @@ Route::middleware('admin')->group(function () {
 
 Route::middleware('canteen')->group(function () {
     Route::get('/canteen/dashboard', 'App\Http\Controllers\CanteenController@dashboard')->name('canteen.dashboard');
-    Route::get('/canteen/menu', 'App\Http\Controllers\CanteenController@menu')->name('canteen.menu');
+    Route::get('/canteen/inventory', 'App\Http\Controllers\CanteenController@menu')->name('canteen.menu');
+    Route::get('/canteen/inventory/{date}/view', 'App\Http\Controllers\CanteenController@inventory')->name('canteen.inventory');
     Route::get('/canteen/sales', 'App\Http\Controllers\CanteenController@sales')->name('canteen.sales');
     Route::get('/canteen/sales/{date}', 'App\Http\Controllers\CanteenController@salesOverview')->name('canteen.sales.view');
     Route::get('/canteen/point-of-sale', 'App\Http\Controllers\CanteenController@pos')->name('canteen.pos');

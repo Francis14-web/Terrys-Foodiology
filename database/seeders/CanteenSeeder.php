@@ -15,6 +15,7 @@ class CanteenSeeder extends Seeder
     public function run()
     {
         \App\Models\Canteen::create([
+            'id' => '99626032-c82b-4755-a9a5-228103ce5c3e',
             'display_name' => 'Terry\'s Foodiology',
             'username' => 'terrysfoodiology',
             'email' => 'terry.canteen@gmail.com',

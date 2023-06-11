@@ -1,4 +1,4 @@
-<div class="p-10">
+<div class="py-5">
     <button wire:click="$emit('openModal', 'add-food-modal')" class="fixed z-20 bottom-10 right-10 bg-green-700 w-12 h-12 flex items-center justify-center text-3xl rounded-full text-white hover:bg-green-800 hover:shadow-xl"><i class='bx bx-plus' ></i></button>
     <div class="w-full flex justify-between">
         <div class="flex gap-3 ">

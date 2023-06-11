@@ -35,6 +35,7 @@ class CanteenMenu extends Component
 
     public function change($category)
     {
+        $this->resetPage();
         $this->category = $category;
     }
 

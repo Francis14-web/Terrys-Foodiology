@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Admin;
-use App\Models\User;
-use App\Models\OrderGroup;
 use Carbon\Carbon;
+use App\Models\User;
+use App\Models\Admin;
+use App\Models\Inventory;
+use App\Models\OrderGroup;
 
 class CanteenController extends Controller
 {
@@ -19,6 +20,12 @@ class CanteenController extends Controller
 
     public function pos() {
         return view('canteen.pos');
+    }
+
+    public function inventory($date){
+        $formattedDate = Carbon::parse($date)->format('F j, Y');
+        $inventory = Inventory::whereDate('created_at', $date)->get();
+        return view('canteen.inventory', compact('inventory', 'formattedDate', 'date'));
     }
 
     public function message()

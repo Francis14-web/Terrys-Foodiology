@@ -14,7 +14,7 @@
             @endforeach
         </div>        
         <x-livewire-select-field label="Food Category" type="text" model="food_category" :categories="$categories"/>
-        <x-livewire-input-field label="Food Stock" type="number" model="food_stock" />
+        <x-dropdown-field label="Is this food restocked everyday?" name="is_restocked_everyday" :options="['Yes', 'No']"/>
         <input type="submit" value="Update Food" class="bg-green-500 text-white py-2 text-xs rounded font-medium w-full hover:bg-green-900 cursor-pointer">
     </form> 
 </div>

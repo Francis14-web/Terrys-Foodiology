@@ -22,6 +22,7 @@ class Food extends Model
         'food_stock',
         'food_category',
         'food_rating',
+        'is_restocked_everyday',
     ];
 
     public static function left()
@@ -37,5 +38,10 @@ class Food extends Model
     public function orders()
     {
         return $this->hasMany(Order::class);
+    }
+
+    public function inventory()
+    {
+        return $this->hasMany(Inventory::class);
     }
 }

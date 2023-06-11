@@ -17,9 +17,10 @@ class EditFoodModal extends ModalComponent
     public $food_price;
     public $food_description;
     public $food_image;
-    public $food_category = 'Rice Meal';
+    public $food_category;
     public $food_id;
-    public $food_stock = 0;
+    public $food_stock;
+    public $is_restocked_everyday;
     public $existing_images = [];
     public $categories = [
         'Rice Meal',
@@ -36,8 +37,8 @@ class EditFoodModal extends ModalComponent
             'food_price' => 'required|numeric|min:0|max:300',
             'food_description' => 'required|min:3|max:500',
             'food_category' => 'required',
-            'food_stock' => 'numeric|min:0|max:100',
-            'food_image.*' => 'image|max:1024', // 1MB Max
+            'is_restocked_everyday' => 'required',
+            'food_image' => 'required|image|max:1024', // 1MB Max
         ];
     }
 
@@ -54,26 +55,19 @@ class EditFoodModal extends ModalComponent
     public function updateFood (){
         $validatedData = $this->validate();
         $food = Food::find($this->food_id);
-        $imagePaths = [];
         if ($this->food_image) {
-            foreach ($this->food_image as $image) {
-                if ($image) {
-                    try {
-                        $originalName = $image->getClientOriginalName();
-                        $extension = $image->getClientOriginalExtension();
-                        $fileName = $originalName . '.' . $extension;
-                        $path = $image->storeAs('photos', $fileName);
-                        array_push($imagePaths, $path);
-                    } catch (\Exception $e) {
-                        dd($e);
-                    }
-                } else {
-                    dd($image->getError());
-                }
+            try {
+                $originalName = $this->food_image->getClientOriginalName();
+                $extension = $this->food_image->getClientOriginalExtension();
+                $fileName = $originalName . '.' . $extension;
+                $path = $this->food_image->storeAs('photos', $fileName);
+                $food->food_image = $path;
+            } catch (\Exception $e) {
+                dd($e);
             }
         }
 
-        $images = array_unique(array_merge($this->existing_images, $imagePaths));
+        // $images = array_unique(array_merge($this->existing_images, $imagePaths));
 
         $data = [
             'food_name' => $this->food_name,
@@ -81,7 +75,8 @@ class EditFoodModal extends ModalComponent
             'food_description' => $this->food_description,
             'food_category' => $this->food_category,
             'food_stock' => $this->food_stock,
-            'food_image' => implode(',', $images),
+            'food_image' => $path,
+            'is_restocked_everyday' => ($this->is_restocked_everyday == 'Yes') ? true : false,
         ];
 
         $food->update($data);
@@ -100,6 +95,7 @@ class EditFoodModal extends ModalComponent
         $this->food_description = $food->food_description;
         $this->food_category = $food->food_category;
         $this->food_image = null;
+        $this->is_restocked_everyday = ($food->is_restocked_everyday == true) ? 'Yes' : 'No';
         $this->food_stock = $food->food_stock;
         $this->existing_images = explode(',', $food->food_image);
     }

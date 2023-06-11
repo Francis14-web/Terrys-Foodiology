@@ -28,6 +28,7 @@ class FoodFactory extends Factory
             'food_stock' => $this->faker->numberBetween(1, 20),
             'food_category' => $this->faker->randomElement(['Rice Meal', 'Pasta', 'Snacks', 'Coffee', 'Drinks', 'Dessert']),
             'food_rating' => 0,
+            'is_restocked_everyday' => $this->faker->boolean,
         ];
     }
 }

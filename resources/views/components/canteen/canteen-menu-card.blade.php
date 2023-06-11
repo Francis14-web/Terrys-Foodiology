@@ -11,7 +11,7 @@
     <div class="flex justify-center flex-col text-center m-4 text-zinc-800 w-4/5">
         <h1 class="text-md text-ellipsis truncate">{{$food->food_name}}</h1>
         <p class="text-xs"><span class="font-bold">Price: </span>₱ {{$food->food_price}}</p>    
-        <div class="my-3 flex rounded-md justify-center">
+        {{-- <div class="my-3 flex rounded-md justify-center">
             <button wire:click="reduceQuantity('{{$food->id}}')" type="button" class="mr-1 relative inline-flex items-center space-x-2 px-4 py-2 border border-gray-300 text-sm font-medium rounded-l-md text-gray-700 bg-gray-50 hover:bg-gray-100 focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500">
             -
             </button>
@@ -21,10 +21,11 @@
             <button wire:click="increaseQuantity('{{$food->id}}')" type="button" class="ml-1 relative inline-flex items-center space-x-2 px-4 py-2 border border-gray-300 text-sm font-medium rounded-r-md text-gray-700 bg-gray-50 hover:bg-gray-100 focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500">
             +
             </button>
-        </div>
-        <div class="grid grid-cols-2 place-items-center">
-            <button type="button" class="edit-btn" wire:click="$emit('openModal', 'edit-food-modal', {{ json_encode([$food->id]) }})">Edit</button>
-            <button type="button" class="hover:text-red-600" wire:click="delete('{{$food->id}}')">Delete</button>
+        </div> --}}
+        <div class="grid grid-cols-3 place-items-center">
+            <button type="button" class="edit-btn" wire:click="$emit('openModal', 'add-to-inventory', {{ json_encode([$food->id]) }})"><i class='bx bx-plus'></i></button>
+            <button type="button" class="edit-btn" wire:click="$emit('openModal', 'edit-food-modal', {{ json_encode([$food->id]) }})"><i class='bx bxs-edit-alt' ></i></button>
+            <button type="button" class="hover:text-red-600" wire:click="delete('{{$food->id}}')"><i class='bx bxs-trash' ></i></button>
         </div>       
     </div>
 </div>

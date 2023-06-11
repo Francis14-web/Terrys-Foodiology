@@ -3,8 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Food;
-use App\Models\Canteen;
 use App\Models\Admin;
+use App\Models\Canteen;
+use App\Models\Inventory;
 use App\Models\OrderGroup;
 use App\Models\Verification;
 use App\Events\UserMenuPageEvent;
@@ -103,20 +104,21 @@ class UserController extends Controller
         //Get all food and reduce the quantity
         foreach($order->orders as $userOrder){
             $food = Food::find($userOrder->food_id);
-            $food->food_stock = $food->food_stock - $userOrder->quantity;
-            event(new CanteenMenuPageEvent($food->owner_id)); // Broadcast the new menu to canteen
+            $stock = $food->food_stock - $userOrder->quantity;
+            $food->food_stock = $stock;
             $food->save();
+        
+            $inventory = Inventory::where('food_uuid', $food->id)->first();
+            // $inventory->food_stock = $stock;
+            $inventory->food_sold += $userOrder->quantity;
+            $inventory->food_left = $stock - $inventory->food_sold;
+            $inventory->save();
+        
+            event(new CanteenMenuPageEvent($food->owner_id)); // Broadcast the new menu to canteen
         }
-
+        
         // Broadcast the new order
         event(new UserMenuPageEvent());
-
-        // notyf()
-        //     ->position('x', 'right')->position('y', 'top')
-        //     ->dismissible(true)
-        //     ->ripple(true)
-        //     ->addSuccess('New order has arrived!');
-
         return redirect()->route('user.order', ['success' => $order->id]);
     }
 

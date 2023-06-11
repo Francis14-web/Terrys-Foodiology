@@ -19,6 +19,7 @@ class AddFoodModal extends ModalComponent
     public $food_image;
     public $food_category = 'Rice Meal';
     public $food_stock = 0;
+    public $is_restocked_everyday = 'Yes';
     public $categories = [
         'Rice Meal',
         'Pasta',
@@ -34,8 +35,8 @@ class AddFoodModal extends ModalComponent
             'food_price' => 'required|numeric|min:0|max:300',
             'food_description' => 'required|min:3|max:500',
             'food_category' => 'required',
-            'food_stock' => 'numeric|min:0|max:100',
-            'food_image.*' => 'required|image|max:1024', // 1MB Max
+            'is_restocked_everyday' => 'required',
+            'food_image' => 'required|image|max:1024', // 1MB Max
         ];
     }
 
@@ -55,28 +56,21 @@ class AddFoodModal extends ModalComponent
         $food->food_category = $this->food_category;
         $food->owner_id = auth()->guard('canteen')->user()->id;
         $food->food_rating = 0;
-        $food->food_stock = $this->food_stock;
-
-        $imagePaths = [];
-        foreach ($this->food_image as $image) {
-            if ($image) {
-                try {
-                    $originalName = $image->getClientOriginalName();
-                    $extension = $image->getClientOriginalExtension();
-                    $fileName = $originalName . '.' . $extension;
-                    $path = $image->storeAs('photos', $fileName);
-                    array_push($imagePaths, $path);
-                } catch (\Exception $e) {
-                    dd($e);
-                }
-            } else {
-                dd($image->getError());
+        $food->food_stock = 0;
+        $food->is_restocked_everyday = ($this->is_restocked_everyday == 'Yes') ? true : false;
+        if ($this->food_image) { 
+            try {
+                $originalName = $this->food_image->getClientOriginalName();
+                $extension = $this->food_image->getClientOriginalExtension();
+                $fileName = $originalName . '.' . $extension;
+                $path = $this->food_image->storeAs('photos', $fileName);
+                $food->food_image = $path;
+            } catch (\Exception $e) {
+                dd($e);
             }
         }
-        $food->food_image = implode(',', $imagePaths);
+        // $food->food_image = implode(',', $imagePaths);
         $food->save();
-
-        //print image upload status to log file
 
         $this->closeModalWithEvents([
             CanteenMenu::getName() => 'refreshMenu'

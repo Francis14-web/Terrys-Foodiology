@@ -20,16 +20,6 @@ class FoodSeeder extends Seeder
         // \App\Models\Food::factory()->count(20)->create();
         // UP
 
-        \App\Models\Food::factory()->create([
-            'owner_id' => $user->id,
-            'food_name' => 'Rice with egg',
-            'food_description' => '',
-            'food_image' => 'photos/Rice Meal/',
-            'food_price' => 100,
-            'food_stock' => 0,
-            'food_category' => 'Rice Meal',
-            'food_rating' => 0
-        ]);
         
         \App\Models\Food::factory()->create([
             'owner_id' => $user->id,
@@ -99,9 +89,9 @@ class FoodSeeder extends Seeder
         
         \App\Models\Food::factory()->create([
             'owner_id' => $user->id,
-            'food_name' => 'Pork Abodo',
+            'food_name' => 'Pork Adobo',
             'food_description' => '',
-            'food_image' => 'photos/Rice Meal/Pork-Adobo.jpg',
+            'food_image' => 'photos/Rice Meal/PorkAdobo.jpg',
             'food_price' => 100,
             'food_stock' => 0,
             'food_category' => 'Rice Meal',
@@ -507,7 +497,7 @@ class FoodSeeder extends Seeder
             'food_category' => 'Drinks',
             'food_rating' => 0
         ]);
-            
+        
         // Desserts
         \App\Models\Food::factory()->create([
             'owner_id' => $user->id,
@@ -516,7 +506,7 @@ class FoodSeeder extends Seeder
             'food_image' => 'photos/Dessert/turon.jpg',
             'food_price' => 30,
             'food_stock' => 0,
-            'food_category' => 'Dessert',
+            'food_category' => 'Desserts',
             'food_rating' => 0
             ]);
             
@@ -527,7 +517,7 @@ class FoodSeeder extends Seeder
             'food_image' => 'photos/Dessert/bananaq.jpg',
             'food_price' => 30,
             'food_stock' => 0,
-            'food_category' => 'Dessert',
+            'food_category' => 'Desserts',
             'food_rating' => 0
         ]);
             
@@ -538,7 +528,7 @@ class FoodSeeder extends Seeder
             'food_image' => 'photos/Dessert/strawberry.jpg',
             'food_price' => 40,
             'food_stock' => 0,
-            'food_category' => 'Dessert',
+            'food_category' => 'Desserts',
             'food_rating' => 0
         ]);
             
@@ -549,7 +539,7 @@ class FoodSeeder extends Seeder
             'food_image' => 'photos/Dessert/choco.jpg',
             'food_price' => 40,
             'food_stock' => 0,
-            'food_category' => 'Dessert',
+            'food_category' => 'Desserts',
             'food_rating' => 0
         ]);
             
@@ -560,7 +550,7 @@ class FoodSeeder extends Seeder
             'food_image' => 'photos/Dessert/pandan.jpg',
             'food_price' => 40,
             'food_stock' => 0,
-            'food_category' => 'Dessert',
+            'food_category' => 'Desserts',
             'food_rating' => 0
         ]);
 

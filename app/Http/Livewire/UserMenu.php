@@ -32,6 +32,7 @@ class UserMenu extends Component
 
     public function change($category)
     {
+        $this->resetPage();
         $this->category = $category;
     }
 
@@ -62,6 +63,7 @@ class UserMenu extends Component
         if (!empty($this->category)) {
             $query = $query->where('food_category', $this->category);
         }
+
 
         $foods = $query->search([
                 'food_name',

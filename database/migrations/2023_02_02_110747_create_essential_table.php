@@ -24,6 +24,7 @@ return new class extends Migration
             $table->integer('food_stock');
             $table->string('food_category'); 
             $table->double('food_rating');
+            $table->boolean('is_restocked_everyday')->default(false);
             $table->timestamps();
         });
 
