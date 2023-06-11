@@ -5,6 +5,7 @@
 @section('js')
     <script src="{{ asset('javascript/sidebar.js') }}"></script>
     <script src="{{ asset('javascript/dropdown.js') }}"></script>
+    <script src="{{ asset('javascript/orderdetails.js') }}"></script>
 @endsection
 
 @section('content')
