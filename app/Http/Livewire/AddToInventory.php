@@ -57,8 +57,10 @@ class AddToInventory extends ModalComponent
             $food->food_stock = $this->food_stock;
             $food->save();
 
+            $inventoryId = Inventory::where('food_uuid', $this->food_uuid)->whereDate('created_at', date('Y-m-d'))->first()->id;
+
             Log::create([
-                'log_inventory_id' => $inventory->id,
+                'log_inventory_id' => $inventoryId,
                 'log_job' => 'Added',
                 'log_stock' => $this->food_stock,
                 'log_description' => 'Added ' . $this->food_stock . ' ' . $food->food_name . ' to inventory',

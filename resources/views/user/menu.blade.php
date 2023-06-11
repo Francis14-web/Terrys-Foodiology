@@ -10,6 +10,7 @@
 
 @section('content')
     <div class="relative w-screen min-h-screen">
+        <x-user.user-sidebar />
         <x-user.mobile-navbar/>
         @livewire('point-of-sale-user')
     </div>

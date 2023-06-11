@@ -16,7 +16,13 @@ class Kernel extends ConsoleKernel
     protected function schedule(Schedule $schedule)
     {
         // $schedule->command('inspire')->hourly();
+        $schedule->command('food:stock:update')->dailyAt('00:00');
     }
+
+    protected $commands = [
+        Commands\UpdateFoodStock::class,
+    ];
+    
 
     /**
      * Register the commands for the application.
