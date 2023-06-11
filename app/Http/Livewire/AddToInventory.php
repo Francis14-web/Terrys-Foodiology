@@ -2,8 +2,10 @@
 
 namespace App\Http\Livewire;
 
+use App\Models\Log;
 use App\Models\Food;
 use App\Models\Inventory;
+use App\Events\UserMenuPageEvent;
 use LivewireUI\Modal\ModalComponent;
 
 class AddToInventory extends ModalComponent
@@ -20,7 +22,7 @@ class AddToInventory extends ModalComponent
                 ->addError('Please enter a valid quantity');
             return;
         }
-        
+
         $inventory = Inventory::where('food_uuid', $this->food_uuid)->whereDate('created_at', date('Y-m-d'))->first();
 
         if ($inventory) {
@@ -31,6 +33,13 @@ class AddToInventory extends ModalComponent
             $food = Food::find($this->food_uuid);
             $food->food_stock = $food->food_stock + $this->food_stock;
             $food->save();
+
+            Log::create([
+                'log_inventory_id' => $inventory->id,
+                'log_job' => 'Added',
+                'log_stock' => $this->food_stock,
+                'log_description' => 'Added ' . $this->food_stock . ' ' . $food->food_name . ' to inventory',
+            ]);
 
             notyf()
                 ->position('y', 'top')
@@ -48,11 +57,21 @@ class AddToInventory extends ModalComponent
             $food->food_stock = $this->food_stock;
             $food->save();
 
+            Log::create([
+                'log_inventory_id' => $inventory->id,
+                'log_job' => 'Added',
+                'log_stock' => $this->food_stock,
+                'log_description' => 'Added ' . $this->food_stock . ' ' . $food->food_name . ' to inventory',
+            ]);
+
             notyf()
                 ->position('y', 'top')
                 ->dismissible(true)
                 ->addSuccess('Food added to inventory for today');
         }
+
+        event(new UserMenuPageEvent()); // Broadcast the new menu to user
+
         $this->closeModal();
     }
 

@@ -7,6 +7,7 @@ use App\Models\Inventory;
 use Illuminate\Database\Eloquent\Builder;
 use Rappasoft\LaravelLivewireTables\Views\Column;
 use Rappasoft\LaravelLivewireTables\DataTableComponent;
+use Rappasoft\LaravelLivewireTables\Views\Columns\ComponentColumn;
 
 class CanteenInventoryTable extends DataTableComponent
 {
@@ -40,7 +41,7 @@ class CanteenInventoryTable extends DataTableComponent
         return [
             Column::make("Id", "id")
                 ->sortable()
-                ->isHidden(true),
+                ->hideIf(true),
             Column::make("Food Name", "food.food_name")
                 ->sortable(),
             Column::make("Food stock", "food_stock")
@@ -49,10 +50,19 @@ class CanteenInventoryTable extends DataTableComponent
                 ->sortable(),
             Column::make("Food left", "food_left")
                 ->sortable(),
-            Column::make("Created at", "created_at")
-                ->sortable(),
-            Column::make("Updated at", "updated_at")
-                ->sortable(),
+            Column::make("Added stocks at", "created_at")
+                ->sortable()
+                ->format(function ($value) {
+                    return Carbon::parse($value)->format('F j, Y \a\t h:i A');
+                }),
+            ComponentColumn::make("Last stock update at", "updated_at")
+                ->component('table-link')
+                ->attributes(fn ($value, $row, Column $column) => 
+                [
+                    'label' => 'view: ' . Carbon::parse($value)->format('F j, Y \a\t h:i A'),
+                    'href' => route('canteen.inventory.log', ['date' => Carbon::parse($value)->toDateString(), 'id' => $row->id]),
+                ])
+            
         ];
     }
 }

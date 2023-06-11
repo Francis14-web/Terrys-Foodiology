@@ -35,4 +35,9 @@ class Inventory extends Model
     public function food(){
         return $this->belongsTo(Food::class);
     }
+
+    public function logs()
+    {
+        return $this->hasMany(Logs::class);
+    }
 }

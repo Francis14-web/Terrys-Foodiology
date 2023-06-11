@@ -258,7 +258,7 @@ class PointOfSaleUser extends Component
 
     public function render()
     {
-        $query = Food::where('owner_id', auth()->guard('canteen')->user()->id);
+        $query = Food::where('owner_id', '99626032-c82b-4755-a9a5-228103ce5c3e');
 
         if (!empty($this->category)) {
             $query = $query->where('food_category', $this->category);

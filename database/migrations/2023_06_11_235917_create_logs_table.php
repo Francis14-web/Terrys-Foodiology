@@ -11,13 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('inventories', function (Blueprint $table) {
+        Schema::create('logs', function (Blueprint $table) {
             $table->id();
-            $table->uuid('food_uuid');
-            $table->foreign('food_uuid')->references('id')->on('foods')->onDelete('cascade');
-            $table->integer('food_stock');
-            $table->integer('food_sold');
-            $table->integer('food_left');
+            $table->foreignId('log_inventory_id')->constrained('inventories')->onDelete('cascade');
+            $table->enum('log_job', ['Added', 'Removed', 'Purchased']);
+            $table->integer('log_stock');
+            $table->text('log_description')->nullable();
             $table->timestamps();
         });
     }
@@ -27,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('inventories');
+        Schema::dropIfExists('logs');
     }
 };

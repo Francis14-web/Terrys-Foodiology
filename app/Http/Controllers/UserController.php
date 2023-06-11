@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Log;
 use App\Models\Food;
 use App\Models\Admin;
 use App\Models\Canteen;
@@ -111,8 +112,15 @@ class UserController extends Controller
             $inventory = Inventory::where('food_uuid', $food->id)->first();
             // $inventory->food_stock = $stock;
             $inventory->food_sold += $userOrder->quantity;
-            $inventory->food_left = $stock - $inventory->food_sold;
+            $inventory->food_left -= $userOrder->quantity;
             $inventory->save();
+
+            Log::create([
+                'log_inventory_id' => $inventory->id,
+                'log_job' => 'Purchased',
+                'log_stock' => $userOrder->quantity,
+                'log_description' => 'Added ' . $userOrder->quantity . ' ' . $food->food_name . ' to inventory',
+            ]);
         
             event(new CanteenMenuPageEvent($food->owner_id)); // Broadcast the new menu to canteen
         }

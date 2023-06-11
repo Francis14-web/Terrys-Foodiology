@@ -28,6 +28,14 @@ class CanteenController extends Controller
         return view('canteen.inventory', compact('inventory', 'formattedDate', 'date'));
     }
 
+    public function logs($date, $id) {
+        // $formattedDate = Carbon::parse($date)->format('F j, Y');
+        // $inventory = Inventory::whereDate('created_at', $date)->get();
+
+        // dd ($date, $id);
+        return view('canteen.log', compact('date', 'id'));
+    }
+
     public function message()
     {
         $conversations = User::whereHas('messagesSent', function ($query) {
