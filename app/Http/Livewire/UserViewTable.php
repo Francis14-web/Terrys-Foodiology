@@ -39,13 +39,16 @@ class UserViewTable extends DataTableComponent
                 ->sortable()
                 ->searchable(),
             Column::make("Quantity", "quantity")
-                ->sortable(),
+                ->sortable()
+                ->collapseOnTablet(),
             Column::make("Price", "food.food_price")
-                ->sortable(),
+                ->sortable()
+                ->collapseOnTablet(),
             Column::make("Total Price", "price")
                 ->sortable(),
             Column::make("Order added at", "created_at")
-                ->sortable(),
+                ->sortable()
+                ->collapseOnTablet(),
         ];
     }
 }
