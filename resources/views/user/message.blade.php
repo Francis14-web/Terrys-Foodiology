@@ -11,7 +11,7 @@
     <div class="relative w-screen h-screen">
         <x-user.mobile-navbar/>
         <x-user.user-sidebar />
-        <div class="sm:ml-[270px] h-full" id="main-window">
+        <div class="ml-[270px] h-full" id="main-window">
             <x-user.user-heading  title="Messages" />           
             <div class="mt-4 flex justify-center sm:w-full gap-4">
                 <div class="overflow-x-hidden w-[600px] justify-center ">
