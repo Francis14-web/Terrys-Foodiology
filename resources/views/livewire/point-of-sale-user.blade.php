@@ -102,16 +102,15 @@
 <!-- Mobile View -->
 <div class="fixed hidden sm:hidden top-0 h-screen bg-gray-500 opacity-70 w-full" id="view-bg">
 </div>
-<div class="fixed sm:hidden inset-x-0 bottom-0 bg-green-500 py-4 px-2 w-full font-semibold text-center">
-
-    <p id="view-order" class="text-white">View Order</p>
-    
+<div id="view-order"  class="sm:hidden hidden inset-x-0 bottom-0 bg-green-500 py-4 px-2 font-semibold text-center">
+    <p class="text-white">View Order</p>
+</div> 
     @if($userOrder)
-        <div id="order-detail" class="bg-white hidden sm:flex  sm:max-w-xs inset-x-0 bottom-0  max-h-screen border-l sm:relative  p-5  flex-col">
+        <div id="order-detail" class="bg-white sm:hidden sm:flex fixed sm:max-w-xs  bottom-0 inset-x-0  max-h-screen border-l sm:relative  p-5  flex-col">
             <div class="flex-1">
                 <div class="flex justify-between items-center">
                     <p class="font-semibold text-base mb-2">Orders Details</p>
-                    <div class="text-green-600 " id="cancelBtn">
+                    <div class="text-green-600 z-30" id="cancelBtn">
                         <i class='bx bx-x bx-sm' style="color:#16a34a"></i>
                     </div>
                 </div>
@@ -149,6 +148,6 @@
         </div>
     @endif
     </div>
-</div>
+
 </div>
 
