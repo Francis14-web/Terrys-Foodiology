@@ -30,11 +30,15 @@ class PointOfSalePayButton extends ModalComponent
             $food->save();
 
             $inventory = Inventory::where('food_uuid', $food->id)->first();
+            $inventory->food_sold += $order->quantity;
+            $inventory->food_left -= $order->quantity;
+            $inventory->save();
+
             Log::create([
                 'log_inventory_id' => $inventory->id,
                 'log_job' => 'Purchased',
                 'log_stock' => $order->quantity,
-                'log_description' => 'User purchased ' . $order->quantity . ', ' . $food->food_name . ' stock(s) deducted to inventory',
+                'log_description' => 'User purchased ' . $food->food_name . ', ' .  $order->quantity. ' stock(s) deducted to inventory',
             ]);
         }
         
