@@ -14,7 +14,7 @@
         <div class="sm:ml-[270px] h-full" id="main-window">
             
                 <x-user.user-heading title="Orders" />
-                <a href="{{route('user.order')}}" class="absolute top-[85px] left-0" id="burger">
+                <a href="{{route('user.order')}}" class="sm:hidden absolute top-[85px] left-0" id="burger">
                     <i class='bx bx-left-arrow-alt bx-sm pl-2 text-xl text-green-600'></i>
                 </a>
             

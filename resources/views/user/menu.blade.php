@@ -12,6 +12,7 @@
     <div class="relative w-screen min-h-screen">
         <x-user.user-sidebar />
         <x-user.mobile-navbar/>
+        <x-user.user-sidebar/>
         @livewire('point-of-sale-user')
     </div>
 @endsection
