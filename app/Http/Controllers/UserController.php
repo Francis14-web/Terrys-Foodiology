@@ -119,7 +119,7 @@ class UserController extends Controller
                 'log_inventory_id' => $inventory->id,
                 'log_job' => 'Purchased',
                 'log_stock' => $userOrder->quantity,
-                'log_description' => 'Added ' . $userOrder->quantity . ' ' . $food->food_name . ' to inventory',
+                'log_description' => 'User purchased ' . $userOrder->quantity . ' ' . $food->food_name . ' removed to inventory',
             ]);
         
             event(new CanteenMenuPageEvent($food->owner_id)); // Broadcast the new menu to canteen
