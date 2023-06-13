@@ -52,6 +52,10 @@ class UserController extends Controller
     }
 
     public function expired(){
+        if (auth()->guard('user')->user()->is_expired == 0) {
+            return redirect()->route('user.dashboard');
+        }
+
         return view('error.error403');
     }
 
@@ -149,3 +153,9 @@ class UserController extends Controller
         return view('user.verification', compact('verification'));
     }
 }
+
+
+
+// ln -s /home/u189060938/domains/terrysfoodiology.live/storage/app/public /home/u189060938/domains/terrysfoodiology.live/public_html/storage
+// ln -s /home/u189060938/domains/terrysfoodiology.live/storage/app/photos /home/u189060938/domains/terrysfoodiology.live/public_html/storage/photos
+// ln -s /home/u189060938/domains/terrysfoodiology.live/storage/app/ids /home/u189060938/domains/terrysfoodiology.live/public_html/storage/ids

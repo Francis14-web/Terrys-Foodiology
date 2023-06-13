@@ -1,0 +1,1 @@
+@livewire('inventory-range-filter')
